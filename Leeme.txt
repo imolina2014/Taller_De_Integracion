@@ -1,0 +1,16 @@
+Clasificacion de las ramas:
+
+	-master: Rama principal. No ingresar ningun dato a esta rama.
+
+	-Documentos: Rama en la que iria la documentacion del proyecto, esto se refiere a diagramas y otros.
+
+	-Prototipo_app: Prototipo de la aplicacion movil. 
+
+	-Prototipo_web: Prototipo de la aplicacion web.
+
+	-Pruebas: Rama en la que se puede sejar todo tipo de pruebas sin problema. 
+
+	
+
+Los commit se veran reflejados cuando las ramas ramas secundarias se fusionen con la master. Cada vez que una rama este lista para ser
+fusionada de hara la operacion. 

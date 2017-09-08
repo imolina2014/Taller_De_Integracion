@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
     <!--
@@ -12,16 +12,48 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
         <title>AplicacionMobile</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Conectando con el dispositivo</p>
-                <p class="event received">El dispositivo está preparado</p>
+        <!-- PAGINA 1 -->
+        <div data-role="page" id="pagina1">
+            <div data-role="header">
+                <h1> NOMBRE PAGINA </h1>
             </div>
-        </div>
+
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#" data-icon="home"> Pagina 1  </a></li>
+                    <li> <a href="#pagina2" data-icon="grid"> Pagina 2  </a></li>
+                </ul>
+            </div>
+
+            <div data-role="content">
+                CONTENIDO PAGINA 1
+            </div>
+        </div><!-- Div que cierra el id pagina1-->
+
+        <!-- PAGINA 2 -->
+        <div data-role="page" id="pagina2">
+            <div data-role="header">
+                <h1> NOMBRE PAGINA </h1>
+            </div>
+
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#pagina1" data-icon="home"> Pagina 1  </a></li>
+                    <li> <a href="#" data-icon="grid"> Pagina 2  </a></li>
+                </ul>
+            </div>
+
+            <div data-role="content">
+                CONTENIDO PAGINA 2
+            </div>
+        </div> <!-- Div que cierra el id pagina2-->
+
+        <script type="text/javascript" src="scripts/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script type="text/javascript" src="scripts/index.js"></script>

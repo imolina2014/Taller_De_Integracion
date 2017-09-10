@@ -5,51 +5,85 @@
         Personalice la directiva de seguridad de contenido en la etiqueta meta como sea necesario. Agregue "unsafe-inline" a default-src para permitir JavaScript insertado.
         Para obtener más detalles, consulte http://go.microsoft.com/fwlink/?LinkID=617521
     -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' *; script-src 'self' https://*.googleapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' *;script-src 'self' https://*.googleapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
+        <style>
+            #map {
+                width: 100%;
+                height: 300px;
+            }
+        </style>
         <title>AplicacionMobile</title>
     </head>
     <body">
         <!-- PAGINA 1 -->
-        <div data-role="page" id="pagina1" style="background-image: url('images/blur1.jpg'); color:white">
-            <div data-role="header" style="background-image: url('images/blur2.jpg'); color:white">
+        <div data-role="page" id="pagina1" style="background-image: url('images/blur1.jpg');color:white">
+            <div data-role="header" style="background-image: url('images/blur1.jpg');color:white">
                 <h1>Informacion</h1>
             </div>
 
             <div data-role="navbar" style="background-image: url('images/blur2.jpg'); color:white">
                 <ul>
-                    <li> <a href="#" data-icon="home" style="background-color:aqua"> Pagina 1  </a></li>
-                    <li> <a href="#pagina2" data-icon="grid" style="background-color:aqua"> Pagina 2  </a></li>
+                    <li> <a href="#" data-icon="home" style="background-image:url('images/blur2.jpg')">Informaciones</a></li>
+                    <li> <a href="#pagina2" data-icon="grid" style="background-image:url('images/blur2.jpg')">Menu</a></li>
                 </ul>
             </div>
 
             <div data-role="content">
-                <h2>Bienvenido a la App de Seguridad</h2>
-                <p>Aqui podras unirte al programa de Seguridad y Estadistica acerca de incidentes y aviso de ellos; por lo cual tu eres un gran colaborador y parte del programa ya que con tus notificaciones y apoyo alaApp podemos tener un barrio y ciudad mas Segura</p>
+                <h2 style="font-size:18px">Bienvenido a la App de Seguridad</h2>
+                <p style="font-size:12px">Aqui podras unirte al programa de Seguridad y Estadistica de incidentes; donde tu puedes ser un gran colaborador y parte del programa notificando de manera responsable incidentes que ocuren a tu alrederor y con ello notificar a los participantes de lamisma forma en que otros notificran a la aplicacion y todos podremos estar al dia y asi lograr un barrio y ciudad mas Segura</p>
+                <br>
+                <p style="font-size:12px">Tienes Dudas?<br></p>
+                <a style="font-size:12px">Como Usar la App<br></a>
+                <a style="font-size:12px">Como utilizamos los Datos e Informacion<br></a>
+                <a style="font-size:12px">Como notificamos a los Servicios Publicos<br></a>
+                <a style="font-size:12px">Ayuda<br></a>
+                <br>
+                <br>
+                <p style="font-size:12px; color:gray">Gracias por usar la Aplicacion de Seguridad para mas informacion visita <a>Sitio WEB</a></p>
             </div>
+
+            
+                
+          
         </div><!-- Div que cierra el id pagina1-->
 
         <!-- PAGINA 2 -->
-        <div data-role="page" id="pagina2" style="background-image: url('images/blur1.jpg'); color:white">
-            <div data-role="header" style="background-image: url('images/blur2.jpg'); color:white">
+        <div data-role="page" id="pagina2" style="background-image: url('images/blur1.jpg')">
+            <div data-role="header" style="background-image: url('images/blur1.jpg'); color:white">
                 <h1>Menu</h1>
             </div>
 
             <div data-role="navbar" style="background-image: url('images/blur2.jpg'); color:white">
                 <ul>
-                    <li> <a href="#pagina1" data-icon="home" style="background-color:aqua"> Pagina 1  </a></li>
-                    <li> <a href="#" data-icon="grid" style="background-color:aqua"> Pagina 2  </a></li>
+                    <li> <a href="#pagina1" data-icon="home" style="background-image:url('images/blur2.jpg')">Informaciones </a></li>
+                    <li> <a href="#" data-icon="grid" style="background-image:url('images/blur2.jpg')"> Menu </a></li>
                 </ul>
             </div>
 
             <div data-role="content">
-                Tipo de Delito:
+                <select>Tipo de Delito:
+                <option>Atraco</option>
+                <option>Asalto a Mano Armada</option>
+                <option>Portonazo</option>
+                </select>
+                <div id="datos" class="">
+                    <button id="btnMostrarMapa">Mostrar Mapa</button>
+                    <div class="ui-field-contain">
+                        <label for="txtLat">Latitud: </label>
+                        <input id="txtLat" type="text" value="" readonly>
+                        <label for="txtLon">Longitud: </label>
+                        <input id="txtLon" type="text" value="" readonly>
+                    </div>
+                </div>
+                <div id="map">
+
+                </div>
             </div>
         </div> <!-- Div que cierra el id pagina2-->
 

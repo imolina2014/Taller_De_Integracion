@@ -56,7 +56,7 @@
             var marcador = new google.maps.Marker({
                 position: coords,
                 map: mapa,
-                title: "Mi Ubicacion",
+                title: "Mi Ubicación",
                 animation: google.maps.Animation.DROP
             });
         }

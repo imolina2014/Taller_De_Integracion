@@ -24,13 +24,13 @@
         <!-- PAGINA 1 -->
         <div data-role="page" id="pagina1" style="background-image: url('images/blur1.jpg');color:white">
             <div data-role="header" style="background-image: url('images/blur1.jpg');color:white">
-                <h1>Informacion</h1>
+                <h1>INFORMACIÓN</h1>
             </div>
 
             <div data-role="navbar" style="background-image: url('images/blur2.jpg'); color:white">
                 <ul>
                     <li> <a href="#" data-icon="home" style="background-image:url('images/blur2.jpg')">Informaciones</a></li>
-                    <li> <a href="#pagina2" data-icon="grid" style="background-image:url('images/blur2.jpg')">Menu</a></li>
+                    <li> <a href="#pagina2" data-icon="grid" style="background-image:url('images/blur2.jpg')">Ingresar Incidente</a></li>
                 </ul>
             </div>
 
@@ -56,33 +56,58 @@
         <!-- PAGINA 2 -->
         <div data-role="page" id="pagina2" style="background-image: url('images/blur1.jpg')">
             <div data-role="header" style="background-image: url('images/blur1.jpg'); color:white">
-                <h1>Menu</h1>
+                <h1>MENÚ</h1>
             </div>
 
             <div data-role="navbar" style="background-image: url('images/blur2.jpg'); color:white">
                 <ul>
-                    <li> <a href="#pagina1" data-icon="home" style="background-image:url('images/blur2.jpg')">Informaciones </a></li>
-                    <li> <a href="#" data-icon="grid" style="background-image:url('images/blur2.jpg')"> Menu </a></li>
+                    <li> <a href="#pagina1" data-icon="home" style="background-image:url('images/blur2.jpg')">Informaciones</a></li>
+                    <li> <a href="#" data-icon="grid" style="background-image:url('images/blur2.jpg')">Ingresar Incidente</a></li>
                 </ul>
             </div>
 
             <div data-role="content">
-                <select>Tipo de Delito:
-                <option>Atraco</option>
-                <option>Asalto a Mano Armada</option>
-                <option>Portonazo</option>
-                </select>
-                <div id="datos" class="">
-                    <button id="btnMostrarMapa">Mostrar Mapa</button>
-                    <div class="ui-field-contain">
-                        <label for="txtLat">Latitud: </label>
-                        <input id="txtLat" type="text" value="" readonly>
-                        <label for="txtLon">Longitud: </label>
-                        <input id="txtLon" type="text" value="" readonly>
-                    </div>
-                </div>
-                <div id="map">
+                <div id="inIncidentes">
+                    <form class="fmrIncidente">
+                        <div>
+                            <label>Categoría:</label>
+                            <div>
+                                <select>
+                                    <option value="seleccionar">Seleccionar categoría</option>
+                                    <option value="accidente">Accidente</option>
+                                    <option value="delito">Delito</option>
+                                </select>
+                            </div>
+                        </div><br/>
+                        <div>
+                            <label>Tipo:</label>
+                            <div>
+                                <select>
+                                    <option>Seleccionar tipo</option>
+                                    <option>Choque vehicular</option>
+                                    <option>Incendio</option>
+                                    <option>Derrumbes</option>
+                                    <option>Robo con intimidación</option>
+                                    <option>Asalto</option>
+                                    <option>Portonazo</option>
+                                </select>
+                            </div>
+                        </div><br/>
+                        <div id="datos" class="">
+                            <label>Seleccionar ubicación en el mapa:</label>
+                            <button id="btnMostrarMapa">Mostrar mapa</button>
+                            <div class="ui-field-contain">
+                                <label for="txtLat">Latitud:</label>
+                                <input id="txtLat" type="text" value="" readonly>
+                                <label for="txtLon">Longitud:</label>
+                                <input id="txtLon" type="text" value="" readonly>
+                            </div>
+                        </div>
+                        <div id="map">
 
+                        </div>
+                        <input type="submit" name="registrar" value="Registrar Incidente"/>
+                    </form>
                 </div>
             </div>
         </div> <!-- Div que cierra el id pagina2-->

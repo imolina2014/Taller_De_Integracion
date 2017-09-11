@@ -69,4 +69,13 @@
         console.log("codigo de err;" + err.code + " msj=" + err.message);
     }
 
+    function ObtenerDatos() {
+        var Categoria = getElementById("categoria");
+        var Tipo = getElementById("tipo");
+        var Descripcion = getElementById("descripcion");
+        var Latitud = getElementById("txtLat");
+        var Longitud = getElementById("txtLon");
+    }
+
+
 })();

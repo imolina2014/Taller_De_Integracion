@@ -71,7 +71,7 @@
                     <form class="fmrIncidente">
                         <div>
                             <label style="color:white;">Categoría:</label>
-                            <div>
+                            <div id="categoria">
                                 <select>
                                     <option value="seleccionar">Seleccionar categoría</option>
                                     <option value="accidente">Accidente</option>
@@ -81,7 +81,7 @@
                         </div><br/>
                         <div>
                             <label style="color:white;">Tipo:</label>
-                            <div>
+                            <div id"tipo" >
                                 <select>
                                     <option>Seleccionar tipo</option>
                                     <option>Choque vehicular</option>
@@ -99,7 +99,7 @@
                         </div><br/>
                         <div>
                             <label style="color:white;">Descripción Incidente:</label>
-                            <div>
+                            <div id="descripcion">
                                 <input type="text" id="desc" name="descripcion" size="250" maxlength="250" placeholder="Ingresar descripción del incidente..." onclick="javascript: limpia(this);" onBlur="javascript: verifica(this);"/>
                             </div>
                         </div><br />

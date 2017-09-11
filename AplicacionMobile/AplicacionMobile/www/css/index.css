@@ -31,6 +31,12 @@ body {
     font-size:12px;
 }
 
+.btnRegistrar {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
 .app {
     background: url(../images/cordova.png) no-repeat center top; 
     position: absolute;             

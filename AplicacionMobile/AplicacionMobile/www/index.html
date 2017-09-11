@@ -54,12 +54,12 @@
         </div><!-- Div que cierra el id pagina1-->
 
         <!-- PAGINA 2 -->
-        <div data-role="page" id="pagina2" style="background-image: url('images/blur1.jpg')">
-            <div data-role="header" style="background-image: url('images/blur1.jpg'); color:white">
+        <div data-role="page" id="pagina2" style="background-image: url('images/blur3.png')">
+            <div data-role="header" style="background-image: url('images/blur3.png'); color:white">
                 <h1>MENÚ</h1>
             </div>
 
-            <div data-role="navbar" style="background-image: url('images/blur2.jpg'); color:white">
+            <div data-role="navbar" style="background-image: url('images/blur3.png'); color:white">
                 <ul>
                     <li> <a href="#pagina1" data-icon="home" style="background-image:url('images/blur2.jpg')">Informaciones</a></li>
                     <li> <a href="#" data-icon="grid" style="background-image:url('images/blur2.jpg')">Ingresar Incidente</a></li>
@@ -70,7 +70,7 @@
                 <div id="inIncidentes">
                     <form class="fmrIncidente">
                         <div>
-                            <label>Categoría:</label>
+                            <label style="color:white;">Categoría:</label>
                             <div>
                                 <select>
                                     <option value="seleccionar">Seleccionar categoría</option>
@@ -80,33 +80,37 @@
                             </div>
                         </div><br/>
                         <div>
-                            <label>Tipo:</label>
+                            <label style="color:white;">Tipo:</label>
                             <div>
                                 <select>
                                     <option>Seleccionar tipo</option>
                                     <option>Choque vehicular</option>
                                     <option>Incendio</option>
                                     <option>Derrumbes</option>
-                                    <option>Robo con intimidación</option>
+                                    <option>Robo con violencia</option>
                                     <option>Asalto</option>
                                     <option>Portonazo</option>
+                                    <option>Parricidio</option>
+                                    <option>Infanticidio</option>
+                                    <option>Secuestro</option>
+                                    <option>Sustracción de menores</option>
                                 </select>
                             </div>
                         </div><br/>
                         <div id="datos" class="">
-                            <label>Seleccionar ubicación en el mapa:</label>
+                            <label style="color:white;">Seleccionar ubicación en el mapa:</label>
                             <button id="btnMostrarMapa">Mostrar mapa</button>
                             <div class="ui-field-contain">
-                                <label for="txtLat">Latitud:</label>
+                                <label for="txtLat" style="color:white;">Latitud:</label>
                                 <input id="txtLat" type="text" value="" readonly>
-                                <label for="txtLon">Longitud:</label>
+                                <label for="txtLon" style="color:white;">Longitud:</label>
                                 <input id="txtLon" type="text" value="" readonly>
                             </div>
                         </div>
                         <div id="map">
 
                         </div>
-                        <input type="submit" name="registrar" value="Registrar Incidente"/>
+                        <input type="submit" name="registrar" value="Registrar Incidente" />
                     </form>
                 </div>
             </div>

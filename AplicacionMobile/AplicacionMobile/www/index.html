@@ -20,7 +20,7 @@
         </style>
         <title>AplicacionMobile</title>
     </head>
-    <body">
+    <body>
         <!-- PAGINA 1 -->
         <div data-role="page" id="pagina1" style="background-image: url('images/blur3.png');color:white">
             <div data-role="header" style="background-image: url('images/blur3.png');color:white">
@@ -46,12 +46,10 @@
                 <br>
                 <br>
                 <p style="font-size:13px; color:white">Gracias por usar la Aplicacion de Seguridad para mas informacion visita <a style="color:white">Sitio WEB</a></p>
-            </div>
-
-            
-                
-          
+            </div>   
         </div><!-- Div que cierra el id pagina1-->
+
+
 
         <!-- PAGINA 2 -->
         <div data-role="page" id="pagina2" style="background-image:url('images/blur3.png')">
@@ -103,18 +101,19 @@
                                 <input type="text" id="desc" name="descripcion" size="250" maxlength="250" placeholder="Ingresar descripción del incidente..." onclick="javascript: limpia(this);" onBlur="javascript: verifica(this);"/>
                             </div>
                         </div><br />
-                        <div id="datos" class="">
-                            <label style="color:white;">Seleccionar ubicación en el mapa:</label>
-                            <button id="btnMostrarMapa">Mostrar mapa</button>
-                            <div class="ui-field-contain">
-                                <label for="txtLat" style="color:white;">Latitud:</label>
-                                <input id="txtLat" type="text" value="" readonly>
-                                <label for="txtLon" style="color:white;">Longitud:</label>
-                                <input id="txtLon" type="text" value="" readonly>
+                        <div data-role="main" class="ui-content">
+                            <div id="datos" class="">
+                                <label style="color:white;">Seleccionar ubicación en el mapa:</label>
+                                <div class="ui-field-contain">
+                                    <label for="txtLat" style="color:white;">Latitud:</label>
+                                    <input id="txtLat" type="text" value="" readonly>
+                                    <label for="txtLon" style="color:white;">Longitud:</label>
+                                    <input id="txtLon" type="text" value="" readonly>
+                                </div>
                             </div>
-                        </div>
-                        <div id="map">
+                            <div id="map">
 
+                            </div>
                         </div>
                         <div>
                             <input type="submit" name="registrar" class="btnRegistrar" value="Registrar Incidente" />

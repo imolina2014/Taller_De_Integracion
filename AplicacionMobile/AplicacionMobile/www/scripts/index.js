@@ -12,7 +12,7 @@
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
 
-        $('#btnMostrarMapa').click(getDatos);
+        $('#pagina2').ready(getDatos);
 
         // TODO: Cordova se ha cargado. Haga aquí las inicializaciones que necesiten Cordova.
         var parentElement = document.getElementById('deviceready');

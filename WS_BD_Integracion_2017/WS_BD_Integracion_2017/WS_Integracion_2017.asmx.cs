@@ -20,16 +20,22 @@ namespace WS_BD_Integracion_2017
     public class WS_Integracion_2017 : System.Web.Services.WebService
     {
         [WebMethod]
+        public string HelloWorld()
+        {
+            return "Hello World";
+        }
+
+        [WebMethod]
         public DataSet DatosIncidente()
         {
             string sConnection;
             sConnection = "server=localhost;uid=root;pwd=;database=denuncias;";
             MySqlConnection con = new MySqlConnection(sConnection);
             con.Open();
-            MySqlDataAdapter query = new MySqlDataAdapter("SELECT * FROM vehiculos", con);
-            DataSet datos = new DataSet("vehiculos");
-            query.FillSchema(datos, SchemaType.Source, "vehiculos");
-            query.Fill(datos, "vehiculos");
+            MySqlDataAdapter query = new MySqlDataAdapter("SELECT * FROM incidentes", con);
+            DataSet datos = new DataSet("incidentes");
+            query.FillSchema(datos, SchemaType.Source, "incidentes");
+            query.Fill(datos, "incidentes");
             con.Close();
             return datos;
         }

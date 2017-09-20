@@ -10,14 +10,10 @@
     function onDeviceReady() {
         // Controlar la pausa de Cordova y reanudar eventos
         document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-        
+        document.addEventListener('resume', onResume.bind(this), false);
+
+        $('#prueba').click(prueba);
         // TODO: Cordova se ha cargado. Haga aquí las inicializaciones que necesiten Cordova.
-        var parentElement = document.getElementById('deviceready');
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
     };
 
     function onPause() {
@@ -27,4 +23,23 @@
     function onResume() {
         // TODO: esta aplicación se ha reactivado. Restaure el estado de la aplicación aquí.
     };
+
+    function prueba() {
+        var parametros = {
+            "Categoria":   'CATEGORIA',
+            "Tipo":        'TIPO',
+            "Descripcion": 'DESCRIPCION',
+            "NTelefono":   'TELEFONO',
+            "Lat":         'LAT',
+            "Lon":         'LON'
+        };
+        $.ajax({
+            data: parametros, //datos que se envian a traves de ajax
+            url: "http://pillan.inf.uct.cl/~imolina/TI_IV/pruebas/enc.php",
+            type: 'post', //método de envio
+            success: function (result) {
+                alert(result);
+            }
+        });
+    }
 } )();

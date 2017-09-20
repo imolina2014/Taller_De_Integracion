@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        Personalice la directiva de seguridad de contenido en la etiqueta meta como sea necesario. Agregue "unsafe-inline" a default-src para permitir JavaScript insertado.
+        Para obtener más detalles, consulte http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' *;script-src 'self' https://*.googleapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
+        <style>
+            #map {
+                width: 100%;
+                height: 300px;
+            }
+        </style>
+        <title>AplicacionMobile</title>
+    </head>
+    <body>
+        <!-- PAGINA 1 -->
+        <div data-role="page" id="pagina1" style="background-image: url('images/blur3.png');color:white">
+            <div data-role="header" style="background-image: url('images/blur3.png');color:white">
+                <h1>INFORMACIÓN</h1>
+            </div>
+
+            <div data-role="navbar" style="background-image: url('images/blur2.jpg'); color:white">
+                <ul>
+                    <li> <a href="#" data-icon="home" style="background-image:url('images/blur2.jpg')">Informaciones</a></li>
+                    <li> <a href="#pagina2" data-icon="grid" style="background-image:url('images/blur2.jpg')">Ingresar Incidente</a></li>
+                </ul>
+            </div>
+
+            <div data-role="content">
+                <h2 style="font-size:18px">Bienvenido a la App de Seguridad</h2>
+                <p style="font-size:12px">Aqui podras unirte al programa de Seguridad y Estadistica de incidentes; donde tu puedes ser un gran colaborador y parte del programa notificando de manera responsable incidentes que ocuren a tu alrederor y con ello notificar a los participantes de lamisma forma en que otros notificran a la aplicacion y todos podremos estar al dia y asi lograr un barrio y ciudad mas Segura</p>
+                <br>
+                <p style="font-size:18px">Tienes Dudas?<br></p>
+                <a style="font-size:13px; color:white">Como Usar la App<br></a>
+                <a style="font-size:13px; color:white">Como utilizamos los Datos e Informacion<br></a>
+                <a style="font-size:13px; color:white">Como notificamos a los Servicios Publicos<br></a>
+                <a style="font-size:13px; color:white">Ayuda<br></a>
+                <br>
+                <br>
+                <p style="font-size:13px; color:white">Gracias por usar la Aplicacion de Seguridad para mas informacion visita <a style="color:white">Sitio WEB</a></p>
+            </div>   
+        </div><!-- Div que cierra el id pagina1-->
+
+
+
+        <!-- PAGINA 2 -->
+        <div data-role="page" id="pagina2" style="background-image:url('images/blur3.png')">
+            <div data-role="header" style="background-image: url('images/blur3.png'); color:white">
+                <h1>MENÚ</h1>
+            </div>
+
+            <div data-role="navbar" style="background-image: url('images/blur3.png'); color:white">
+                <ul>
+                    <li> <a href="#pagina1" data-icon="home" style="background-image:url('images/blur2.jpg')">Informaciones</a></li>
+                    <li> <a href="#" data-icon="grid" style="background-image:url('images/blur2.jpg')">Ingresar Incidente</a></li>
+                </ul>
+            </div>
+
+            <div data-role="content">
+                <div id="inIncidentes">
+                    <form class="fmrIncidente">
+                        <div>
+                            <label style="color:white;">Categoría:</label>
+                            <div id="categoria">
+                                <select>
+                                    <option value="seleccionar">Seleccionar categoría</option>
+                                    <option value="accidente">Accidente</option>
+                                    <option value="delito">Delito</option>
+                                </select>
+                            </div>
+                        </div><br/>
+                        <div>
+                            <label style="color:white;">Tipo:</label>
+                            <div id"tipo" >
+                                <select>
+                                    <option>Seleccionar tipo</option>
+                                    <option>Choque vehicular</option>
+                                    <option>Incendio</option>
+                                    <option>Derrumbes</option>
+                                    <option>Robo con violencia</option>
+                                    <option>Asalto</option>
+                                    <option>Portonazo</option>
+                                    <option>Parricidio</option>
+                                    <option>Infanticidio</option>
+                                    <option>Secuestro</option>
+                                    <option>Sustracción de menores</option>
+                                </select>
+                            </div>
+                        </div><br/>
+                        <div>
+                            <label style="color:white;">Descripción Incidente:</label>
+                            <div id="descripcion">
+                                <input type="text" id="desc" name="descripcion" size="250" maxlength="250" placeholder="Ingresar descripción del incidente..." onclick="javascript: limpia(this);" onBlur="javascript: verifica(this);"/>
+                            </div>
+                        </div><br />
+                        <div data-role="main" class="ui-content">
+                            <div id="datos" class="">
+                                <label style="color:white;">Seleccionar ubicación en el mapa:</label>
+                                <div class="ui-field-contain">
+                                    <label for="txtLat" style="color:white;">Latitud:</label>
+                                    <input id="txtLat" type="text" value="" readonly>
+                                    <label for="txtLon" style="color:white;">Longitud:</label>
+                                    <input id="txtLon" type="text" value="" readonly>
+                                </div>
+                            </div>
+                            <div id="map">
+
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" name="registrar" class="btnRegistrar" value="Registrar Incidente" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- Div que cierra el id pagina2-->
+
+        <script type="text/javascript" src="scripts/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
+    </body>
+</html>

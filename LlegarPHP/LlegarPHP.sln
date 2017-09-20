@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "LlegarPHP", "LlegarPHP\LlegarPHP.jsproj", "{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Android = Debug|Android
+		Debug|iOS = Debug|iOS
+		Debug|Windows-ARM = Debug|Windows-ARM
+		Debug|Windows-x64 = Debug|Windows-x64
+		Debug|Windows-x86 = Debug|Windows-x86
+		Release|Android = Release|Android
+		Release|iOS = Release|iOS
+		Release|Windows-ARM = Release|Windows-ARM
+		Release|Windows-x64 = Release|Windows-x64
+		Release|Windows-x86 = Release|Windows-x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Android.ActiveCfg = Debug|Android
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Android.Build.0 = Debug|Android
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Android.Deploy.0 = Debug|Android
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|iOS.ActiveCfg = Debug|iOS
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|iOS.Build.0 = Debug|iOS
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|iOS.Deploy.0 = Debug|iOS
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-ARM.ActiveCfg = Debug|Windows-ARM
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-ARM.Build.0 = Debug|Windows-ARM
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-ARM.Deploy.0 = Debug|Windows-ARM
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-x64.ActiveCfg = Debug|Windows-x64
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-x64.Build.0 = Debug|Windows-x64
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-x64.Deploy.0 = Debug|Windows-x64
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-x86.ActiveCfg = Debug|Windows-x86
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-x86.Build.0 = Debug|Windows-x86
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Debug|Windows-x86.Deploy.0 = Debug|Windows-x86
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Android.ActiveCfg = Release|Android
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Android.Build.0 = Release|Android
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Android.Deploy.0 = Release|Android
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|iOS.ActiveCfg = Release|iOS
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|iOS.Build.0 = Release|iOS
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|iOS.Deploy.0 = Release|iOS
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-ARM.ActiveCfg = Release|Windows-ARM
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-ARM.Build.0 = Release|Windows-ARM
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-ARM.Deploy.0 = Release|Windows-ARM
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-x64.ActiveCfg = Release|Windows-x64
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-x64.Build.0 = Release|Windows-x64
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-x64.Deploy.0 = Release|Windows-x64
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-x86.ActiveCfg = Release|Windows-x86
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-x86.Build.0 = Release|Windows-x86
+		{E4B24863-BAA9-46B6-9806-EE9ECC5E546D}.Release|Windows-x86.Deploy.0 = Release|Windows-x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF8AC5D4-35AC-4FF9-AA17-73D93E56415E}
+	EndGlobalSection
+EndGlobal

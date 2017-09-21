@@ -73,7 +73,7 @@
 	
     function cat_Accidente() {
         var selecTipo = document.getElementById("tipo");
-        var CTG_Accidente = ["Colisión Vehicular", "Choque múltiple", "Incendio", "Derrumbes", "Atropello de peatones", "Otro"];
+        var CTG_Accidente = ["Colision Vehicular", "Choque multiple", "Incendio", "Derrumbes", "Atropello de peatones", "Otro"];
         for (var i = 0; i < CTG_Accidente.length; i++) {
             var option = document.createElement("option");
             option.text = CTG_Accidente[i];
@@ -83,7 +83,7 @@
 
     function cat_Delito() {
         var selecTipo = document.getElementById("tipo");
-        var CTG_Delito = ["Robo con violencia", "Asalto", "Portonazo", "Parricidio", "Infanticidio", "Secuestro", "Sustracción de menores", "Asesinato", "Otro"];
+        var CTG_Delito = ["Robo con violencia", "Asalto", "Portonazo", "Parricidio", "Infanticidio", "Secuestro", "Sustraccion de menores", "Asesinato", "Otro"];
         for (var i = 0; i < CTG_Delito.length; i++) {
             var option = document.createElement("option");
             option.text = CTG_Delito[i];

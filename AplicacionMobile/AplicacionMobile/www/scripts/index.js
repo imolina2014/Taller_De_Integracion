@@ -73,7 +73,7 @@
 	
     function cat_Accidente() {
         var selecTipo = document.getElementById("tipo");
-        var CTG_Accidente = ["Colision Vehicular", "Choque multiple", "Incendio", "Derrumbes", "Atropello de peatones", "Otro"];
+        var CTG_Accidente = ["Colision vehicular", "Choque multiple", "Incendio", "Derrumbes", "Atropello de peatones", "Otro"];
         for (var i = 0; i < CTG_Accidente.length; i++) {
             var option = document.createElement("option");
             option.text = CTG_Accidente[i];

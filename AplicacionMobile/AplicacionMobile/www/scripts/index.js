@@ -113,7 +113,7 @@
     function Obtener_Datos() {
         var dato_Categoria = $("#categoria option:selected").text();
         var dato_Tipo = $("#tipo option:selected").text();
-        var dato_Descripcion = $("#descripcion").val();
+        var dato_Descripcion = $("#desc").val();
         var dato_Latitud = $("#txtLat").val();
         var dato_Longitud = $("#txtLon").val();
         var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud];

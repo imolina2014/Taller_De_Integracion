@@ -13,6 +13,8 @@
         document.addEventListener('resume', onResume.bind(this), false);
 
         $('#pagina2').ready(getDatos);
+		document.getElementById("categoria").addEventListener("change", sCategoria, false);
+        document.getElementById("btnRegistrar").addEventListener("click", Obtener_Datos, false);
 
         // TODO: Cordova se ha cargado. Haga aquí las inicializaciones que necesiten Cordova.
         var parentElement = document.getElementById('deviceready');
@@ -68,14 +70,72 @@
     function onError(err) {
         console.log("codigo de err;" + err.code + " msj=" + err.message);
     }
-
-    function ObtenerDatos() {
-        var Categoria = getElementById("categoria");
-        var Tipo = getElementById("tipo");
-        var Descripcion = getElementById("descripcion");
-        var Latitud = getElementById("txtLat");
-        var Longitud = getElementById("txtLon");
+	
+    function cat_Accidente() {
+        var selecTipo = document.getElementById("tipo");
+        var CTG_Accidente = ["Colisión Vehicular", "Choque múltiple", "Incendio", "Derrumbes", "Atropello de peatones", "Otro"];
+        for (var i = 0; i < CTG_Accidente.length; i++) {
+            var option = document.createElement("option");
+            option.text = CTG_Accidente[i];
+            selecTipo.add(option);
+        }
     }
 
+    function cat_Delito() {
+        var selecTipo = document.getElementById("tipo");
+        var CTG_Delito = ["Robo con violencia", "Asalto", "Portonazo", "Parricidio", "Infanticidio", "Secuestro", "Sustracción de menores", "Asesinato", "Otro"];
+        for (var i = 0; i < CTG_Delito.length; i++) {
+            var option = document.createElement("option");
+            option.text = CTG_Delito[i];
+            selecTipo.add(option);
+        }
+    }
 
+    function sCategoria() {
+        /* Para obtener el texto*/
+        var comboCategoria = document.getElementById("categoria");
+        var selecCategoria = comboCategoria.options[comboCategoria.selectedIndex].text;
+        if (selecCategoria == "Accidente") {
+            $("#tipo").removeAttr('disabled');
+            $('#tipo').children('option:not(:first)').remove();
+            cat_Accidente();
+        }
+        if (selecCategoria == "Delito") {
+            $("#tipo").removeAttr('disabled');
+            $('#tipo').children('option:not(:first)').remove();
+            cat_Delito();
+        }
+        if (selecCategoria == "Seleccionar categoría") {
+            $("#tipo").attr('disabled', 'disabled');
+        }
+    }
+ 
+    function Obtener_Datos() {
+        var dato_Categoria = $("#categoria option:selected").text();
+        var dato_Tipo = $("#tipo option:selected").text();
+        var dato_Descripcion = $("#descripcion").val();
+        var dato_Latitud = $("#txtLat").val();
+        var dato_Longitud = $("#txtLon").val();
+        var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud];
+        prueba(aDatos);
+    }
+
+    function prueba(aDatosToBD) {
+        var parametros = {
+            "Categoria": aDatosToBD[0],
+            "Tipo": aDatosToBD[1],
+            "Descripcion": aDatosToBD[2],
+            "NTelefono": 'TELEFONO',
+            "Lat": aDatosToBD[3],
+            "Lon": aDatosToBD[4]
+        };
+        $.ajax({
+            data: parametros, //datos que se envian a traves de ajax
+            url: "http://pillan.inf.uct.cl/~imolina/TI_IV/pruebas/enc.php",
+            type: 'post', //método de envio
+            success: function (result) {
+                alert(result);
+            }
+        });
+    }
 })();

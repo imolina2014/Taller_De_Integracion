@@ -69,29 +69,19 @@
                     <form class="fmrIncidente">
                         <div>
                             <label style="color:white;">Categoría:</label>
-                            <div id="categoria">
-                                <select>
-                                    <option value="seleccionar">Seleccionar categoría</option>
-                                    <option value="accidente">Accidente</option>
-                                    <option value="delito">Delito</option>
+                            <div>
+                                <select id="categoria" onchange="sCategoria();">
+                                    <option>Seleccionar categoría</option>
+                                    <option>Accidente</option>
+                                    <option>Delito</option>
                                 </select>
                             </div>
                         </div><br/>
                         <div>
                             <label style="color:white;">Tipo:</label>
-                            <div id"tipo" >
-                                <select>
+                            <div>
+                                <select id="tipo">
                                     <option>Seleccionar tipo</option>
-                                    <option>Choque vehicular</option>
-                                    <option>Incendio</option>
-                                    <option>Derrumbes</option>
-                                    <option>Robo con violencia</option>
-                                    <option>Asalto</option>
-                                    <option>Portonazo</option>
-                                    <option>Parricidio</option>
-                                    <option>Infanticidio</option>
-                                    <option>Secuestro</option>
-                                    <option>Sustracción de menores</option>
                                 </select>
                             </div>
                         </div><br/>
@@ -116,7 +106,7 @@
                             </div>
                         </div>
                         <div>
-                            <input type="submit" name="registrar" class="btnRegistrar" value="Registrar Incidente" />
+                            <input type="button" id="btnRegistrar" value="Registrar Incidente" onclick="Obtener_Datos()"/>
                         </div>
                     </form>
                 </div>

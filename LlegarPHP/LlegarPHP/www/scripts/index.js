@@ -5,7 +5,11 @@
 (function () {
     "use strict";
 
-    document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
+    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        console.log(device.cordova);
+    }
 
     function onDeviceReady() {
         // Controlar la pausa de Cordova y reanudar eventos
@@ -25,21 +29,7 @@
     };
 
     function prueba() {
-        var parametros = {
-            "Categoria":   'CATEGORIA',
-            "Tipo":        'TIPO',
-            "Descripcion": 'DESCRIPCION',
-            "NTelefono":   'TELEFONO',
-            "Lat":         'LAT',
-            "Lon":         'LON'
-        };
-        $.ajax({
-            data: parametros, //datos que se envian a traves de ajax
-            url: "http://pillan.inf.uct.cl/~imolina/TI_IV/pruebas/enc.php",
-            type: 'post', //método de envio
-            success: function (result) {
-                alert(result);
-            }
-        });
+        var string = device.serial;
+        alert(string);
     }
 } )();

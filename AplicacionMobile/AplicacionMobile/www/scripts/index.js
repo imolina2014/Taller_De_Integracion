@@ -103,6 +103,10 @@
         // Controlar la pausa de Cordova y reanudar eventos
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            console.log(device.cordova);
+        }
 
         $('#pagina2').ready(getDatos);
 	document.getElementById("categoria").addEventListener("change", sCategoria, false);
@@ -182,7 +186,7 @@
         var dato_Descripcion = $("#desc").val();
         var dato_Latitud = $("#txtLat").val();
         var dato_Longitud = $("#txtLon").val();
-        var Telefono = "TELEFONO";
+        var Telefono = device.serial;
         var Calle = $("#txtCalle").val();
 
         var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, Calle, Telefono];

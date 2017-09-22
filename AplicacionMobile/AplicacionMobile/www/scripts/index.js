@@ -149,8 +149,26 @@
         var dato_Descripcion = $("#desc").val();
         var dato_Latitud = $("#txtLat").val();
         var dato_Longitud = $("#txtLon").val();
-        var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud];
-        prueba(aDatos);
+        var Telefono = "TELEFONO";
+        var Calle = "";
+
+        var geocoder = new google.maps.Geocoder;
+        var infowindow = new google.maps.InfoWindow;
+        var latlng = { lat: parseFloat(dato_Latitud), lng: parseFloat(dato_Longitud) };
+        geocoder.geocode({ 'location': latlng }, function (results, status) {
+            if (status === 'OK') {
+                if (results[0]) {
+                    Calle = (results[0].formatted_address);
+                    var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, Calle, Telefono];
+                } else {
+                    var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, "Undefined Area", Telefono];
+                }
+            } else {
+                alert('La geolocalizacion fallo: ' + status);
+                var aDatos = [];
+            }
+            prueba(aDatos);
+        });
     }
 
     function prueba(aDatosToBD) {
@@ -158,17 +176,19 @@
             "Categoria": aDatosToBD[0],
             "Tipo": aDatosToBD[1],
             "Descripcion": aDatosToBD[2],
-            "NTelefono": 'TELEFONO',
+            "NTelefono": aDatosToBD[6],
             "Lat": aDatosToBD[3],
-            "Lon": aDatosToBD[4]
+            "Lon": aDatosToBD[4],
+            "Calle": aDatosToBD[5]
         };
         $.ajax({
             data: parametros, //datos que se envian a traves de ajax
             url: "http://pillan.inf.uct.cl/~imolina/TI_IV/pruebas/enc.php",
             type: 'post', //método de envio
-            success: function (result) {
+           success: function (result) {
                 alert(result);
             }
         });
+        return;
     }
 }());

@@ -19,11 +19,37 @@
 
 
         }, function (error) { console.log(error); });
+
+    function actualiza_calle(CusLat, CusLon) {
+        var geocoder = new google.maps.Geocoder;
+        var infowindow = new google.maps.InfoWindow;
+        var latlng = { lat: parseFloat(CusLat), lng: parseFloat(CusLon) };
+        geocoder.geocode({ 'location': latlng }, function (results, status) {
+            if (status === 'OK') {
+                if (results[0]) {
+                    document.getElementById("txtCalle").value = (results[0].formatted_address);
+
+                } else {
+                    document.getElementById("txtCalle").value = "Undefined Area.";
+                }
+            } else {
+                alert('La geolocalizacion fallo: ' + status);
+
+            }
+        });
+        return;
+    }
+
+
+
     function setMapa(coords) {
-    var CusLat = coords.lat;
-    var CusLon = coords.lng;
-    document.getElementById("txtLat").value = CusLat;
-    document.getElementById("txtLon").value = CusLon;
+        var CusLat = coords.lat;
+        var CusLon = coords.lng;
+
+        actualiza_calle(CusLat, CusLon);
+
+        document.getElementById("txtLat").value = CusLat;
+        document.getElementById("txtLon").value = CusLon;
         //Se crea una nueva instancia del objeto mapa
         var map = new google.maps.Map(document.getElementById('map'),
             {
@@ -59,6 +85,13 @@
             //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
             document.getElementById("txtLat").value = this.getPosition().lat();
             document.getElementById("txtLon").value = this.getPosition().lng();
+
+            actualiza_calle(this.getPosition().lat(), this.getPosition().lng());
+
+
+
+
+
         });
     }
     //callback al hacer clic en el marcador lo que hace es quitar y poner la animacion BOUNCE
@@ -150,25 +183,28 @@
         var dato_Latitud = $("#txtLat").val();
         var dato_Longitud = $("#txtLon").val();
         var Telefono = "TELEFONO";
-        var Calle = "";
+        var Calle = $("#txtCalle").val();
 
-        var geocoder = new google.maps.Geocoder;
-        var infowindow = new google.maps.InfoWindow;
-        var latlng = { lat: parseFloat(dato_Latitud), lng: parseFloat(dato_Longitud) };
-        geocoder.geocode({ 'location': latlng }, function (results, status) {
-            if (status === 'OK') {
-                if (results[0]) {
-                    Calle = (results[0].formatted_address);
-                    var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, Calle, Telefono];
-                } else {
-                    var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, "Undefined Area", Telefono];
-                }
-            } else {
-                alert('La geolocalizacion fallo: ' + status);
-                var aDatos = [];
-            }
-            prueba(aDatos);
-        });
+        var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, Calle, Telefono];
+
+ //       var geocoder = new google.maps.Geocoder;
+ //       var infowindow = new google.maps.InfoWindow;
+ //       var latlng = { lat: parseFloat(dato_Latitud), lng: parseFloat(dato_Longitud) };
+ //       geocoder.geocode({ 'location': latlng }, function (results, status) {
+ //           if (status === 'OK') {
+ //               if (results[0]) {
+ //                   Calle = (results[0].formatted_address);
+ //                   var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, Calle, Telefono];
+ //               } else {
+ //                   var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, "Undefined Area", Telefono];
+ //               }
+ //           } else {
+ //               alert('La geolocalizacion fallo: ' + status);
+ //               var aDatos = [];
+ //           }
+ //           prueba(aDatos);
+ //       });
+        prueba(aDatos);
     }
 
     function prueba(aDatosToBD) {

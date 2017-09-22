@@ -2,9 +2,62 @@
 // http://go.microsoft.com/fwlink/?LinkID=397704
 // Para depurar código al cargar la página en cordova-simulate o en dispositivos o emuladores Android: inicie la aplicación, establezca puntos de interrupción 
 // y ejecute "window.location.reload()" en la Consola de JavaScript.
-(function () {
-    "use strict";
 
+
+(function () {
+    
+    var marker;          //variable del marcador
+    var coords = {};    //coordenadas obtenidas con la geolocalización
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            coords = {
+                lng: position.coords.longitude,
+                lat: position.coords.latitude
+            };
+            setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
+
+
+        }, function (error) { console.log(error); });
+    function setMapa(coords) {
+        //Se crea una nueva instancia del objeto mapa
+        var map = new google.maps.Map(document.getElementById('map'),
+            {
+                zoom: 13,
+                center: new google.maps.LatLng(coords.lat, coords.lng),
+
+            });
+
+        function toggleBounce() {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
+        //Creamos el marcador en el mapa con sus propiedades
+        //para nuestro obetivo tenemos que poner el atributo draggable en true
+        //position pondremos las mismas coordenas que obtuvimos en la geolocalización
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            position: new google.maps.LatLng(coords.lat, coords.lng),
+
+        });
+        //agregamos un evento al marcador junto con la funcion callback al igual que el evento dragend que indica 
+        //cuando el usuario a soltado el marcador
+        marker.addListener('click', toggleBounce);
+
+        marker.addListener('dragend', function (event) {
+            //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
+            document.getElementById("txtLat").value = this.getPosition().lat();
+            document.getElementById("txtLon").value = this.getPosition().lng();
+        });
+    }
+    //callback al hacer clic en el marcador lo que hace es quitar y poner la animacion BOUNCE
+    
+    "use strict";
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
@@ -38,35 +91,15 @@
             timeout: 10000,
             enableHighAccuracy: true
         });
+        
     }
-
     function onSuccess(position) {
         var CusLat = position.coords.latitude;
         var CusLon = position.coords.longitude;
-
         document.getElementById("txtLat").value = CusLat;
         document.getElementById("txtLon").value = CusLon;
-
-        try {
-            var coords = new google.maps.LatLng(CusLat, CusLon);
-
-            var opciones = {
-                center: coords, zoom: 15
-            };
-
-            var mapa = new google.maps.Map(document.getElementById("map"), opciones);
-            var marcador = new google.maps.Marker({
-                position: coords,
-                map: mapa,
-                title: "Mi Ubicación",
-                animation: google.maps.Animation.DROP
-            });
-        }
-        catch (err) {
-            console.log(err.message);
-        }
     }
-
+    
     function onError(err) {
         console.log("codigo de err;" + err.code + " msj=" + err.message);
     }
@@ -138,4 +171,4 @@
             }
         });
     }
-})();
+}());

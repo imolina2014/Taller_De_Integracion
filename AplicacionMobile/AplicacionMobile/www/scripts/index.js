@@ -15,15 +15,21 @@
                 lat: position.coords.latitude
             };
             setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
+	    
 
 
         }, function (error) { console.log(error); });
     function setMapa(coords) {
+    var CusLat = coords.lat;
+    var CusLon = coords.lng;
+    document.getElementById("txtLat").value = CusLat;
+    document.getElementById("txtLon").value = CusLon;
         //Se crea una nueva instancia del objeto mapa
         var map = new google.maps.Map(document.getElementById('map'),
             {
                 zoom: 13,
                 center: new google.maps.LatLng(coords.lat, coords.lng),
+		
 
             });
 
@@ -66,7 +72,7 @@
         document.addEventListener('resume', onResume.bind(this), false);
 
         $('#pagina2').ready(getDatos);
-		document.getElementById("categoria").addEventListener("change", sCategoria, false);
+	document.getElementById("categoria").addEventListener("change", sCategoria, false);
         document.getElementById("btnRegistrar").addEventListener("click", Obtener_Datos, false);
 
         // TODO: Cordova se ha cargado. Haga aquí las inicializaciones que necesiten Cordova.
@@ -86,18 +92,12 @@
     };
 
     function getDatos() {
-        navigator.geolocation.getCurrentPosition(onSuccess, onError, {
+        navigator.geolocation.getCurrentPosition(onError, {
             maxiumAge: 300000,
             timeout: 10000,
             enableHighAccuracy: true
         });
         
-    }
-    function onSuccess(position) {
-        var CusLat = position.coords.latitude;
-        var CusLon = position.coords.longitude;
-        document.getElementById("txtLat").value = CusLat;
-        document.getElementById("txtLon").value = CusLon;
     }
     
     function onError(err) {

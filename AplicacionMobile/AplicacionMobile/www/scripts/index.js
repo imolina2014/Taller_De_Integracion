@@ -88,10 +88,6 @@
 
             actualiza_calle(this.getPosition().lat(), this.getPosition().lng());
 
-
-
-
-
         });
     }
     //callback al hacer clic en el marcador lo que hace es quitar y poner la animacion BOUNCE
@@ -191,23 +187,6 @@
 
         var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, Calle, Telefono];
 
- //       var geocoder = new google.maps.Geocoder;
- //       var infowindow = new google.maps.InfoWindow;
- //       var latlng = { lat: parseFloat(dato_Latitud), lng: parseFloat(dato_Longitud) };
- //       geocoder.geocode({ 'location': latlng }, function (results, status) {
- //           if (status === 'OK') {
- //               if (results[0]) {
- //                   Calle = (results[0].formatted_address);
- //                   var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, Calle, Telefono];
- //               } else {
- //                   var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, "Undefined Area", Telefono];
- //               }
- //           } else {
- //               alert('La geolocalizacion fallo: ' + status);
- //               var aDatos = [];
- //           }
- //           prueba(aDatos);
- //       });
         prueba(aDatos);
     }
 
@@ -223,7 +202,7 @@
         };
         $.ajax({
             data: parametros, //datos que se envian a traves de ajax
-            url: "http://pillan.inf.uct.cl/~imolina/TI_IV/pruebas/enc.php",
+            url: "https://integracioniv.000webhostapp.com/enc.php",
             type: 'post', //método de envio
            success: function (result) {
                 alert(result);

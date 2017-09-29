@@ -12,34 +12,63 @@
 </head>
 
 <body style="background-image: url(img/wallpaper.jpg); background-size: 100%">
-	<div class="container" >
-		<div class="row">
-			<br>
-			
-			<div class="barra1 topnav">
-				<ul class="nav nav-pills nav-justified">
-					<li role="presentation" class="inicio"><a class="logo"><b>SISTEMA  DE INCIDENTES</b> </a></li>
-				</ul>
-			</div>
-			
-			<div class="col-md-8 barra2 topnav">
-				<ul class="nav nav-pills nav-justified">
-					<li role="presentation" class="active"><a >Incidentes</a></li>
-					<li role="presentation"><a>Como Usar APP</a></li>
-					<li role="presentation"><a>Uso de Datos</a></li>
-					<li role="presentation"> <a>Como Notificamos</a></li>
-					<li role="presentation"><a>Ayuda</a></li>
-				</ul>
-			</div>
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+							<span class="sr-only">Menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">SISTEMA DE INGRESO DE INCIDENTES</a>
+					</div>
+					
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							
+						</ul>
+					
+						<ul class="nav navbar-nav navbar-right" id="navbar-1">
+							<li  class="active"><a >Incidentes</a></li>
+							<li><a>Como Usar</a></li>
+							<li><a>Uso de Datos</a></li>
+							<li> <a>Como Notificamos</a></li>
+							<li><a>Ayuda</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Desplegable <span class="caret"></span></>
+								<ul class="dropdown-menu">
+									<li><a>Item1</a> </li>
+									<li><a>Item1</a> </li>
+									<li class="divider"><a>Item4</a> </li>
+								</ul>
+							</li>
+							<!--
 
-			<hr>
+							<form action="" class="navbar-form navbar-left" role="search" > 
 
-			<div class=" col-md-12 main" style="font-size: 18px">
+							<div class="form-group">
+								<input type="text" class="form-control"  placeholder="buscar" name="search">
+							</div>
+						</form>-->
+						</ul>
+
+
+					</div>	
+				</div>
+			</nav>
+		</header>
+		<hr>
+		
+
+		<div class=" col-md-12 main" style="font-size: 18px">
 				
-				<h1 style="font-size: 25px; color:black"><b>Bienvenido al Servicio de Registro de Incidentes</b></h1>
-				<p>Aquí podrás unirte al programa de seguridad y estadística de incidentes; donde tú puedes ser un gran colaborador y parte del programa, notificando de manera responsable incidentes que ocurren a tu alrededor y con ello, notificar a los participantes de la misma.</p>
+			<h1 style="font-size: 25px; color:black"><b>Bienvenido al Servicio de Registro de Incidentes</b></h1>
+			<p>Aquí podrás unirte al programa de seguridad y estadística de incidentes; donde tú puedes ser un gran colaborador y parte del programa, notificando de manera responsable incidentes que ocurren a tu alrededor y con ello, notificar a los participantes de la misma.</p>
 				
-				<label>Filtrar</label>	
+			<label>Filtrar</label>	
 
 				<select>
 					<option>Seleccionar Categoria</option>
@@ -66,9 +95,6 @@
 				<button class="button">Buscar</button>		
 				<br>
 				<br>
-				
-
-
 
 				<table class="table">
 					<tr>
@@ -99,12 +125,7 @@
 				</table>
 
 
-			</div>
-
-				
-
-		<br> 
-		<br> 
+			</div> 
 
 	</div>
 </body>

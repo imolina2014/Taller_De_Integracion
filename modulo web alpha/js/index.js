@@ -24,3 +24,6 @@ function guardar() {
 		}
 	});
 }
+function redirec(p){
+	window.location.replace(p);
+}

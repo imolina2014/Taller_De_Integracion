@@ -24,6 +24,28 @@ function guardar() {
 		}
 	});
 }
+
+function RegistrarAyuda(nombre,email,asunto,comentario){
+	var datos={
+		"Nombre":nombre,
+		"Email":email,
+		"Asunto":asunto,
+		"Comentario":comentario
+	};
+	
+	$.ajax({
+		data:  datos,
+		url:   './php/ayuda.php',
+		type:  'post',
+        beforeSend: function () {
+			$("#pr").html("Procesando, espere por favor...");
+        },
+        success:  function (response) {
+			$("#pr").html(response);
+        }
+	});
+}
+
 function redirec(p){
 	window.location.replace(p);
 }

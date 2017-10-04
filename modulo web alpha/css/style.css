@@ -1,0 +1,19 @@
+.cuadrito{
+	margin: 10px auto;
+	width: 700px;
+}
+.cuadrito1{
+	margin-top:2px;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+.bordes{
+	border:0.5px solid black;
+	height: 100px;
+}
+.opciones{
+	float: right;
+}
+#azul{
+	color: white;
+}

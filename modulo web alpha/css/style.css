@@ -1,6 +1,7 @@
 .cuadrito{
 	margin: 10px auto;
 	width: 700px;
+	align-content: left;
 }
 .cuadrito1{
 	margin-top:2px;

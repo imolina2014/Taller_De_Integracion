@@ -60,12 +60,12 @@
 				
 			<label>Filtrar</label>	
 
-				<select class="select">
+				<select id="sCategoria">
 					<option>Seleccionar Categoria</option>
 					<option>Accidente</option>
 					<option>Delito</option>
 				</select>
-				<select>
+				<select id="sTipo">
 					<option>Seleccionar Incidente</option>
 					<option>Asesinato</option>
 					<option>Choque</option>
@@ -81,12 +81,11 @@
 					<option>Mi Ubicacion</option>
 					<option>Seleccionar Ubicacion</option>
 				</select>
-				
-				<button class="btn btn-default"> Buscar </button>		
+				<input type="button" class="btn btn-default" value="Buscar" onclick="BuscarIncidente();">	
 				<br>
 				<br>
 
-				<table class="table">
+				<table class="table" id="tIncidentes">
 				  <thead class="thead-inverse">
 				    <tr>
 				      <th>#</th>
@@ -116,8 +115,7 @@
 				    </tr>
 				  </tbody>
 				</table>
-		</div> 
-
+		</div>
 	</div>
 </body>
 </html>

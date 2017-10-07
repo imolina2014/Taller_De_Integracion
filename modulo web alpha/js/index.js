@@ -49,3 +49,18 @@ function RegistrarAyuda(nombre,email,asunto,comentario){
 function redirec(p){
 	window.location.replace(p);
 }
+
+function BuscarIncidente() {
+	var sCategoria = document.getElementById("sCategoria").value;
+	var sTipo = document.getElementById("sTipo").value;
+	//alert(sCategoria);
+	//salert(sTipo);
+	$.ajax({
+		data: {Categoria:sCategoria, Tipo:sTipo},
+		url: "./php/mostrarIncidentes.php",
+		type: "post",
+		success: function(datos) {
+			$("#tIncidentes").html(datos);
+		}
+	});
+}

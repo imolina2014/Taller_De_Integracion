@@ -69,7 +69,7 @@ function filtrar(id){
 	var etiqueta = document.getElementById(id);
 	etiqueta.parentNode.removeChild(etiqueta);
  
-	var categoria=document.getElementById("categoria");
+	var categoria=document.getElementById("sCategoria");
 	var seleccion=categoria.options[categoria.selectedIndex].value;
 	
 	var delitos={
@@ -89,12 +89,12 @@ function filtrar(id){
 
 	var div=document.getElementById("contenedor");
 	var selec=document.createElement("select");
-	selec.setAttribute("id","tipo");
+	selec.setAttribute("id","sTipo");
 	selec.setAttribute("style","width:200px;");
 	div.appendChild(selec);
 	
 	
-	var tipo=document.getElementById("tipo");
+	var tipo=document.getElementById("sTipo");
 	selec=document.createElement("option");
 	selec.setAttribute("value","Seleccionar Tipo");
 	selec.setAttribute("label","Seleccionar Tipo");
@@ -110,7 +110,7 @@ function filtrar(id){
 
 		for(i=0;i<count;i++){
 			var opcion=document.createElement("option");
-			opcion.setAttribute("value",accidentes[i].toString());
+			opcion.setAttribute("value",accidentes[i]);
 			opcion.setAttribute("label",accidentes[i].toString());
 			tipo.appendChild(opcion);
 		}
@@ -125,7 +125,7 @@ function filtrar(id){
 
 		for(i=0;i<count;i++){
 			var opcion=document.createElement("option");
-			opcion.setAttribute("value",delitos[i].toString());
+			opcion.setAttribute("value",delitos[i]);
 			opcion.setAttribute("label",delitos[i].toString());
 			tipo.appendChild(opcion);
 		}

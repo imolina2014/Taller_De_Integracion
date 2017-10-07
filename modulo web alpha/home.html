@@ -60,22 +60,17 @@
 				
 			<label>Filtrar</label>	
 
-				<select id="sCategoria">
-					<option>Seleccionar Categoria</option>
-					<option>Accidente</option>
-					<option>Delito</option>
+				<select class="select" id="sCategoria" onchange="filtrar('sTipo')">
+					<option selected value="Seleccionar Categoria">Seleccionar Categoria</option>
+					<option value="Accidente">Accidente</option>
+					<option value="Delito">Delito</option>
 				</select>
-				<select id="sTipo">
-					<option>Seleccionar Incidente</option>
-					<option>Asesinato</option>
-					<option>Choque</option>
-					<option>Asesinato</option>
-					<option>Choque</option>
-					<option>Asesinato</option>
-					<option>Choque</option>
-					<option>Asesinato</option>
-					<option>Choque</option>
-				</select>
+				
+				<div style="display: inline;" id="contenedor">
+					<select style="width:200px;" id="sTipo">
+						<option selected value="Seleccionar Tipo">Seleccionar Tipo</option>
+					</select>
+				</div>
 
 				<select>Ubicacion
 					<option>Mi Ubicacion</option>

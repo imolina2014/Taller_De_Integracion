@@ -13,7 +13,7 @@
 
 </head>
 
-<body style="background: #eee url(http://subtlepatterns.com/patterns/sativa.png">
+<body name="principal" onload="crea_categoria()">
 	<div class="container">
 		<header>
 			<nav class="navbar navbar-default  navbar-inverse"><!-- navbar-fixed-top-->
@@ -53,32 +53,32 @@
 		
 		
 
-		<div class=" col-md-12 main" style="font-size: 18px">
+		<div class=" col-md-12 main">
 		
-			<h1 class="h1" style="font-size: 25px; color:black"><b>Bienvenido al Servicio de Registro de Incidentes</b></h1>
+			<h1 class="h1"><b>Bienvenido al Servicio de Registro de Incidentes</b></h1>
 			<p class="text-primary">Aquí podrás unirte al programa de seguridad y estadística de incidentes; donde tú puedes ser un gran colaborador y parte del programa, notificando de manera responsable incidentes que ocurren a tu alrededor y con ello, notificar a los participantes de la misma.</p>
 				
 			<label>Filtrar</label>	
 
-				<select class="select" id="sCategoria" onchange="filtrar('sTipo')">
-					<option selected value="Seleccionar Categoria">Seleccionar Categoria</option>
-					<option value="Accidente">Accidente</option>
-					<option value="Delito">Delito</option>
-				</select>
+				<form method="post" name="filtro">
+					<div id="Categoria"> 
+						<select class="select" id="sCategoria" onchange="filtrar('sTipo')">
+							<option selected value="Seleccionar Categoria">Seleccionar Categoria</option>
+						</select>
+					</div>
+					
+					<div id="contenedor">
+						<select id="sTipo">
+							<option selected value="Seleccionar Tipo">Seleccionar Tipo</option>
+						</select>
+					</div>
 				
-				<div style="display: inline;" id="contenedor">
-					<select style="width:200px;" id="sTipo">
-						<option selected value="Seleccionar Tipo">Seleccionar Tipo</option>
+					<select>
+						<option>Seleccionar Ubicacion</option>
 					</select>
-				</div>
-
-				<select>
-					<option>Mi Ubicacion</option>
-					<option>Seleccionar Ubicacion</option>
-				</select>
-				<input type="button" class="btn btn-default" value="Buscar" onclick="BuscarIncidente();">	
-				<br>
-				<br>
+					
+					<input type="button" class="btn btn-default" value="Buscar" onclick="BuscarIncidente();">	
+				</form>	
 
 				<table class="table" id="tIncidentes">
 				  <thead class="thead-inverse">

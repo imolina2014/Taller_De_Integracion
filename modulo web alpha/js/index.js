@@ -50,21 +50,6 @@ function redirec(p){
 	window.location.replace(p);
 }
 
-function BuscarIncidente() {
-	var sCategoria = document.getElementById("sCategoria").value;
-	var sTipo = document.getElementById("sTipo").value;
-	//alert(sCategoria);
-	//salert(sTipo);
-	$.ajax({
-		data: {Categoria:sCategoria, Tipo:sTipo},
-		url: "./php/mostrarIncidentes.php",
-		type: "post",
-		success: function(datos) {
-			$("#tIncidentes").html(datos);
-		}
-	});
-}
-
 function filtrar(id){
 	var etiqueta = document.getElementById(id);
 	etiqueta.parentNode.removeChild(etiqueta);
@@ -73,18 +58,23 @@ function filtrar(id){
 	var seleccion=categoria.options[categoria.selectedIndex].value;
 	
 	var delitos={
-		"0":"Robo",
-		"1":"Asesinato",
-		"2":"Robo-Intimidación",
-		"3":"Homicidio",
-		"4":"Allanamiento de morada",
+		"0":"Robo con violencia",
+		"1":"Asalto",
+		"2":"Portonazo",
+		"3":"Parricidio",
+		"4":"Infanticidio",
+		"5":"Secuestro",
+		"6":"Sustraccion de menores",
+		"7":"Asesinato",
+		"8":"Otro"
 	};
 	var accidentes={
-		"0":"Choque",
-		"1":"Caida",
-		"2":"Quemaduras",
-		"3":"Intoxicación",
-		"4":"Electrocución",
+		"0":"Colision vehicular",
+		"1":"Choque multiple",
+		"2":"Incendio",
+		"3":"Derrumbes",
+		"4":"Atropello de peatones",
+		"5":"Otro"
 	};
 
 	var div=document.getElementById("contenedor");
@@ -130,4 +120,23 @@ function filtrar(id){
 			tipo.appendChild(opcion);
 		}
 	}
+}
+
+function BuscarIncidente() {
+	var sCategoria = document.getElementById("sCategoria").value;
+	var sTipo = document.getElementById("sTipo").value;
+	//alert(sCategoria);
+	//salert(sTipo);
+	datos = {
+		"Categoria": sCategoria,
+		"Tipo": sTipo
+	}
+	$.ajax({
+		data: datos,
+		url: "./php/mostrarIncidentes.php",
+		type: "post",
+		success: function(result) {
+			$("#tIncidentes").html(result);
+		}
+	});
 }

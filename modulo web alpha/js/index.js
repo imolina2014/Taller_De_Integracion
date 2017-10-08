@@ -50,6 +50,20 @@ function redirec(p){
 	window.location.replace(p);
 }
 
+function crea_categoria(){
+	selec=document.getElementById("sCategoria");
+	
+	var opcion=document.createElement("option");
+	opcion.setAttribute("value","Accidente");
+	opcion.setAttribute("label","Accidente");
+	selec.appendChild(opcion);
+	
+	opcion=document.createElement("option");
+	opcion.setAttribute("value","Delito");
+	opcion.setAttribute("label","Delito");
+	selec.appendChild(opcion);	
+}
+
 function filtrar(id){
 	var etiqueta = document.getElementById(id);
 	etiqueta.parentNode.removeChild(etiqueta);
@@ -61,7 +75,7 @@ function filtrar(id){
 		"0":"Robo con violencia",
 		"1":"Asalto",
 		"2":"Portonazo",
-		"3":"Parricidio",
+		"3":"Padricidio",
 		"4":"Infanticidio",
 		"5":"Secuestro",
 		"6":"Sustraccion de menores",

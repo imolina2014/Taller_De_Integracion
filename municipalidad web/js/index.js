@@ -25,12 +25,13 @@ function guardar() {
 	});
 }
 
-function RegistrarAyuda(nombre,email,asunto,comentario){
+function RegistrarAyuda(){
+
 	var datos={
-		"Nombre":nombre,
-		"Email":email,
-		"Asunto":asunto,
-		"Comentario":comentario
+		"Nombre":$("#FRM-nombre").val(),
+		"Email":$("#FRM-email").val(),
+		"Asunto":$("#FRM-asunto").val(),
+		"Comentario":$("#FRM-formulario").val()
 	};
 	
 	$.ajax({

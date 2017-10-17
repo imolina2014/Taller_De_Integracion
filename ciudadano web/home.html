@@ -12,8 +12,7 @@
 	<link rel="stylesheet"  href="css/style.css">
     <style>
         #map {
-            width: 100%;
-            height: 300px;
+            height: 400px;
         }
     </style>
 </head>
@@ -23,7 +22,6 @@
 		<header>
 			<nav class="navbar navbar-default  navbar-inverse"><!-- navbar-fixed-top-->
 				<div class="container-fluid">
-					
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
 							<span class="sr-only">Menu</span>
@@ -31,7 +29,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="Home2.html" class="navbar-brand">SISTEMA DE INGRESO DE INCIDENTES</a>
+						<a href="#" class="navbar-brand">SISTEMA DE INGRESO DE INCIDENTES</a>
 					</div>
 					
 					<div class="collapse navbar-collapse">
@@ -59,48 +57,41 @@
 		
 
 		<div class=" col-md-12 main">
-		
 			<h1 class="h1"><b>Bienvenido al Servicio de Registro de Incidentes</b></h1>
 			<p class="text-primary">Aquí podrás unirte al programa de seguridad y estadística de incidentes; donde tú puedes ser un gran colaborador y parte del programa, notificando de manera responsable incidentes que ocurren a tu alrededor y con ello, notificar a los participantes de la misma.</p>
-				
+			
 			<label>Filtrar</label>	
-
-				<form method="post" name="filtro">
-					<div id="Categoria"> 
-						<select class="select" id="sCategoria" onchange="filtrar('sTipo')">
-							<option selected value="Seleccionar Categoria">Seleccionar Categoria</option>
-						</select>
-					</div>
+			<form method="post" name="filtro">
+				<div id="Categoria"> 
+					<select class="select" id="sCategoria" onchange="filtrar('sTipo')">
+						<option selected value="Seleccionar Categoria">Seleccionar Categoria</option>
+					</select>
+				</div>
 					
-					<div id="contenedor">
-						<select id="sTipo">
-							<option selected value="Seleccionar Tipo">Seleccionar Tipo</option>
-						</select>
-					</div>
+				<div id="contenedor">
+					<select id="sTipo">
+						<option selected value="Seleccionar Tipo">Seleccionar Tipo</option>
+					</select>
+				</div>
 				
 					<!-- <select>
 						<option>Seleccionar Ubicacion</option>
 					</select> -->
 					
-					<input type="button" class="btn btn-primary" value="Buscar" onclick="BuscarIncidente();">	
-				</form>	
-                <br><br>
-                <label>Vea ubicación del incidente en el mapa haciendo clic sobre botón "Ver Mapa"</label>
-                <div id="map">
-                </div>
-                
-				<table class="table" id="tIncidentes">
-				  <thead class="thead-inverse">
-				    <tr>
-				      <th>#</th>
-				      <th>CATEGORÍA</th>
-				      <th>TIPO</th>
-				      <th>DESCRIPCIÓN</th>
-				      <th>FECHA</th>
-				      <th>CALLE</th>
+				<input type="button" class="btn btn-primary" value="Buscar" onclick="BuscarIncidente();">	
+			</form>	
+            <table class="table" style="width=100%" id="tIncidentes">
+				<thead class='thead-inverse'>
+			        <tr>
+				        <th>#</th>
+				        <th>CATEGORÍA</th>
+				        <th>TIPO</th>
+				        <th>DESCRIPCIÓN</th>
+				        <th>FECHA</th>
+				        <th>CALLE</th>
 				    </tr>
-				  </thead>
-				</table>
+				</thead>
+			</table>
 		</div>
 	</div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>

@@ -184,13 +184,19 @@
         var dato_Longitud = $("#txtLon").val();
         var Telefono = device.serial;
         var Calle = $("#txtCalle").val();
-
         var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud, Calle, Telefono];
-
         prueba(aDatos);
     }
 
     function prueba(aDatosToBD) {
+    
+        if (aDatosToBD[0] == "Seleccionar categoría"){
+            alert("Revise el campo categoria.");
+            return;
+        } if (aDatosToBD[1] == "Seleccionar tipo") {
+            alert("Revise el campo tipo.");
+            return;
+        }
         var parametros = {
             "Categoria": aDatosToBD[0],
             "Tipo": aDatosToBD[1],
@@ -204,10 +210,19 @@
             data: parametros, //datos que se envian a traves de ajax
             url: "https://integracioniv.000webhostapp.com/enc.php",
             type: 'post', //método de envio
-           success: function (result) {
+            beforeSend: function () {
+                $('#btnRegistrar').attr('disabled', 'disabled');
+                $("#pagina2").css("opacity", 0.5);
+                $("#contenedor-carga").show();
+            },
+            success: function (result) {
+                $("#contenedor-carga").hide();
+                $("#pagina2").css("opacity", 1);
+                $("#btnRegistrar").removeAttr("disabled");
                 alert(result);
             }
         });
+       
         return;
     }
 }());

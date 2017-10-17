@@ -5,6 +5,14 @@
         Personalice la directiva de seguridad de contenido en la etiqueta meta como sea necesario. Agregue "unsafe-inline" a default-src para permitir JavaScript insertado.
         Para obtener más detalles, consulte http://go.microsoft.com/fwlink/?LinkID=617521
     -->
+
+
+        <script type="text/javascript" src="scripts/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' *;script-src 'self' https://*.googleapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no">
@@ -17,10 +25,52 @@
                 width: 100%;
                 height: 300px;
             }
+            *, *:after, *:before {
+                margin: 0;
+                padding: 0;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+            }
+            #contenerdor-carga {
+                background-color: rgba(250.240.245.0.9);
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                -webkit-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                transition: all 1s ease;
+                z-index:1000;
+            }
+            #carga {
+                border: 15px solid #ccc;
+                border-top-color: #045FB4;
+                border-top-style: groove;
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                -webkit-animation: girar 1.5s linear infinite;
+                -o-animation: girar 1.5s linear infinite;
+                animation: girar 1.5s linear infinite;
+            }
+            @keyframes girar {
+                from {transform:rotate(0deg);}
+                to{transform:rotate(360deg);}
+            }
+
+            
         </style>
+
         <title>AplicacionMobile</title>
     </head>
     <body>
+        
+
         <!-- PAGINA 1 -->
         <div data-role="page" id="pagina1" style="background-image: url('images/blur3.png');color:white">
             <div data-role="header" style="background-image: url('images/blur3.png');color:white">
@@ -55,6 +105,7 @@
 
         <!-- PAGINA 2 -->
         <div data-role="page" id="pagina2" style="background-image:url('images/blur3.png')">
+            
             <div data-role="header" style="background-image: url('images/blur3.png'); color:white">
                 <h1>MENÚ</h1>
             </div>
@@ -97,32 +148,31 @@
                             <div id="datos" class="">
                                 <label style="color:white;">Seleccionar ubicación en el mapa:</label>
 
-                                <div class="ui-field-contain" style="display:none;" >
-                                   <!--<label for="txtLat" style="color:white; display:none;">Latitud:</label> --> 
-                                    <input id="txtLat" type="text" value=""  readonly>
-                                   <!-- <label for="txtLon" style="color:white; display:none;">Longitud:</label> -->
-                                    <input id="txtLon" type="text" value=""  readonly>
+                                <div class="ui-field-contain" style="display:none;">
+
+                                    <input id="txtLat" type="text" value="" readonly>
+
+                                    <input id="txtLon" type="text" value="" readonly>
                                 </div>
                                 <div class="ui-field-contain">
                                     <input id="txtCalle" type="text" value="" readonly>
                                 </div>
-                            <div id="map">
+                               <div id="map">
 
+                                </div>
                             </div>
                         </div>
                         <div>
-                            <input type="button" id="btnRegistrar" value="Registrar Incidente" onclick="Obtener_Datos()"/>
+                            <input type="button" id="btnRegistrar" value="Registrar Incidente" onclick="Obtener_Datos()" />
                         </div>
                     </form>
+                    
                 </div>
             </div>
+            
         </div> <!-- Div que cierra el id pagina2-->
 
-        <script type="text/javascript" src="scripts/jquery-2.2.3.min.js"></script>
-        <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
+       
+        <div id="contenedor-carga" style="display:none;"><div id="carga"></div></div>
     </body>
 </html>

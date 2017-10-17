@@ -3,9 +3,10 @@
 // Para depurar código al cargar la página en cordova-simulate o en dispositivos o emuladores Android: inicie la aplicación, establezca puntos de interrupción 
 // y ejecute "window.location.reload()" en la Consola de JavaScript.
 
-
 (function () {
     
+    
+
     var marker;          //variable del marcador
     var coords = {};    //coordenadas obtenidas con la geolocalización
     navigator.geolocation.getCurrentPosition(
@@ -144,16 +145,21 @@
     }
  
     function Obtener_Datos() {
+      
+        document.getElementById('contenedor-carga').style.display = 'block';
+
+
         var dato_Categoria = $("#categoria option:selected").text();
         var dato_Tipo = $("#tipo option:selected").text();
         var dato_Descripcion = $("#desc").val();
         var dato_Latitud = $("#txtLat").val();
         var dato_Longitud = $("#txtLon").val();
         var aDatos = [dato_Categoria, dato_Tipo, dato_Descripcion, dato_Latitud, dato_Longitud];
-        prueba(aDatos);
+        
     }
 
     function prueba(aDatosToBD) {
+
         var parametros = {
             "Categoria": aDatosToBD[0],
             "Tipo": aDatosToBD[1],
@@ -162,11 +168,14 @@
             "Lat": aDatosToBD[3],
             "Lon": aDatosToBD[4]
         };
+
+        
         $.ajax({
             data: parametros, //datos que se envian a traves de ajax
             url: "http://pillan.inf.uct.cl/~imolina/TI_IV/pruebas/enc.php",
             type: 'post', //método de envio
-            success: function (result) {
+            success: function(result) {
+            
                 alert(result);
             }
         });

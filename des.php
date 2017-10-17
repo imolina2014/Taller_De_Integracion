@@ -50,8 +50,10 @@
 		$tmp = $_FILES['Archivo']['tmp_name']; 
 		$dir = "archivos/$nombre"; 
 		move_uploaded_file($tmp,"$dir");
-	    $query = "SELECT descripcion, coordenadas, fecha, tipo, categoria, nro_denuncia FROM incidentes where id=$var";
+
+	    $query = "SELECT descripcion, AsText(coordenadas), fecha, tipo, categoria, nro_denuncia FROM incidentes where id=$var";
 		$resultado=$mysqli->query($query);
+
 		print("<div class='container' style= 'background:white'>");
 		print("<div class='table-responsive'>
 			<table class='table'>");
@@ -71,7 +73,15 @@
 			print("<tbody>
 				<tr>");
 			print("<td>".$rows["descripcion"]."</td>");
-			print("<td>".$rows["coordenadas"]."</td>");
+		//DESDE AQUI METODO PARA PARSEAR LAS COORDENADAS Y VOLVERLAS A LATITUD Y LONGITUDO POR SEPARADO//
+			$CoorSep = $rows["AsText(coordenadas)"];
+			$CoorSep = explode(" ", $CoorSep);
+			$CoorSep[0]= explode("(", $CoorSep[0]);
+			$CoorSep[1]= explode(")", $CoorSep[1]);
+			$lat = $CoorSep[0][1];
+			$lon = $CoorSep[1][0];
+		//FIN METODO//
+			print("<td>".$lat.",".$lon."</td>");
 			print("<td>".$rows["fecha"]."</td>");
 			print("<td>".$rows["tipo"]."</td>");
 			print("<td>".$rows["categoria"]."</td>");

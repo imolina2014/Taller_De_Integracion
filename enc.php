@@ -7,7 +7,7 @@
 	$Lat         = $_POST['Lat'];
 	$Lon         = $_POST['Lon'];
 	$Calle		 = $_POST['Calle'];
-	$Coordenadas = $Lat.",".$Lon;
+	$Coordenadas = "GeomFromText('POINT(".$Lat." ".$Lon.")')";
 	$fp=fopen("archivos/certificado.pem","r");	//LECTURA del archivo que contiene la llave publica.
 	$llave_publica = fread($fp,8192);
 	fclose($fp);
@@ -17,7 +17,10 @@
 	fclose($fp);
 	openssl_public_encrypt($texto_encriptado, $texto_encriptado, $llave_publica);
 	$texto_encriptado = base64_encode($texto_encriptado); //Esta es la variable final a ingresar en la BD como Numero Telefono
-	$sql = "INSERT INTO incidentes (DESCRIPCION, COORDENADAS, FECHA, CATEGORIA, TIPO, NRO_DENUNCIA, CALLE) VALUES ('$Descripcion','$Coordenadas',CURRENT_DATE,'$Categoria','$Tipo','$texto_encriptado','$Calle')";
+
+	$sql = "INSERT INTO incidentes (DESCRIPCION, COORDENADAS, FECHA, CATEGORIA, TIPO, NRO_DENUNCIA, CALLE) VALUES ('$Descripcion',$Coordenadas,CURRENT_DATE,'$Categoria','$Tipo','$texto_encriptado','$Calle')";
+
+
 	$resultado = mysqli_query($mysqli, $sql);
 	mysqli_close($mysqli); 
 	if($resultado) {

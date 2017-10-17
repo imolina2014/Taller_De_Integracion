@@ -10,7 +10,12 @@
 	<script type="text/javascript" src="js/index.js"></script>
 	<link rel="stylesheet"  href="css/bootstrap.css">
 	<link rel="stylesheet"  href="css/style.css">
-
+    <style>
+        #map {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body name="principal" onload="crea_categoria()">
@@ -73,13 +78,17 @@
 						</select>
 					</div>
 				
-					<select>
+					<!-- <select>
 						<option>Seleccionar Ubicacion</option>
-					</select>
+					</select> -->
 					
-					<input type="button" class="btn btn-default" value="Buscar" onclick="BuscarIncidente();">	
+					<input type="button" class="btn btn-primary" value="Buscar" onclick="BuscarIncidente();">	
 				</form>	
-
+                <br><br>
+                <label>Vea ubicación del incidente en el mapa haciendo clic sobre botón "Ver Mapa"</label>
+                <div id="map">
+                </div>
+                
 				<table class="table" id="tIncidentes">
 				  <thead class="thead-inverse">
 				    <tr>
@@ -94,5 +103,6 @@
 				</table>
 		</div>
 	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
 </body>
 </html>

@@ -3,18 +3,18 @@
 	$categoria = $_POST["Categoria"];
 	$tipo = $_POST["Tipo"];
 
-	$sql = "SELECT * FROM incidentes WHERE CATEGORIA='$categoria' AND TIPO='$tipo'";	
+	$sql = "SELECT * FROM sectores";	
 	$resultado = mysqli_query($mysqli,$sql);
 
     echo "	<table class='table' style='width=100%'>
 				<thead class='thead-inverse'>
 				    <tr>
 				      	<th>#</th>
-				      	<th>CATEGORÍA</th>
-				      	<th>TIPO</th>
-				      	<th>DESCRIPCIÓN</th>
-				      	<th>FECHA</th>
-				      	<th>CALLE</th>
+				      	<th>USUARIO</th>
+				      	<th>POSICION #1</th>
+				      	<th>POSICION #2</th>
+				      	<th>POSICION #3</th>
+				      	<th>POSICION #4</th>
 				    </tr>
 				 </thead>
 				 <tbody>";

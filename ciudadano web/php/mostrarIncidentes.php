@@ -1,10 +1,14 @@
 <?php
 	include("conex.php");
+	$calle=$_POST["Calle"];
 	$categoria = $_POST["Categoria"];
 	$tipo = $_POST["Tipo"];
-
-	$sql = "SELECT CATEGORIA,TIPO,DESCRIPCION,FECHA,CALLE,AsText(COORDENADAS) FROM incidentes WHERE CATEGORIA='$categoria' AND TIPO='$tipo'";	
-	$resultado = mysqli_query($mysqli,$sql);
+	$fecha=$_POST["Fecha"];
+     
+    if ($calle=="")$sql = "SELECT CATEGORIA,TIPO,DESCRIPCION,FECHA,CALLE,AsText(COORDENADAS) FROM incidentes WHERE CATEGORIA='$categoria' AND TIPO='$tipo' AND FECHA='$fecha'";
+    else $sql = "SELECT CATEGORIA,TIPO,DESCRIPCION,FECHA,CALLE,AsText(COORDENADAS) FROM incidentes WHERE CATEGORIA='$categoria' AND TIPO='$tipo' AND FECHA='$fecha' AND CALLE='$calle'";
+    
+    $resultado = mysqli_query($mysqli,$sql);
     
     echo "  <div class='row'>
                 <div class='col-md-6'>

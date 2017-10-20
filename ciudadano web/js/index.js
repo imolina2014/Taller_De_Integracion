@@ -137,13 +137,19 @@ function filtrar(id){
 }
 
 function BuscarIncidente() {
+    var sCalle= document.getElementById("sCalle").value;
 	var sCategoria = document.getElementById("sCategoria").value;
 	var sTipo = document.getElementById("sTipo").value;
-	//alert(sCategoria);
-	//salert(sTipo);
+	var sFecha = document.getElementById("sFecha").value;
+
+	var ord=sFecha.split("/");
+	sFecha=ord[2]+"-"+ord[0]+"-"+ord[1];
+
 	datos = {
+	    "Calle": sCalle,
 		"Categoria": sCategoria,
-		"Tipo": sTipo
+		"Tipo": sTipo,
+		"Fecha":sFecha
 	}
 	$.ajax({
 		data: datos,

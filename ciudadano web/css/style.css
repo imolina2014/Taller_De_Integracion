@@ -29,6 +29,12 @@ div[id="contenedor"]{
 
 select[id="sTipo"]{
 	width:200px;
+	height:31px;
+}
+
+select[id="sCategoria"]{
+	width:200px;
+	height:31px;
 }
 
 table[class="table"]{

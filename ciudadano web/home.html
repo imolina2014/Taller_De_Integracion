@@ -10,6 +10,10 @@
 	<script type="text/javascript" src="js/index.js"></script>
 	<link rel="stylesheet"  href="css/bootstrap.css">
 	<link rel="stylesheet"  href="css/style.css">
+	<link href ="datedropper/datedropper.css" rel="stylesheet" type ="text/css"/>
+	<link href ="datedropper/myfecha.css" rel="stylesheet" type="text/css"/>
+	<script src ="datedropper/datedropper.js "></script>
+
     <style>
         #map {
             height: 400px;
@@ -62,6 +66,8 @@
 			
 			<label>Filtrar</label>	
 			<form method="post" name="filtro">
+				<input type="text" size="20" id="sCalle" placeholder="Ingresar Calle (Opcional)">
+				
 				<div id="Categoria"> 
 					<select class="select" id="sCategoria" onchange="filtrar('sTipo')">
 						<option selected value="Seleccionar Categoria">Seleccionar Categoria</option>
@@ -74,13 +80,13 @@
 					</select>
 				</div>
 				
-					<!-- <select>
-						<option>Seleccionar Ubicacion</option>
-					</select> -->
+				<input type="text" data-theme="myfecha" data-large-mode="true" id="sFecha">
 					
 				<input type="button" class="btn btn-primary" value="Buscar" onclick="BuscarIncidente();">	
 			</form>	
-            <table class="table" style="width=100%" id="tIncidentes">
+			<script>$("#sFecha").dateDropper();</script>
+		    	
+			<table class="table" style="width=100%" id="tIncidentes">
 				<thead class='thead-inverse'>
 			        <tr>
 				        <th>#</th>

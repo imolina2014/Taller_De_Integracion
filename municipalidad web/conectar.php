@@ -1,13 +1,6 @@
 <?php
 
- try{
-     $conn = mysqli("localhost", "id2847271_imolina","12345", "id2847271_imolina");
-     echo 'Conexion realizada';
-    }            
-catch{die( "Fallo la conexión a MySQL: (" . $conn  -> mysqli_connect_errno() 
-	. ") " .$conn  -> mysqli_connect_error());
-}
- 
+include 'conex.php' 
 /* @var $_POST type */
 $nombre= $_POST["user"];
 $pass= $_POST["password"];

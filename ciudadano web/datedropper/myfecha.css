@@ -1,0 +1,68 @@
+/*
+
+	INSTRUCTIONS ---------------------------------------------------------------------------------
+  
+  1. link this stylesheet in the head of your HTML
+  	 <link href="YOUR PATH/myfecha.css" rel="stylesheet" type="text/css" />
+     
+  2. Set the file name as data-theme attribute on your input
+  	 <input data-theme="myfecha" />
+     
+  3. That's it!
+  
+  When you run script the style will be automatically applied.
+
+*/
+div.datedropper.myfecha {
+  border-radius: 0px;
+  width: 162px;
+}
+div.datedropper.myfecha .picker {
+  border-radius: 0px;
+  box-shadow: 0 0 64px 10px rgba(0, 0, 0, 0.65);
+}
+div.datedropper.myfecha .pick-l {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+div.datedropper.myfecha:before,
+div.datedropper.myfecha .pick-submit,
+div.datedropper.myfecha .pick-lg-b .pick-sl:before,
+div.datedropper.myfecha .pick-m,
+div.datedropper.myfecha .pick-lg-h {
+  background-color: #337ab7;
+}
+div.datedropper.myfecha .pick-y.pick-jump,
+div.datedropper.myfecha .pick li span,
+div.datedropper.myfecha .pick-lg-b .pick-wke,
+div.datedropper.myfecha .pick-btn {
+  color: #337ab7;
+}
+div.datedropper.myfecha .picker,
+div.datedropper.myfecha .pick-l {
+  background-color: #FFF;
+}
+div.datedropper.myfecha .picker,
+div.datedropper.myfecha .pick-arw,
+div.datedropper.myfecha .pick-l {
+  color: #4D4D4D;
+}
+div.datedropper.myfecha .pick-m,
+div.datedropper.myfecha .pick-m .pick-arw,
+div.datedropper.myfecha .pick-lg-h,
+div.datedropper.myfecha .pick-lg-b .pick-sl,
+div.datedropper.myfecha .pick-submit {
+  color: #FFF;
+}
+div.datedropper.myfecha.picker-tiny:before,
+div.datedropper.myfecha.picker-tiny .pick-m {
+  background-color: #FFF;
+}
+div.datedropper.myfecha.picker-tiny .pick-m,
+div.datedropper.myfecha.picker-tiny .pick-m .pick-arw {
+  color: #4D4D4D;
+}
+div.datedropper.myfecha.picker-lkd .pick-submit {
+  background-color: #FFF;
+  color: #4D4D4D;
+}

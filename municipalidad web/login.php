@@ -19,16 +19,11 @@
             </div>
     </div>
     </div>
-</body>
-</html>
-
 <?php
-//session_start();
-//session_destroy();
-header("Content-Type: text/html; charset=UTF-8");
+session_start();
+session_destroy();
 if(isset($_REQUEST["ingresar"])) {
-	$conexion = mysqli_connect("localhost", "id2847271_imolina","12345", "id2847271_imolina");
-
+	$conexion = mysqli_connect("localhost", "id2847271_imolina","12345","id2847271_imolina");
     $FRMusuario = mysqli_real_escape_string( $conexion, substr( $_POST["username"], 0, 10) );
     $FRMclave   = mysqli_real_escape_string( $conexion, $_POST["password"] );
 
@@ -36,13 +31,16 @@ if(isset($_REQUEST["ingresar"])) {
     $sql = sprintf("SELECT * FROM usuarios WHERE NOMBRE='%s' AND CONTRASEÑA='%s'", $FRMusuario, $FRMclave);
     $consulta = mysqli_query($conexion,$sql);
 
-    if ($consulta->num_rows>0){
-        //session_start();
-       // $registro = mysqli_fetch_array($consulta);
-	   	//$_SESSION['usuario']=$registro["NOMBRE"];
-		header('Location:index.html');
-	}
-	else echo '<script>alert("Error!, accion NO realizada.")</script>';
+    if ($consulta>=0){
+        session_start();
+        $registro = mysqli_fetch_array($consulta);
+	   	$_SESSION['usuario']=$registro["NOMBRE"];
+		header('Location:index.php');
+	}else{ echo '<script>alert("Error!, accion NO realizada.")</script>';
+    echo"<form action='login.php' method='post'>";
+    }
 
 }
 ?>
+</body>
+</html>

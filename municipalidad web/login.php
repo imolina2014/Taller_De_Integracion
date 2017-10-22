@@ -22,19 +22,18 @@
 <?php
 session_start();
 session_destroy();
-if(isset($_REQUEST["ingresar"])) {
+if(isset($_POST["ingresar"])) {
 	$conexion = mysqli_connect("localhost", "id2847271_imolina","12345","id2847271_imolina");
-    $FRMusuario = mysqli_real_escape_string( $conexion, substr( $_POST["username"], 0, 10) );
-    $FRMclave   = mysqli_real_escape_string( $conexion, $_POST["password"] );
+    $usuario = $_POST["username"];
+	$clave = $_POST["password"];
 
-
-    $sql = sprintf("SELECT * FROM usuarios WHERE NOMBRE='%s' AND CONTRASEÑA='%s'", $FRMusuario, $FRMclave);
+    $sql = "SELECT * FROM usuarios WHERE NOMBRE='".$usuario."' and CONTRASEÑA='".$clave."' ";
     $consulta = mysqli_query($conexion,$sql);
 
     if ($consulta>=0){
+    	$filaD=mysqli_fetch_array($consulta);
         session_start();
-        $registro = mysqli_fetch_array($consulta);
-	   	$_SESSION['usuario']=$registro["NOMBRE"];
+	   	$_SESSION['usuario']=$_POST['username'];
 		header('Location:index.php');
 	}else{ echo '<script>alert("Error!, accion NO realizada.")</script>';
     echo"<form action='login.php' method='post'>";

@@ -16,7 +16,7 @@ session_start();
 
 			</head>
 
-			<body style='background-image: url(img/wallpaper.jpg); background-size: 100%'>
+			<body'>
 				<div class='container'>
 					<header>
 						<nav class='navbar navbar-default  navbar-inverse'><!-- navbar-fixed-top-->

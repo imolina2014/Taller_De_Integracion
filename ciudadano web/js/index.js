@@ -160,3 +160,13 @@ function BuscarIncidente() {
 		}
 	});
 }
+
+function Incidentes(){
+		$.ajax({
+		url: "./php/Incidentes.php",
+		type: "post",
+		success: function(result) {
+			$("#Tgeneral").html(result);
+		}
+	});	
+}

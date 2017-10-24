@@ -26,6 +26,10 @@
       var labelIndex = 0;
       var Marker_Max = 4;
       var Num_Marker = 0;
+      var coo_sector = [];
+      coo_sector.push('hola','perro');
+      //console.log(coo_sector);
+
 
     
 
@@ -49,10 +53,12 @@
                 lng: position.coords.longitude+0.05,
                 lat: position.coords.latitude
             };
-            
+            //console.log(position.coords2.longitude);
+            console.log(coords.lng)
+            console.log(coords2.lng)
             //setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
             //console.log(coords);
-            console.log(position.coords2.lng);
+            //console.log(coords[0]);
             var map = new google.maps.Map(document.getElementById('map'), {
               zoom: 12,
               center: coords
@@ -60,7 +66,7 @@
 
             // This event listener calls addMarker() when the map is clicked.
             //google.maps.event.addListener(map, 'click', function(event) {
-              //console.log(event.latLng.position);
+           // console.log(event.latLng.position);
               //addMarker(event.latLng, map);
             //});
 
@@ -69,6 +75,15 @@
             b=addMarker(coords2,map);
             c=addMarker(coords3,map);
             d=addMarker(coords4,map);
+
+            document.getElementById('lat1').value= coords.lat;
+            document.getElementById('long1').value=coords.lng;
+            document.getElementById('lat2').value=coords2.lat;
+            document.getElementById('long2').value=coords2.lng;
+            document.getElementById('lat3').value=coords3.lat;
+            document.getElementById('long3').value=coords3.lng;
+            document.getElementById('lat4').value=coords4.lat;
+            document.getElementById('long4').value=coords4.lng;
           }
 
         , function (error) { console.log(error); });
@@ -87,6 +102,8 @@
           label: labels[labelIndex++ % labels.length],
           map: map
         });
+        
+
         return location
         
       }
@@ -95,6 +112,24 @@
     </script>
   </head>
   <body>
+  	<form id="form1" name="form1">
+	  	<label>Latitud A   : </label>
+		<input type='text' name='lat1' id='lat1' value=''><br>
+		<label>Longitud A : </label>
+		<input type='text' name='long1' id='long1' value=''><br>
+		<label>Latitud B : </label>
+		<input type='text' name='lat2' id='lat2' value=''><br>
+		<label>Longitud B : </label>
+		<input type='text' name='long2' id='long2' value=''><br>
+		<label>Latitud C : </label>
+		<input type='text' name='lat3' id='lat3' value=''><br>
+		<label>Longitud C : </label>
+		<input type='text' name='long3' id='long3' value=''><br>
+		<label>Latitud D : </label>
+		<input type='text' name='lat4' id='lat4' value=''><br>
+		<label>Longitud C : </label>
+		<input type='text' name='long4' id='long4' value=''><br>
+    	</form>
     <div id="map"></div>
   </body>
 </html>

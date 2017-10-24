@@ -60,6 +60,10 @@ table[class="table"]{
 }
 
 body[name="principal"]{
+<<<<<<< HEAD
+=======
+	#background: url(http://subtlepatterns.com/patterns/sativa.png);
+>>>>>>> 9dadff457d2d1471f4fa6b84457c1537348f08f9
 }
 
 div[class=" col-md-12 main"]{

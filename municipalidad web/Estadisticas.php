@@ -40,7 +40,7 @@ session_start();
 											<li class='active'><a href='Estadisticas.php'>Estadisticas</a></li>
 											<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>
 											<li ><a href='RevisionSectores.php'>Revision Sectores</a></li>
-											<li><a>".$_SESSION['usuario']."</a></li>
+											<li><a href='login.php' class'sesion'>Salir ".$_SESSION['usuario']."</a></li>
 											<!--
 											<form action='' class='navbar-form navbar-left' role='search' > 
 

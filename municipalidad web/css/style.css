@@ -1,3 +1,25 @@
+.sesion{
+	background-color:red;
+}
+
+h1{
+	font-size: 25px;
+	color: black;
+}
+
+h2{
+	font-size: 18px;
+	color: black;
+}
+
+p{
+	font-size: 16px;
+}
+
+body{
+	background-image: url(img/background.jpg);
+}
+
 .cuadrito{
 	margin: 10px auto;
 	width: 700px;
@@ -29,6 +51,12 @@ div[id="contenedor"]{
 
 select[id="sTipo"]{
 	width:200px;
+	height:31px;
+}
+
+select[id="sCategoria"]{
+	width:200px;
+	height:31px;
 }
 
 table[class="table"]{
@@ -36,7 +64,10 @@ table[class="table"]{
 }
 
 body[name="principal"]{
-	background: url(http://subtlepatterns.com/patterns/sativa.png);
+<<<<<<< HEAD
+=======
+	#background: url(img/background.jpg);
+>>>>>>> 9dadff457d2d1471f4fa6b84457c1537348f08f9
 }
 
 div[class=" col-md-12 main"]{

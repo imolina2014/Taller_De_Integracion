@@ -1,3 +1,21 @@
+h1{
+	font-size: 25px;
+	color: black;
+}
+
+h2{
+	font-size: 18px;
+	color: black;
+}
+
+p{
+	font-size: 16px;
+}
+
+body{
+	background-image: url(img/background.jpg);
+}
+
 .cuadrito{
 	margin: 10px auto;
 	width: 700px;
@@ -42,7 +60,6 @@ table[class="table"]{
 }
 
 body[name="principal"]{
-	background: url(http://subtlepatterns.com/patterns/sativa.png);
 }
 
 div[class=" col-md-12 main"]{

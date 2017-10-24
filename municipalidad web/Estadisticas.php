@@ -4,7 +4,7 @@ session_start();
 		echo"
 				<html>
 			<head>
-				<meta charset='utf-8'>
+				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 				<meta http-equiv='X-UA-Compatible' content='IE-edge'>
 				<meta name='viewport' content='width=device-width, initial-scale=1'>
 				<title>Municipalidad & Carabineros</title>
@@ -16,7 +16,7 @@ session_start();
 
 			</head>
 
-			<body style='background-image: url(img/wallpaper.jpg); background-size: 100%'>
+			<body  style='background-image: url(img/background.jpg);'>
 				<div class='container'>
 					<header>
 						<nav class='navbar navbar-default  navbar-inverse'><!-- navbar-fixed-top-->

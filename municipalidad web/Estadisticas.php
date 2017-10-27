@@ -68,18 +68,63 @@
 		<div class="container">
 			<div class="row col-md-3">
 				<div class="caja">
-					<select onchange="mostrarResultados(this.value);">
+					<select onchange="mostrarResultados(this.value)">
 						<?php
 							for($i=2000; $i<2020; $i++) {
 								if($i==2015) echo "<option value='".$i."' selected>".$i."</option>";
 								else echo "<option value='".$i."'>".$i."</option>";
 							} 
+							echo "
+								<script>
+									$(document).ready(mostrarResultados(2015));
+										function mostrarResultados(año) {
+											$.ajax({
+												type: 'POST',
+												url = 'DatosE1.php',
+												data: 'año'+año,
+												success:function(data) {
+													var valores = eval(data);
+													var enero = valores[0];
+													var febrero = valores[1];
+													var marzo = valores[2];
+													var abril = valores[3];
+													var mayo = valores[4];
+													var junio = valores[5];
+													var julio = valores[6];
+													var agosto = valores[7];
+													var septiembre = valores[8];
+													var octubre = valores[9];
+													var noviembre = valores[10];
+													var diciembre = valores[11];
+
+													var Datos = {
+														labels : ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+														datasets : [
+															{
+																fiilColor : 'rgba(91,228,146,0.6)', //Color de las barras
+																strokeColor : 'rgba(57,194,112,0.7)', //Color del borde de las barras
+																highlightFill : 'rgba(73,206,180,0.6)', //Color 'HOVER0 de las barras
+																highlightStroke : 'rgba(66,196,157,0.7)', //Color 'HOVER' del borde de las barras
+																data : [enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre]
+															}
+														]
+													};
+
+													var contexto = document.getElementById('grafico').getContext('2d');
+													window.Barra = new Chart(contexto).Bar(Datos, {responsive : true});
+												}
+											});
+
+											return false;
+										}
+								</script>
+								";
 						?>
 					</select>
 				</div>
-			<div class="resultados">
-				<canvas id="grafico"></canvas>
-			</div>
+				<div class="resultados">
+					<canvas id="grafico"></canvas>
+				</div>
 			</div>
 		</div>
 	</body>

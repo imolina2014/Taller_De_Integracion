@@ -36,10 +36,10 @@
 		</style>
 	</head>
 
-	<body  style='background-image: url(img/background.jpg);'>
-		<div class='container'>
-			<header>
-				<nav class='navbar navbar-default  navbar-inverse'><!-- navbar-fixed-top-->
+	<body  style='background-color: #e3f2fd;'>
+				<div class='container'>
+					<header>
+						<nav  class='navbar navbar-light bg-light' style= 'background-color:#4CAF50' >
 					<div class='container-fluid'>
 						<div class='navbar-header'>
 							<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-1'>
@@ -55,7 +55,7 @@
 							</ul>		
 							<ul class='nav navbar-nav navbar-right' id='navbar-1'>
 								<li><a href='index.php' >Incidentes</a></li>
-								<li class='active'><a href='Estadisticas.php'>Estadisticas</a></li>
+								<li class='active'><a href='Estadisticas.php' style='color:black; background-color:white;'>Estadisticas</a></li>
 								<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>
 								<li ><a href='RevisionSectores.php'>Revision Sectores</a></li>
 								<li><a href='login.php'>Salir</a></li>

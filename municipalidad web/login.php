@@ -9,12 +9,13 @@
     <div class="container">
     <div class="login-container">
             <div id="output"></div>
-            <div class="avatar"></div>
+            <div class="avatar"><img src="img/logo.png" style="height: 100px; border-radius: 50px"></div>
             <div class="form-box">
                 <form action="login.php" method="POST">
                     <input name="username" type="text" placeholder="Usuario">
                     <input name="password" type="password" placeholder="Clave">
-                    <button class="btn btn-info btn-block login" type="submit" name="ingresar">Ingresar</button>
+                    <button class="btn btn-info btn-block login" type="submit" name="ingresar">Ingresar</button><br>
+                    <a href="../ciudadano%20web/home.html">regresar</a>
                 </form>
             </div>
     </div>
@@ -23,13 +24,12 @@
 session_start();
 session_destroy();
 if(isset($_POST["ingresar"])) {
-	$conexion = mysqli_connect("localhost", "id2847271_imolina","12345","id2847271_imolina");
+	$conexion = mysqli_connect("localhost", "root","","id2847271_imolina");
     $usuario = $_POST["username"];
 	$clave = $_POST["password"];
 
     $sql = "SELECT * FROM usuarios WHERE NOMBRE='".$usuario."' and CONTRASEÑA='".$clave."' ";
     $consulta = mysqli_query($conexion,$sql);
-
     if ($consulta>=0){
     	$filaD=mysqli_fetch_array($consulta);
         session_start();

@@ -16,10 +16,10 @@ session_start();
 
 			</head>
 
-			<body  style='background-image: url(img/background.jpg);'>
+			<body  style='background-color: #e3f2fd;'>
 				<div class='container'>
 					<header>
-						<nav class='navbar navbar-default  navbar-inverse'><!-- navbar-fixed-top-->
+						<nav  class='navbar navbar-light bg-light' style= 'background-color:#4CAF50' >
 							<div class='container-fluid'>
 								
 								<div class='navbar-header'>
@@ -36,7 +36,8 @@ session_start();
 									<ul class='nav navbar-nav'>
 									</ul>		
 									<ul class='nav navbar-nav navbar-right' id='navbar-1'>
-										<li class='active'><a href='index.php' >Incidentes</a></li>
+										<li><img src='img/logo.png' alt='' height='50px' style='border-radius: 4px;'><br></li>
+										<li class='active'><a href='index.php' style='color:black; background-color:white;' >Incidentes</a></li>
 										<li><a href='Estadisticas.php'>Estadisticas</a></li>
 										<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>
 										<li ><a href='RevisionSectores.php'>Revision Sectores</a></li>
@@ -50,7 +51,6 @@ session_start();
 					
 
 					<div class='container' >
-						<center><img src='Logo.png' alt='' width='400' height='300'></center><br>
 						<div class='row'>
 
 							<div class='col-md-1 col-xs-1 col-sm-1'></div>
@@ -108,11 +108,11 @@ session_start();
 							</a>
 
 							<div class='col-md-1 col-xs-1 col-sm-1'></div>
-								
 						</div>
 					</div>
-
 				</div>
+
+
 			</body>
 			</html>";
 }else{header("Location:login.php");}

@@ -13,13 +13,13 @@ session_start();
 				<link rel='stylesheet'  href='css/bootstrap.css'>
 				<link rel='stylesheet'  href='css/style.css'>
 				<link rel='stylesheet'  href='css/home.css'>
-
+				<script src='js/crear_sector.js'></script>
 			</head>
 
-			<body  style='background-image: url(img/background.jpg);'>
+			<body  style='background-color: #e3f2fd;'>
 				<div class='container'>
 					<header>
-						<nav class='navbar navbar-default  navbar-inverse'><!-- navbar-fixed-top-->
+						<nav  class='navbar navbar-light bg-light' style= 'background-color:#4CAF50' >
 							<div class='container-fluid'>
 								
 								<div class='navbar-header'>
@@ -39,7 +39,7 @@ session_start();
 											<li><a href='index.php'>Incidentes</a></li>
 											<li><a href='Estadisticas.php'>Estadisticas</a></li>
 											<li class='active'
-											><a href='CreacionSectores.php'>Creacion Sectores</a></li>
+											><a href='CreacionSectores.php' style='color:black; background-color:white;'>Creacion Sectores</a></li>
 											<li><a href='RevisionSectores.php'>Revision Sectores</a></li>
 											<li><a href='login.php' class'sesion'>Salir ".$_SESSION['usuario']."</a></li>
 											<!--
@@ -55,8 +55,44 @@ session_start();
 							</nav>
 						</header>
 
+						<div class='create_sector'>
+							<form>
+								  <div class='form-group'>
+								    <label for='exampleFormControlInput1'>Nombre de Sector: </label>
+								    <input type='text' class='form-control' id='exampleFormControlInput1' placeholder='Nombre'>
+								  </div>
+								  <div class='form-group'>
+								    <label for='exampleFormControlSelect1'>Puntos del Sector</label>
+									    <select class='form-control' id='exampleFormControlSelect1'>
+									      <option>1</option>
+									      <option>2</option>
+									      <option>3</option>
+									      <option>4</option>
+									      <option>5</option>
+									    </select>
+								  </div>
+								  <div class='form-group'>
+								    <label for='exampleFormControlSelect2'>Tipo de Delitos</label>
+								    <select multiple class='form-control' id='exampleFormControlSelect2'>
+								      <option>1</option>
+								      <option>2</option>
+								      <option>3</option>
+								      <option>4</option>
+								      <option>5</option>
+								    </select>
+								  </div>
+								  <div class='form-group'>
+								    <label for='exampleFormControlTextarea1'>Descripcion</label>
+								    <textarea class='form-control' id='exampleFormControlTextarea1' rows='3'></textarea>
+								  </div>
+
+								  <button class='btn btn-primary' type='submit' onClick='create_sector'>Crear Sector</button>
+								</form>
+							 
+							  
+						
 				</body>
 				</html>";
 
-}else{header("Location:login.php");}
+}else{header('Location:login.php');}
 ?>

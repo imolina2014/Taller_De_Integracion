@@ -23,13 +23,12 @@
 session_start();
 session_destroy();
 if(isset($_POST["ingresar"])) {
-	$conexion = mysqli_connect("localhost", "id2847271_imolina","12345","id2847271_imolina");
+	$conexion = mysqli_connect("localhost", "root","","id2847271_imolina");
     $usuario = $_POST["username"];
 	$clave = $_POST["password"];
 
     $sql = "SELECT * FROM usuarios WHERE NOMBRE='".$usuario."' and CONTRASEÑA='".$clave."' ";
     $consulta = mysqli_query($conexion,$sql);
-
     if ($consulta>=0){
     	$filaD=mysqli_fetch_array($consulta);
         session_start();

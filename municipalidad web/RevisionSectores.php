@@ -16,10 +16,10 @@ session_start();
 
 			</head>
 
-			<body  style='background-image: url(img/background.jpg);'>
+			<body  style='background-color: #e3f2fd;'>
 				<div class='container'>
 					<header>
-						<nav class='navbar navbar-default  navbar-inverse'><!-- navbar-fixed-top-->
+						<nav  class='navbar navbar-light bg-light' style= 'background-color:#4CAF50' >
 							<div class='container-fluid'>
 								
 								<div class='navbar-header'>
@@ -38,7 +38,7 @@ session_start();
 										<li><a href='index.php' >Incidentes</a></li>
 										<li><a href='Estadisticas.php'>Estadisticas</a></li>
 										<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>
-										<li class='active'><a href='RevisionSectores.php'>Revision Sectores</a></li>
+										<li class='active'><a href='RevisionSectores.php' style='color:black; background-color:white;' >Revision Sectores</a></li>
 										<li><a href='login.php' class'sesion'>Salir ".$_SESSION['usuario']."</a></li>
 										<!--
 										<form action='' class='navbar-form navbar-left' role='search' > 

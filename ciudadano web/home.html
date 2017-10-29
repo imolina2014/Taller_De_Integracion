@@ -21,10 +21,10 @@
     </style>
 </head>
 
-<body style="background-image: url(img/background.jpg);" name="principal" onload="crea_categoria();Incidentes()">
+<body style="background-color: #e3f2fd;" name="principal" onload="crea_categoria();Incidentes()">
 	<div class="container">
 		<header>
-			<nav class="navbar navbar-default  navbar-inverse"><!-- navbar-fixed-top-->
+			<nav  class="navbar navbar-light bg-light" style= "background-color:#4CAF50" >
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
@@ -40,7 +40,7 @@
 						<ul class="nav navbar-nav">
 						</ul>		
 						<ul class="nav navbar-nav navbar-right" id="navbar-1">
-							<li  class="active"><a href="home.html" >Incidentes</a></li>
+							<li  class="active"><a href="home.html" style="background-color: white; color: black;" >Incidentes</a></li>
 							<li><a href="ComoUsar.html">Como Usar</a></li>
 							<li><a href="UsoDeDatos.html">Uso de Datos</a></li>
 							<li> <a href="ComoNotificamos.html">Como Notificamos</a></li>
@@ -81,10 +81,6 @@
 				</div>
 				
 				<input type="text" data-theme="myfecha" data-large-mode="true" id="sFecha">
-				
-					<!-- <select>
-						<option>Seleccionar Ubicacion</option>
-					</select> -->
             	
 				<input type="button" class="btn btn-primary" value="Buscar" onclick="BuscarIncidente();">	
 		    </form>	

@@ -23,7 +23,7 @@
 session_start();
 session_destroy();
 if(isset($_POST["ingresar"])) {
-	$conexion = mysqli_connect("localhost", "id2847271_imolina","12345","id2847271_imolina");
+	$conexion = mysqli_connect("localhost", "root","","id2847271_imolina");
     $usuario = $_POST["username"];
 	$clave = $_POST["password"];
 

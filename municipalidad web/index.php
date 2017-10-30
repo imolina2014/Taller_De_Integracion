@@ -29,17 +29,17 @@ session_start();
 							<span class='icon-bar'></span>
 							<span class='icon-bar'></span>
 						</button>
-						<a class='navbar-brand'>SISTEMA DE INGRESO DE INCIDENTES</a>
+						<a href="index.php" class='navbar-brand'>SISTEMA DE INGRESO DE INCIDENTES</a>
 					</div>
 					<div class='collapse navbar-collapse'>
 						<ul class='nav navbar-nav'>
 						</ul>		
 						<ul class='nav navbar-nav navbar-right' id='navbar-1'>
-							<li class='active'><a href='index.php' style='color:black; background-color:white;' >Incidentes</a></li>
+							<li><a href='incidentes.php'>Incidentes</a></li>
 							<li><a href='Estadisticas.php'>Estadisticas</a></li>
 							<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>
-							<li ><a href='RevisionSectores.php'>Revision Sectores</a></li>
-							<li><a href='login.php' class'sesion'>Salir</a></li>
+							<li><a href='RevisionSectores.php'>Revision Sectores</a></li>
+							<li><a href='login.php' class='sesion'>Salir</a></li>
 						</ul>
 					</div>	
 				</div>

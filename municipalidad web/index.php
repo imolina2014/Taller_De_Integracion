@@ -72,7 +72,7 @@ session_start();
 			</div>
 			<div class='row'>
 				<div class='col-md-1 col-xs-1 col-sm-1'></div>
-				<a href='index.php'>
+				<a href='incidentes.php'>
 					<div class='col-md-4 col-xs-12 col-sm-4 bordes2' style='height: 140px; top:20px;'>
 						<div class='col-md-10 col-xs-10 col-sm-10'>
 							<h3 class='text-center'>Incidentes</h3>

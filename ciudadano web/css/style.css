@@ -84,3 +84,19 @@ h1[class="h1"]{
 div[id="Categoria"]{
 	display:inline;
 }
+
+img[id="iconos"]{
+	width:33px;
+	height:33px;
+	margin-right:10px;
+}
+
+img[id='G_iconos']{
+	width:55px;
+	height:53px;
+	margin-right:10px;
+}
+
+#map {
+    height: 400px;
+}

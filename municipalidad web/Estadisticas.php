@@ -2,6 +2,20 @@
 	session_start();
 	if(!isset($_SESSION['usuario'])){
 		header("Location: login.php");
+	$conexion = mysqli_connect("localhost", "root","","id2847271_imolina");
+							
+							$sql_incidentes = "SELECT * FROM incidentes WHERE categoria='Accidente'";
+							$sql_incendios="SELECT * FROM incidentes WHERE tipo='Accidente'";
+    						
+    						$consulta_incidentes=mysqli_query($conexion,$sql_incidentes);
+    						$consulta_incendios= mysqli_query($conexion,$sql_incendios);
+							$nr_inci = mysqli_num_rows($conexion,$consulta_incidentes);
+							$nr_ince = mysqli_num_rows($conexion,$consulta_incendios);
+
+							$porcent=$ince*100/$inci;
+
+	echo"<p>".($porcent)."</p>";
+
 	}
 ?>
 <html>

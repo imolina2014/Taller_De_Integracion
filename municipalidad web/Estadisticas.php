@@ -36,6 +36,7 @@
 				$consulta_atropellos= mysqli_query($conexion,$sql_atropellos);
 				$consulta_otros= mysqli_query($conexion,$sql_incendios);
 			
+<<<<<<< HEAD
 				$colision_vehicular=mysqli_num_rows($consulta_colision);
 				$choque_multiple=mysqli_num_rows($consulta_choque);
 				//$incendio=mysqli_num_rows($consulta_incendios);
@@ -49,6 +50,20 @@
 				//$atropellos=13;
 				//$otros=8;
 				
+=======
+				//$colision_vehicular=mysqli_num_rows($consulta_colision);
+				//$choque_multiple=mysqli_num_rows($consulta_choque);
+				//$incendio=mysqli_num_rows($consulta_incendios);
+				//$derrumbes=mysqli_num_rows($consulta_derrumbes);
+				//$atropellos=mysqli_num_rows($consulta_atropellos);
+				//$otros=mysqli_num_rows($consulta_otros);
+				$colision_vehicular=30;
+				$choque_multiple=10;
+				$incendio=34;
+				$derrumbes=12;
+				$atropellos=13;
+				$otros=8;
+>>>>>>> ab9e1725570939d7c76f1cdb3288ba434e08b4ba
 		?>
 
 	<script>

@@ -37,7 +37,7 @@ session_start();
 					<div class='collapse navbar-collapse'>
 						<ul class='nav navbar-nav'>
 						</ul>		
-						<ul class='nav navbar-nav navbar-right' id='navbar-1'>
+						<ul class='nav navbar-nav navbar-right navbar-fixed-top' id='navbar-1'>
 							<li><a href='incidentes.php'>Incidentes</a></li>
 							<li><a href='Estadisticas.php'>Estadisticas</a></li>
 							<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>

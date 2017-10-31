@@ -2,20 +2,6 @@
 	session_start();
 	if(!isset($_SESSION['usuario'])){
 		header("Location: login.php");
-	$conexion = mysqli_connect("localhost", "root","","id2847271_imolina");
-							
-							$sql_incidentes = "SELECT * FROM incidentes WHERE categoria='Accidente'";
-							$sql_incendios="SELECT * FROM incidentes WHERE tipo='Accidente'";
-    						
-    						$consulta_incidentes=mysqli_query($conexion,$sql_incidentes);
-    						$consulta_incendios= mysqli_query($conexion,$sql_incendios);
-							$nr_inci = mysqli_num_rows($conexion,$consulta_incidentes);
-							$nr_ince = mysqli_num_rows($conexion,$consulta_incendios);
-
-							$porcent=$ince*100/$inci;
-
-	echo"<p>".($porcent)."</p>";
-
 	}
 ?>
 <html>
@@ -30,22 +16,64 @@
 	<script type="text/javascript" src="js/Chart.bundle.min.js"></script>	
 	<link rel='stylesheet'  href='css/bootstrap.css'>
 	<link rel='stylesheet'  href='css/style.css'>
-	<link rel='stylesheet'  href='css/home.css'>
+	<!--<link rel='stylesheet'  href='css/home.css'>-->
+
+
+		<?php
+				$conexion = mysqli_connect("localhost", "root","","id2847271_imolina");
+									
+				$sql_incendios="SELECT CALLE FROM incidentes WHERE tipo='Incendio'";
+				$sql_colision="SELECT CALLE FROM incidentes WHERE tipo='Colision vehicular'";
+		    	$sql_choque="SELECT CALLE FROM incidentes WHERE tipo='Choque multiple'";
+		    	$sql_derrumbes="SELECT CALLE FROM incidentes WHERE tipo='Derrumbes'";
+				$sql_atropellos="SELECT CALLE FROM incidentes WHERE tipo='Atropello de peatones'";
+		    	$sql_otros="SELECT CALLE FROM incidentes WHERE tipo='otro'";
+		  
+		    	$consulta_incendio=mysqli_query($conexion,$sql_incendios); 
+				$consulta_colision=mysqli_query($conexion,$sql_colision);
+				$consulta_choque=mysqli_query($conexion,$sql_choque);
+				$consulta_derrumbes= mysqli_query($conexion,$sql_derrumbes);
+				$consulta_atropellos= mysqli_query($conexion,$sql_atropellos);
+				$consulta_otros= mysqli_query($conexion,$sql_incendios);
+			
+				$colision_vehicular=mysqli_num_rows($consulta_colision);
+				$choque_multiple=mysqli_num_rows($consulta_choque);
+				//$incendio=mysqli_num_rows($consulta_incendios);
+				$derrumbes=mysqli_num_rows($consulta_derrumbes);
+				$atropellos=mysqli_num_rows($consulta_atropellos);
+				$otros=mysqli_num_rows($consulta_otros);
+				//$colision_vehicular=30;
+				//$choque_multiple=10;
+				$incendio=34;
+				//$derrumbes=12;
+				//$atropellos=13;
+				//$otros=8;
+				
+		?>
+
 	<script>
+		
+		var colision_vehicular=<?php echo $colision_vehicular;?> 
+		var choque_multiple=<?php echo $choque_multiple?> 
+		var incendio=<?php echo $incendio;?> 
+		var derrumbes=<?php echo $derrumbes;?> 
+		var atropellos=<?php echo $atropellos;?> 
+		var otros=<?php echo $otros;?> ;
+
 		$(document).ready(function(){
 			var datos = {
 				type : "pie",
 				data : {
 					datasets : [{
-						data : [5,10,40,12,23,],
-						backgroundColor : ["#F7464A","#46BFDB","#FDB45C","#949FB1","#4D5360",],
+						data : [colision_vehicular,choque_multiple,incendio,derrumbes,atropellos,otros],
+						backgroundColor : ["#00BCD4","#673AB7","#F44336","#CDDC39","#FF9800","#3F51B5",],
 					}],
-					labels : ["Datos01","Datos02","Datos03","Datos04","Datos05",]
+					labels : ["Colision Vehicular","Choque Multiple","Incendio","Derrumbes","Atropellos","otros",]
 				},
 				options : { reponsive: true, }
 			};
-			var canvas = document.getElementById('chart').getContext('2d');
-			window.pie = new Chart(canvas,datos);
+			var canvas_Tipo_INC = document.getElementById('Tipos_Incidentes').getContext('2d');
+			window.pie = new Chart(canvas_Tipo_INC,datos);
 		});
 
 		$(document).ready(function(){
@@ -134,11 +162,11 @@
 			</nav>
 		</header>
 	</div>
-	<div class="container">
-		<div class="row main">
+	<div class="container main">
+		<div class="row">
 			<div class="col-md-6">
 				<div id="canvas-container" style="width: 100%;">
-					<canvas id="chart" width="400" height="350"></canvas>
+					<canvas id="Tipos_Incidentes" width="400" height="350"></canvas>
 				</div>
 			</div>
 			<div class="col-md-6">

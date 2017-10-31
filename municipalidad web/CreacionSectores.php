@@ -146,20 +146,13 @@ session_start();
 							<li class='active'><a href='CreacionSectores.php' style='color:black; background-color:white;'>Creacion Sectores</a></li>
 							<li><a href='RevisionSectores.php'>Revision Sectores</a></li>
 							<li><a href='login.php' class'sesion'>Salir</a></li>
-											<!--
-											<form action='' class='navbar-form navbar-left' role='search' > 
-
-											<div class='form-group'>
-												<input type='text' class='form-control'  placeholder='buscar' name='search'>
-											</div>
-										</form>-->
 						</ul>
 					</div>	
 				</div>
 			</nav>
 		</header>
 
-		<div class='create_sector'>
+		<div class='create_sector main'>
 			<form>
 				<div class='form-group'>
 				    <label for='exampleFormControlInput1'>Nombre de Sector: </label>

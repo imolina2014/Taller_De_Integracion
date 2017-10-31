@@ -107,7 +107,7 @@
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
 		<header>
-			<nav  class='navbar navbar-light bg-light navbar-fixed-top' style= 'background-color:#4CAF50' >
+			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
 					<div class='navbar-header'>
 						<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-1'>
@@ -135,7 +135,7 @@
 		</header>
 	</div>
 	<div class="container">
-		<div class="row">
+		<div class="row main">
 			<div class="col-md-6">
 				<div id="canvas-container" style="width: 100%;">
 					<canvas id="chart" width="400" height="350"></canvas>

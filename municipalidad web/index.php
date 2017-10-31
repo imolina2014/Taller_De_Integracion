@@ -20,7 +20,7 @@ session_start();
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
 		<header>
-			<nav  class='navbar navbar-light bg-light navbar-fixed-top' style= 'background-color:#4CAF50' >
+			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
 					<div class='navbar-header'>
 						<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-1'>
@@ -47,7 +47,7 @@ session_start();
 		</header>
 		
 		<div class='container' >
-			<div class='row'>
+			<div class='row main'>
 				<div class='col-md-1 col-xs-1 col-sm-1'></div>
 				<a href='CreacionSectores.php'>
 					<div class='col-md-4 col-xs-12 col-sm-4 bordes2' style=' height: 140px;'>

@@ -23,7 +23,7 @@ session_start();
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
 		<header>
-			<nav  class='navbar navbar-light bg-light' style= 'background-color:#4CAF50' >
+			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
 					<div class='navbar-header'>
 						<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-1'>
@@ -37,7 +37,7 @@ session_start();
 					<div class='collapse navbar-collapse'>
 						<ul class='nav navbar-nav'>
 						</ul>		
-						<ul class='nav navbar-nav navbar-right navbar-fixed-top' id='navbar-1'>
+						<ul class='nav navbar-nav navbar-right' id='navbar-1'>
 							<li><a href='incidentes.php'>Incidentes</a></li>
 							<li><a href='Estadisticas.php'>Estadisticas</a></li>
 							<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>

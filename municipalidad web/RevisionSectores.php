@@ -20,10 +20,10 @@ session_start();
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
 		<header>
-			<nav  class='navbar navbar-light bg-light' style= 'background-color:#4CAF50' >
+			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
 					<div class='navbar-header'>
-						<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-1'>
+						<button type='button' class='navbar-toggle collapsed navbar-fixed-top' data-toggle='collapse' data-target='#navbar-1'>
 							<span class='sr-only'>Menu</span>
 							<span class='icon-bar'></span>
 							<span class='icon-bar'></span>

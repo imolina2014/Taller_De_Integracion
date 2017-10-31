@@ -40,13 +40,6 @@ session_start();
 							<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>
 							<li class='active'><a href='RevisionSectores.php' style='color:black; background-color:white;' >Revision Sectores</a></li>
 							<li><a href='login.php' class='sesion'>Salir</a></li>
-										<!--
-										<form action='' class='navbar-form navbar-left' role='search' > 
-
-										<div class='form-group'>
-											<input type='text' class='form-control'  placeholder='buscar' name='search'>
-										</div>
-									</form>-->
 						</ul>
 					</div>	
 				</div>

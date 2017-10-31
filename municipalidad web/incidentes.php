@@ -49,8 +49,8 @@ session_start();
 			</nav>
 		</header>
 		
-		<div class='container' >
-			<div class=" col-md-12 main">
+		<div class='container main' >
+			<div class=" col-md-12">
 			<h1><b>Bienvenido al Servicio de Registro de Incidentes</b></h1>
 			<p>Aquí podrás unirte al programa de seguridad y estadística de incidentes; donde tú puedes ser un gran colaborador y parte del programa, notificando de manera responsable incidentes que ocurren a tu alrededor y con ello, notificar a los participantes de la misma.</p>
 			

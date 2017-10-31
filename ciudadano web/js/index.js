@@ -136,37 +136,57 @@ function filtrar(id){
 	}
 }
 
-function BuscarIncidente() {
-    var sCalle= document.getElementById("sCalle").value;
-	var sCategoria = document.getElementById("sCategoria").value;
-	var sTipo = document.getElementById("sTipo").value;
-	var sFecha = document.getElementById("sFecha").value;
-
-	var ord=sFecha.split("/");
-	sFecha=ord[2]+"-"+ord[0]+"-"+ord[1];
-
-	datos = {
-	    "Calle": sCalle,
-		"Categoria": sCategoria,
-		"Tipo": sTipo,
-		"Fecha":sFecha
-	}
-	$.ajax({
-		data: datos,
-		url: "./php/mostrarIncidentes.php",
-		type: "post",
-		success: function(result) {
-			$("#tIncidentes").html(result);
-		}
-	});
-}
-
 function Incidentes(){
-		$.ajax({
+	$.ajax({
 		url: "./php/Incidentes.php",
 		type: "post",
 		success: function(result) {
 			$("#Tgeneral").html(result);
 		}
 	});	
+}
+
+var cont=1
+function BuscarIncidente(valor) {
+	if (cont==0){
+		Incidentes();
+	}
+	
+	if (cont==1){
+		var sCalle= document.getElementById("sCalle").value;
+		var sCategoria = document.getElementById("sCategoria").value;
+		var sTipo = document.getElementById("sTipo").value;
+		var sFecha = document.getElementById("sFecha").value;
+
+		var ord=sFecha.split("/");
+		sFecha=ord[2]+"-"+ord[0]+"-"+ord[1];
+
+		datos = {
+			"Calle": sCalle,
+			"Categoria": sCategoria,
+			"Tipo": sTipo,
+			"Fecha":sFecha
+		}
+		$.ajax({
+			data: datos,
+			url: "./php/mostrarIncidentes.php",
+			type: "post",
+			success: function(result) {
+				$("#tIncidentes").html(result);
+			}
+		});
+		cont=0;
+	}
+}
+
+function initMap(latitud,longitud) {
+    var uluru = {lat: latitud, lng: longitud};
+    var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 16,
+		center: uluru
+    });
+    var marker = new google.maps.Marker({
+		position: uluru,
+		map: map
+    });
 }

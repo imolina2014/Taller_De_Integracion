@@ -1,4 +1,5 @@
 <?php
+	include("php/conex.php");
 	session_start();
 	if(!isset($_SESSION['usuario'])){
 		header("Location: login.php");
@@ -36,7 +37,7 @@
 				$consulta_atropellos= mysqli_query($conexion,$sql_atropellos);
 				$consulta_otros= mysqli_query($conexion,$sql_incendios);
 			
-<<<<<<< HEAD
+
 				$colision_vehicular=mysqli_num_rows($consulta_colision);
 				$choque_multiple=mysqli_num_rows($consulta_choque);
 				//$incendio=mysqli_num_rows($consulta_incendios);
@@ -50,7 +51,7 @@
 				//$atropellos=13;
 				//$otros=8;
 				
-=======
+
 				//$colision_vehicular=mysqli_num_rows($consulta_colision);
 				//$choque_multiple=mysqli_num_rows($consulta_choque);
 				//$incendio=mysqli_num_rows($consulta_incendios);
@@ -63,7 +64,6 @@
 				$derrumbes=12;
 				$atropellos=13;
 				$otros=8;
->>>>>>> ab9e1725570939d7c76f1cdb3288ba434e08b4ba
 		?>
 
 	<script>
@@ -92,29 +92,47 @@
 		});
 
 		$(document).ready(function(){
-			var ctx = document.getElementById("chartbar").getContext('2d');
+		    $.ajax({
+		        url:   'php/DatosE1.php', //archivo que recibe la peticion
+		        type:  'POST', //método de envio
+		        success:  function (data) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+		            var valores = eval(data);	
+		            var Accidentes = valores[0];
+		            var Delitos = valores[1];
+		            var datos = {
+						type : "pie",
+						data : {
+							datasets : [{
+								data : [Accidentes,Delitos,],
+								backgroundColor : ["#F7464A","#46BFDB",],
+							}],
+							labels : ["Accidentes","Delitos",]
+						},
+						options : { reponsive: true, }
+					};
+					var canvas = document.getElementById('ChartPieIncidentes').getContext('2d');
+					window.pie = new Chart(canvas,datos);
+		        }
+		    });
+		});
+
+		$(document).ready(function(){
+			var ctx = document.getElementById("ChartBarIncidentes").getContext('2d');
 			var myChart = new Chart(ctx, {
 			    type: 'bar',
 			    data: {
 			        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-			        datasets: [{
-			            label: '# of Votes',
+			        datasets: [
+			        {
+			            label: '#Accidentes',
 			            data: [12, 19, 3, 5, 2, 3],
 			            backgroundColor: [
 			                'rgba(255, 99, 132, 0.2)',
-			                'rgba(54, 162, 235, 0.2)',
-			                'rgba(255, 206, 86, 0.2)',
-			                'rgba(75, 192, 192, 0.2)',
-			                'rgba(153, 102, 255, 0.2)',
-			                'rgba(255, 159, 64, 0.2)'
+			                'rgba(54, 162, 235, 0.2)'
 			            ],
 			            borderColor: [
 			                'rgba(255,99,132,1)',
-			                'rgba(54, 162, 235, 1)',
-			                'rgba(255, 206, 86, 1)',
-			                'rgba(75, 192, 192, 1)',
-			                'rgba(153, 102, 255, 1)',
-			                'rgba(255, 159, 64, 1)'
+			                'rgba(54, 162, 235, 1)'
 			            ],
 			            borderWidth: 1
 			        }]
@@ -128,20 +146,6 @@
 			            }]
 			        }
 			    }
-			});
-		});
-
-		$(document).ready(function(){
-			$.ajax({
-				url : 'php/DatosE1.php',
-				type : 'POST',
-				beforeSend : function() {
-					$('#chartbarincidentes').html('Procesando datos, por favor espere...');
-				},
-				success : function(response) {
-					$('#chartbarincidentes').html(response);
-					//alert(response);
-				}
 			});
 		});
 	</script>
@@ -177,7 +181,7 @@
 			</nav>
 		</header>
 	</div>
-	<div class="container main">
+	<div class="container main" style="margin-top: 100px;">
 		<div class="row">
 			<div class="col-md-6">
 				<div id="canvas-container" style="width: 100%;">
@@ -186,14 +190,14 @@
 			</div>
 			<div class="col-md-6">
 				<div id="canvas-container" style="width: 100%;">
-					<canvas id="chartbar" width="400" height="350"></canvas>
+					<canvas id="ChartPieIncidentes" width="400" height="350"></canvas>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<div id="canvas-container" style="width: 100%;">
-					<canvas id="chartbarincidentes" width="400" height="350"></canvas>
+					<canvas id="ChartBarIncidentes" width="400" height="350"></canvas>
 				</div>
 			</div>
 		</div>

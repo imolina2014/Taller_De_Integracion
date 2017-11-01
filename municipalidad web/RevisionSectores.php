@@ -46,7 +46,7 @@ session_start();
 			</nav>
 		</header>
 	
-		<div class='main'>
+		<div class='main' style="margin-top: 100px;">
 			<center>
 				<select class='selectpicker show-menu-arrow'>
 					<option style='background: #5cb85c; color: #fff;'>Tus Sectores</option>

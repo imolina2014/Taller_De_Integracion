@@ -21,7 +21,7 @@ session_start();
 </head>
 
 <body  style='background-color: #e3f2fd;'>
-	<div class='container'>
+	<div class='container' style="margin-top: 100px;">
 		<header>
 			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>

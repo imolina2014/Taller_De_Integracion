@@ -19,78 +19,7 @@
 	<link rel='stylesheet'  href='css/style.css'>
 	<!--<link rel='stylesheet'  href='css/home.css'>-->
 
-
-		<?php
-				$conexion = mysqli_connect("localhost", "root","","id2847271_imolina");
-									
-				$sql_incendios="SELECT CALLE FROM incidentes WHERE tipo='Incendio'";
-				$sql_colision="SELECT CALLE FROM incidentes WHERE tipo='Colision vehicular'";
-		    	$sql_choque="SELECT CALLE FROM incidentes WHERE tipo='Choque multiple'";
-		    	$sql_derrumbes="SELECT CALLE FROM incidentes WHERE tipo='Derrumbes'";
-				$sql_atropellos="SELECT CALLE FROM incidentes WHERE tipo='Atropello de peatones'";
-		    	$sql_otros="SELECT CALLE FROM incidentes WHERE tipo='otro'";
-		  
-		    	$consulta_incendio=mysqli_query($conexion,$sql_incendios); 
-				$consulta_colision=mysqli_query($conexion,$sql_colision);
-				$consulta_choque=mysqli_query($conexion,$sql_choque);
-				$consulta_derrumbes= mysqli_query($conexion,$sql_derrumbes);
-				$consulta_atropellos= mysqli_query($conexion,$sql_atropellos);
-				$consulta_otros= mysqli_query($conexion,$sql_incendios);
-			
-
-				$colision_vehicular=mysqli_num_rows($consulta_colision);
-				$choque_multiple=mysqli_num_rows($consulta_choque);
-				//$incendio=mysqli_num_rows($consulta_incendios);
-				$derrumbes=mysqli_num_rows($consulta_derrumbes);
-				$atropellos=mysqli_num_rows($consulta_atropellos);
-				$otros=mysqli_num_rows($consulta_otros);
-				//$colision_vehicular=30;
-				//$choque_multiple=10;
-				$incendio=34;
-				//$derrumbes=12;
-				//$atropellos=13;
-				//$otros=8;
-				
-
-				//$colision_vehicular=mysqli_num_rows($consulta_colision);
-				//$choque_multiple=mysqli_num_rows($consulta_choque);
-				//$incendio=mysqli_num_rows($consulta_incendios);
-				//$derrumbes=mysqli_num_rows($consulta_derrumbes);
-				//$atropellos=mysqli_num_rows($consulta_atropellos);
-				//$otros=mysqli_num_rows($consulta_otros);
-				$colision_vehicular=30;
-				$choque_multiple=10;
-				$incendio=34;
-				$derrumbes=12;
-				$atropellos=13;
-				$otros=8;
-		?>
-
 	<script>
-		
-		var colision_vehicular=<?php echo $colision_vehicular;?> 
-		var choque_multiple=<?php echo $choque_multiple?> 
-		var incendio=<?php echo $incendio;?> 
-		var derrumbes=<?php echo $derrumbes;?> 
-		var atropellos=<?php echo $atropellos;?> 
-		var otros=<?php echo $otros;?> ;
-
-		$(document).ready(function(){
-			var datos = {
-				type : "pie",
-				data : {
-					datasets : [{
-						data : [colision_vehicular,choque_multiple,incendio,derrumbes,atropellos,otros],
-						backgroundColor : ["#00BCD4","#673AB7","#F44336","#CDDC39","#FF9800","#3F51B5",],
-					}],
-					labels : ["Colision Vehicular","Choque Multiple","Incendio","Derrumbes","Atropellos","Otros",]
-				},
-				options : { reponsive: true, }
-			};
-			var canvas_Tipo_INC = document.getElementById('ChartPie_TiposAccidentes').getContext('2d');
-			window.pie = new Chart(canvas_Tipo_INC,datos);
-		});
-
 		$(document).ready(function(){
 		    $.ajax({
 		        url : 'php/DatosE1.php', //archivo que recibe la peticion
@@ -150,6 +79,35 @@
 		    });
 		});
 
+		$(document).ready(function(){
+			$.ajax({
+				url : 'php/DatosE3.php',
+				type : 'POST',
+				success : function(data) {
+					var valores = eval(data);
+
+					var colision_vehicular = valores[0];
+					var choque_multiple = valores[1];
+					var incendio = valores[2];
+					var derrumbes = valores[3];
+					var atropellos = valores[4];
+					var otros = valores[5];
+					var datos = {
+					type : "pie",
+					data : {
+						datasets : [{
+							data : [colision_vehicular,choque_multiple,incendio,derrumbes,atropellos,otros],
+							backgroundColor : ["#00BCD4","#673AB7","#F44336","#CDDC39","#FF9800","#7FFF00",],
+						}],
+						labels : ["Colision Vehicular","Choque Multiple","Incendio","Derrumbes","Atropellos","Otros",]
+					},
+					options : { reponsive: true, }
+				};
+				var canvas_Tipo_INC = document.getElementById('ChartPie_TiposAccidentes').getContext('2d');
+				window.pie = new Chart(canvas_Tipo_INC,datos);
+				}
+			});
+		});
 
 		$(document).ready(function(){
 			var ctx = document.getElementById("ChartBarIncidentes").getContext('2d');

@@ -32,94 +32,136 @@ session_start();
         padding: 0;
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
     <script>
-      // In the following example, markers appear when the user clicks on the map.
-      // Each marker is labeled with a single alphabetical character.
-      var labels = 'ABCD';
-      var labelIndex = 0;
-      var Marker_Max = 4;
-      var Num_Marker = 0;
-      var coo_sector = [];
-      coo_sector.push('hola','perro');
-      //console.log(coo_sector);
+		var marker;          //variable del marcador
+		var coords = {};    //coordenadas obtenidas con la geolocalización
 
-    
+		//Funcion principal
+		initMap = function () 
+		{
 
-      function initialize() {
-        var coords = {};    //coordenadas obtenidas con la geolocalización
-        
-        navigator.geolocation.getCurrentPosition(
-        function (position) {
-            coords = {
-                lng: position.coords.longitude,
-                lat: position.coords.latitude
-            };
-            coords2= {
-                lng: position.coords.longitude,
-                lat: position.coords.latitude+0.05
-            };
-            coords3= {
-                lng: position.coords.longitude+0.05,
-                lat: position.coords.latitude+0.05
-            };
-            coords4= {
-                lng: position.coords.longitude+0.05,
-                lat: position.coords.latitude
-            };
-            
-            //setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
-            //console.log(coords);
-            document.getElementById("LatA").value=coords.lat;
-            document.getElementById("LongA").value=coords.lng;
-            document.getElementById("LatB").value=coords2.lat;
-            document.getElementById("LongB").value=coords2.lng;
-            document.getElementById("LatC").value=coords3.lat;
-            document.getElementById("LongC").value=coords3.lng;
-            document.getElementById("LatD").value=coords4.lat;
-            document.getElementById("LongD").value=coords4.lng;
-            //console.log(coords);
-      		//console.log(coords2);
-            var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 12,
-              center: coords
-            });
+		    //usamos la API para geolocalizar el usuario
+		        navigator.geolocation.getCurrentPosition(
+		          function (position){
+		            coords = {
+		                lng: position.coords.longitude,
+		                lat: position.coords.latitude
+		            };
+		            coords2= {
+		                lng: position.coords.longitude,
+		                lat: position.coords.latitude+0.02
+		            };
+		            coords3= {
+		                lng: position.coords.longitude+0.02,
+		                lat: position.coords.latitude+0.02
+		            };
+		            coords4= {
+		                lng: position.coords.longitude+0.02,
+		                lat: position.coords.latitude
+		            };
+		            setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
+		            document.getElementById("coordslat").value = coords.lat;
+		            document.getElementById("coordslng").value = coords.lng;
+		            document.getElementById("coords2lat").value = coords2.lat;
+		            document.getElementById("coords2lng").value = coords2.lng;
+		            document.getElementById("coords3lat").value = coords3.lat;
+		            document.getElementById("coords3lng").value = coords3.lng;
+		            document.getElementById("coords4lat").value = coords4.lat;
+		            document.getElementById("coords4lng").value = coords4.lng;
+		            
+		           
+		          },function(error){console.log(error);});
+		    
+		}
 
-            // This event listener calls addMarker() when the map is clicked.
-            //google.maps.event.addListener(map, 'click', function(event) {
-            //console.log(event.latLng.position);
-              //addMarker(event.latLng, map);
-            //});
 
-            // Add a marker at the center of the map.
-            a=addMarker(coords, map);
-            b=addMarker(coords2,map);
-            c=addMarker(coords3,map);
-            d=addMarker(coords4,map);
-          }
 
-        , function (error) { console.log(error); });
-        }
+		function setMapa (coords)
+		{   
+		      //Se crea una nueva instancia del objeto mapa
+		      var map = new google.maps.Map(document.getElementById('map'),
+		      {
+		        zoom: 13,
+		        center:new google.maps.LatLng(coords.lat,coords.lng),
 
-      // Adds a marker to the map.
-      function addMarker(location, map) {
-        // Add the marker at the clicked location, and add the next-available label
-        // from the array of alphabetical characters.
+		      });
 
-        var marker = new google.maps.Marker({
-          draggable:true,
-          animation: google.maps.Animation.DROP,
-          position: new google.maps.LatLng(location),
-          position: location,
-          label: labels[labelIndex++ % labels.length],
-          map: map
-        });
-        return location
-        
-      }
-      
+		      //Creamos el marcador en el mapa con sus propiedades
+		      //para nuestro obetivo tenemos que poner el atributo draggable en true
+		      //position pondremos las mismas coordenas que obtuvimos en la geolocalización
+		      marker = new google.maps.Marker({
+		        map: map,
+		        draggable: true,
+		        animation: google.maps.Animation.DROP,
+		        position: new google.maps.LatLng(coords.lat,coords.lng),
 
-      google.maps.event.addDomListener(window, 'load', initialize);
+		      });
+		      marker2 = new google.maps.Marker({
+		        map: map,
+		        draggable: true,
+		        animation: google.maps.Animation.DROP,
+		        position: new google.maps.LatLng(coords2.lat,coords2.lng),
+
+		      });
+		      marker3 = new google.maps.Marker({
+		        map: map,
+		        draggable: true,
+		        animation: google.maps.Animation.DROP,
+		        position: new google.maps.LatLng(coords3.lat,coords3.lng),
+
+		      });
+		      marker4 = new google.maps.Marker({
+		        map: map,
+		        draggable: true,
+		        animation: google.maps.Animation.DROP,
+		        position: new google.maps.LatLng(coords4.lat,coords4.lng),
+
+		      });
+		      //agregamos un evento al marcador junto con la funcion callback al igual que el evento dragend que indica 
+		      //cuando el usuario a soltado el marcador
+		      marker.addListener('click', toggleBounce);
+		      
+		      marker.addListener( 'dragend', function (event)
+		      {
+		        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
+		        document.getElementById("coordslat").value = this.getPosition().lat();
+		        document.getElementById("coordslng").value = this.getPosition().lng();
+		      });
+		      marker2.addListener('click', toggleBounce);
+		      
+		      marker2.addListener( 'dragend', function (event)
+		      {
+		        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
+		        document.getElementById("coords2lat").value = this.getPosition().lat();
+		        document.getElementById("coords2lng").value = this.getPosition().lng();
+		      });
+		      marker3.addListener('click', toggleBounce);
+		      
+		      marker3.addListener( 'dragend', function (event)
+		      {
+		        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
+		        document.getElementById("coords3lat").value = this.getPosition().lat();
+		        document.getElementById("coords3lng").value = this.getPosition().lng();
+		      });
+		      marker4.addListener('click', toggleBounce);
+		      
+		      marker4.addListener( 'dragend', function (event)
+		      {
+		        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
+		        document.getElementById("coords4lat").value = this.getPosition().lat();
+		        document.getElementById("coords4lng").value = this.getPosition().lng();
+		      });
+		}
+
+		//callback al hacer clic en el marcador lo que hace es quitar y poner la animacion BOUNCE
+		function toggleBounce() {
+		  if (marker.getAnimation() !== null) {
+		    marker.setAnimation(null);
+		  } else {
+		    marker.setAnimation(google.maps.Animation.BOUNCE);
+		  }
+		}
     </script>
 </head>
 
@@ -135,6 +177,10 @@ session_start();
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
 		<!--<header>
+=======
+	<div class='container' style="margin-top: 100px;">
+		<header>
+>>>>>>> 20d8ec8ccd1c59444bc2c4c08caff11ce1ba16a0
 			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
 					<div class='navbar-header'>
@@ -184,21 +230,21 @@ session_start();
 			    		<div class="jumbotron cuadrito" style="background: transparent;" >
 							<form name="login">
 								<label id="formapa">Latitud A    : </label>
-					    		<input type="text" value="" id="LatA" style="margin-left:11px;"><br>
+					    		<input type="text" value="" id="coordslat" style="margin-left:11px;"><br>
 					    		<label id="formapa">Longitud A : </label>
-					    		<input type="text" value="" id="LongA"><br>
+					    		<input type="text" value="" id="coordslng"><br>
 					    		<label id="formapa">Latitud B  : </label>
-					    		<input type="text" value="" id="LatB" style="margin-left:11px;"><br>
+					    		<input type="text" value="" id="coords2lat" style="margin-left:11px;"><br>
 					    		<label id="formapa">Longitud B : </label>
-					    		<input type="text" value="" id="LongB"><br>
+					    		<input type="text" value="" id="coords2lng"><br>
 					    		<label id="formapa">Latitud C  : </label>
-					    		<input type="text" value="" id="LatC" style="margin-left:11px;"><br>
+					    		<input type="text" value="" id="coords3lat" style="margin-left:11px;"><br>
 					    		<label id="formapa">Longitud C : </label>
-					    		<input type="text" value="" id="LongC"><br>
+					    		<input type="text" value="" id="coords3lng"><br>
 					    		<label id="formapa">Latitud D  : </label>
-					    		<input type="text" value="" id="LatD" style="margin-left:11px;"><br>
+					    		<input type="text" value="" id="coords4lat" style="margin-left:11px;"><br>
 					    		<label id="formapa">Longitud D : </label>
-					    		<input type="text" value="" id="LongD"><br>
+					    		<input type="text" value="" id="coords4lng"><br>
 							</form>
 						</div>
 			    	</div>

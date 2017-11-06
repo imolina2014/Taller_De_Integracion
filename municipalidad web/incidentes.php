@@ -33,6 +33,9 @@ session_start();
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
 	<!--
+=======
+	<div class='container' style="margin-top: 100px;">
+>>>>>>> 20d8ec8ccd1c59444bc2c4c08caff11ce1ba16a0
 		<header>
 			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>

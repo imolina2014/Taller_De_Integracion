@@ -25,12 +25,13 @@ function guardar() {
 	});
 }
 
-function RegistrarAyuda(nombre,email,asunto,comentario){
+function RegistrarAyuda(){
+
 	var datos={
-		"Nombre":nombre,
-		"Email":email,
-		"Asunto":asunto,
-		"Comentario":comentario
+		"Nombre":$("#FRM-nombre").val(),
+		"Email":$("#FRM-email").val(),
+		"Asunto":$("#FRM-asunto").val(),
+		"Comentario":$("#FRM-formulario").val()
 	};
 	
 	$.ajax({
@@ -136,57 +137,32 @@ function filtrar(id){
 	}
 }
 
-function Incidentes(){
+function BuscarIncidente() {
+	var sCategoria = document.getElementById("sCategoria").value;
+	var sTipo = document.getElementById("sTipo").value;
+	//alert(sCategoria);
+	//salert(sTipo);
+	datos = {
+		"Categoria": sCategoria,
+		"Tipo": sTipo
+	}
 	$.ajax({
-		url: "./php/Incidentes.php",
+		data: datos,
+		url: "./php/mostrarIncidentes.php",
 		type: "post",
 		success: function(result) {
-			$("#Tgeneral").html(result);
+			$("#tIncidentes").html(result);
 		}
-	});	
+	});
 }
 
-var cont=1
-function BuscarIncidente(valor) {
-	if (cont==0){
-		Incidentes();
-	}
-	
-	if (cont==1){
-		var sCalle= document.getElementById("sCalle").value;
-		var sCategoria = document.getElementById("sCategoria").value;
-		var sTipo = document.getElementById("sTipo").value;
-		var sFecha = document.getElementById("sFecha").value;
 
-		var ord=sFecha.split("/");
-		sFecha=ord[2]+"-"+ord[0]+"-"+ord[1];
-
-		datos = {
-			"Calle": sCalle,
-			"Categoria": sCategoria,
-			"Tipo": sTipo,
-			"Fecha":sFecha
-		}
-		$.ajax({
-			data: datos,
-			url: "./php/mostrarIncidentes.php",
-			type: "post",
-			success: function(result) {
-				$("#tIncidentes").html(result);
-			}
-		});
-		cont=0;
-	}
-}
-
-function initMap(latitud,longitud) {
-    var uluru = {lat: latitud, lng: longitud};
-    var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 16,
-		center: uluru
-    });
-    var marker = new google.maps.Marker({
-		position: uluru,
-		map: map
-    });
+  /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
 }

@@ -18,10 +18,21 @@ session_start();
 	<link href ="datedropper/datedropper.css" rel="stylesheet" type ="text/css"/>
 	<link href ="datedropper/myfecha.css" rel="stylesheet" type="text/css"/>
 	<script src ="datedropper/datedropper.js "></script>
+	<link rel='stylesheet'  href='css/style_nav.css'>
 </head>
 
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
+	<div class="topnav" id="myTopnav">
+		  <a href="#home">SISTEMA DE INGRESO DE INCIDENTES</a>
+		  <a href='incidentes.php' style='color:black; background-color:white;'>Incidentes</a>
+		  <a href='Estadisticas.php'>Estadisticas</a>
+		  <a href='CreacionSectores.php'>Creacion Sectores</a>
+		  <a href='RevisionSectores.php'>Revision Sectores</a>
+		  <a href='login.php'>Salir</a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+	<!--
 		<header>
 			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
@@ -47,10 +58,10 @@ session_start();
 					</div>	
 				</div>
 			</nav>
-		</header>
+		</header>-->
 		
-		<div class='container' >
-			<div class=" col-md-12 main">
+		<div class='container main' >
+			<div class=" col-md-12">
 			<h1><b>Bienvenido al Servicio de Registro de Incidentes</b></h1>
 			<p>Aquí podrás unirte al programa de seguridad y estadística de incidentes; donde tú puedes ser un gran colaborador y parte del programa, notificando de manera responsable incidentes que ocurren a tu alrededor y con ello, notificar a los participantes de la misma.</p>
 			

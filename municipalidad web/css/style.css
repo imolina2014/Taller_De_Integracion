@@ -1,3 +1,6 @@
+
+
+
 h1{
 	font-size: 25px;
 	color: black;
@@ -12,8 +15,9 @@ p{
 	font-size: 16px;
 }
 
-
-
+.main{
+	margin-top:45px;
+}
 .cuadrito{
 	margin: 10px auto;
 	width: 700px;

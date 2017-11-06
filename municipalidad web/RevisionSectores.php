@@ -10,16 +10,27 @@ session_start();
 	<meta http-equiv='X-UA-Compatible' content='IE-edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<title>Municipalidad & Carabineros</title>
-	<script type='text/javascript' src'js/jquery-3.2.1.min.js'></script>
+	<script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
 	<script type='text/javascript' src='js/index.js'></script>
 	<link rel='stylesheet'  href='css/bootstrap.css'>
 	<link rel='stylesheet'  href='css/style.css'>
 	<link rel='stylesheet'  href='css/home.css'>
+	<link rel='stylesheet'  href='css/style_nav.css'>
 </head>
 
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
-		<header>
+		<div class="topnav" id="myTopnav">
+		  <a href="#home">SISTEMA DE INGRESO DE INCIDENTES</a>
+		  <a href='incidentes.php'>Incidentes</a>
+		  <a href='Estadisticas.php'>Estadisticas</a>
+		  <a href='CreacionSectores.php'>Creacion Sectores</a>
+		  <a href='RevisionSectores.php' style='color:black; background-color:white;' >Revision Sectores</a>
+		  <a href='login.php'>Salir  <?php echo $_SESSION['usuario']?></a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+
+		<!--<header>
 			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
 					<div class='navbar-header'>
@@ -40,18 +51,11 @@ session_start();
 							<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>
 							<li class='active'><a href='RevisionSectores.php' style='color:black; background-color:white;' >Revision Sectores</a></li>
 							<li><a href='login.php' class='sesion'>Salir</a></li>
-										<!--
-										<form action='' class='navbar-form navbar-left' role='search' > 
-
-										<div class='form-group'>
-											<input type='text' class='form-control'  placeholder='buscar' name='search'>
-										</div>
-									</form>-->
 						</ul>
 					</div>	
 				</div>
 			</nav>
-		</header>
+		</header>-->
 	
 		<div class='main'>
 			<center>

@@ -15,11 +15,21 @@ session_start();
 	<link rel='stylesheet'  href='css/bootstrap.css'>
 	<link rel='stylesheet'  href='css/style.css'>
 	<link rel='stylesheet'  href='css/home.css'>
+	<link rel='stylesheet'  href='css/style_nav.css'>
 </head>
 
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
-		<header>
+		<div class="topnav" id="myTopnav">
+		  <a href="#home">SISTEMA DE INGRESO DE INCIDENTES</a>
+		  <a href='incidentes.php'  style='color:black; background-color:white;'>Incidentes</a>
+		  <a href='Estadisticas.php'>Estadisticas</a>
+		  <a href='CreacionSectores.php'>Creacion Sectores</a>
+		  <a href='RevisionSectores.php' >Revision Sectores</a>
+		  <a href='login.php'>Salir  <?php echo $_SESSION['usuario']?></a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+		<!--<header>
 			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
 					<div class='navbar-header'>
@@ -44,10 +54,10 @@ session_start();
 					</div>	
 				</div>
 			</nav>
-		</header>
+		</header>-->
 		
-		<div class='container' >
-			<div class='row main'>
+		<div class='container main' >
+			<div class='row'>
 				<div class='col-md-1 col-xs-1 col-sm-1'></div>
 				<a href='CreacionSectores.php'>
 					<div class='col-md-4 col-xs-12 col-sm-4 bordes2' style=' height: 140px;'>

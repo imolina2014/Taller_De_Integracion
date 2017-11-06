@@ -13,10 +13,11 @@ session_start();
 	<script type='text/javascript' src="js/jquery-3.2.1.min.js"></script>
 	<script type='text/javascript' src='js/index.js'></script>
 	<link rel='stylesheet'  href='css/bootstrap.css'>
-	<link rel="stylesheet" href="css/index.css"
+	<link rel="stylesheet" href="css/index.css">
 	<link rel='stylesheet'  href='css/style.css'>
 	<link rel='stylesheet'  href='css/home.css'>
 	<script src='js/crear_sector.js'></script>
+	<link rel='stylesheet'  href='css/style_nav.css'>
 	<style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -124,7 +125,16 @@ session_start();
 
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
-		<header>
+		<div class="topnav" id="myTopnav">
+		  <a href="#home">SISTEMA DE INGRESO DE INCIDENTES</a>
+		  <a href='incidentes.php'>Incidentes</a>
+		  <a href='Estadisticas.php'>Estadisticas</a>
+		  <a href='CreacionSectores.php' style='color:black; background-color:white;'>Creacion Sectores</a>
+		  <a href='RevisionSectores.php' >Revision Sectores</a>
+		  <a href='login.php'>Salir  <?php echo $_SESSION['usuario']?></a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+		<!--<header>
 			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class='container-fluid'>
 					<div class='navbar-header'>
@@ -146,20 +156,13 @@ session_start();
 							<li class='active'><a href='CreacionSectores.php' style='color:black; background-color:white;'>Creacion Sectores</a></li>
 							<li><a href='RevisionSectores.php'>Revision Sectores</a></li>
 							<li><a href='login.php' class'sesion'>Salir</a></li>
-											<!--
-											<form action='' class='navbar-form navbar-left' role='search' > 
-
-											<div class='form-group'>
-												<input type='text' class='form-control'  placeholder='buscar' name='search'>
-											</div>
-										</form>-->
 						</ul>
 					</div>	
 				</div>
 			</nav>
-		</header>
+		</header>-->
 
-		<div class='create_sector'>
+		<div class='create_sector main'>
 			<form>
 				<div class='form-group'>
 				    <label for='exampleFormControlInput1'>Nombre de Sector: </label>

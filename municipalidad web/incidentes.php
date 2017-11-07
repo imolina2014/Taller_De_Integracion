@@ -32,36 +32,6 @@ session_start();
 		  <a href='login.php'>Salir <?php echo $_SESSION['usuario']?></a>
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
-	<!--
-=======
-	<div class='container' style="margin-top: 100px;">
->>>>>>> 20d8ec8ccd1c59444bc2c4c08caff11ce1ba16a0
-		<header>
-			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
-				<div class='container-fluid'>
-					<div class='navbar-header'>
-						<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-1'>
-							<span class='sr-only'>Menu</span>
-							<span class='icon-bar'></span>
-							<span class='icon-bar'></span>
-							<span class='icon-bar'></span>
-						</button>
-						<a href="index.php" class='navbar-brand'>SISTEMA DE INGRESO DE INCIDENTES</a>
-					</div>
-					<div class='collapse navbar-collapse'>
-						<ul class='nav navbar-nav'>
-						</ul>		
-						<ul class='nav navbar-nav navbar-right' id='navbar-1'>
-							<li><a href='incidentes.php'>Incidentes</a></li>
-							<li><a href='Estadisticas.php'>Estadisticas</a></li>
-							<li><a href='CreacionSectores.php'>Creacion Sectores</a></li>
-							<li><a href='RevisionSectores.php'>Revision Sectores</a></li>
-							<li><a href='login.php' class='sesion'>Salir</a></li>
-						</ul>
-					</div>	
-				</div>
-			</nav>
-		</header>-->
 		
 		<div class='container main' >
 			<div class=" col-md-12">

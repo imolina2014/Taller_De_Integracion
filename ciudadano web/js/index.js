@@ -137,6 +137,123 @@ function filtrar(id){
 	}
 }
 
+function Incidentes(){
+	$.ajax({
+		url : 'php/accidentes.php', 
+		type : 'POST',
+		success : function (data) {
+			var accidentes = eval(data);
+			//GRAFICO 1	
+		    var datos = {
+				type: 'horizontalBar',
+				data : {
+					labels: ["Colision vehicular","Choque multiple","Incendio","Derrumbes","Atropello de peatones","Otro"],
+					datasets : [{
+						data : accidentes,
+						backgroundColor: [
+			                'rgba(255, 99, 132, 0.5)','rgba(54, 162, 235, 0.5)','rgba(255, 206, 86, 0.5)',
+			                'rgba(255, 51, 0, 0.5)','rgba(153, 255, 0, 0.5)','rgba(0, 0, 0, 0.5)'],
+		                borderColor: [
+			                'rgba(255,99,132,1)','rgba(54, 162, 235, 1)','rgba(255, 206, 86, 1)',
+			                'rgba(255, 51, 0, 1)','rgba(153, 255, 0, 1)','rgba(0, 0, 0, 1)'],
+		            	borderWidth: 1
+					}],
+				},
+				options: {
+					legend: {
+						display: false
+					},
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			};
+			var canvas=document.getElementById("G_accidentes").getContext("2d");
+			window = new Chart(canvas,datos);
+
+			//GRAFICO 2
+			var datos2={
+				type: 'pie',
+			    data: {
+			        labels: ["Colision vehicular","Choque multiple","Incendio","Derrumbes","Atropello de peatones","Otro"],
+			        datasets: [{
+			            label: '#Accidentes',
+			            data: accidentes,
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.5)','rgba(54, 162, 235, 0.5)','rgba(255, 206, 86, 0.5)',
+			                'rgba(255, 51, 0, 0.5)','rgba(153, 255, 0, 0.5)','rgba(0, 0, 0, 0.5)'],
+			        }]
+			    },
+			}
+			var canvas2=document.getElementById("G2_accidentes").getContext("2d");
+			window = new Chart(canvas2,datos2);
+		}
+	});
+
+	$.ajax({
+		url : 'php/delitos.php', 
+		type : 'POST',
+		success : function (data) {
+			var delitos = eval(data);
+			//GRAFICO 3	
+		    var datos3 = {
+				type: 'horizontalBar',
+				data : {
+					labels: ["Robo con violencia","Asalto","Portonazo","Parricidio","Infanticidio","Secuestro","Sustraccion de menores","Asesinato","Otro"],
+					datasets : [{
+						data : delitos,
+						backgroundColor: [
+			                'rgba(255, 99, 132, 0.5)','rgba(54, 162, 235, 0.5)','rgba(255, 206, 86, 0.5)',
+							'rgba(255, 128, 0, 0.5)','rgba(255, 255, 0, 0.5)','rgba(102, 0, 0, 0.5)',
+			                'rgba(255, 51, 0, 0.5)','rgba(153, 255, 0, 0.5)','rgba(0, 0, 0, 0.5)'],
+			            borderColor: [
+			                'rgba(255,99,132,1)','rgba(54, 162, 235, 1)','rgba(255, 206, 86, 1)',
+							'rgba(255, 128, 0,1)','rgba(255, 255, 0, 1)','rgba(102, 0, 0, 1)',
+			                'rgba(255, 51, 0, 1)','rgba(153, 255, 0, 1)','rgba(0, 0, 0, 1)'],
+			            borderWidth: 1
+					}],
+				},
+				options: {
+					legend: {
+						display: false
+					},
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        }
+			    }
+			};
+			var canvas3=document.getElementById("G_delitos").getContext("2d");
+			window = new Chart(canvas3,datos3);
+
+			//GRAFICO 4
+			var datos4={
+				type: 'pie',
+			    data: {
+			        labels: ["Robo con violencia","Asalto","Portonazo","Parricidio","Infanticidio","Secuestro","Sustraccion de menores","Asesinato","Otro"],
+			        datasets: [{
+			            label: '#Delitos',
+			            data: delitos,
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.5)','rgba(54, 162, 235, 0.5)','rgba(255, 206, 86, 0.5)',
+							'rgba(255, 128, 0, 0.5)','rgba(255, 255, 0, 0.5)','rgba(102, 0, 0, 0.5)',
+			                'rgba(255, 51, 0, 0.5)','rgba(153, 255, 0, 0.5)','rgba(0, 0, 0, 0.5)'],
+			        }]
+			    },
+			}
+			var canvas4=document.getElementById("G2_delitos").getContext("2d");
+			window = new Chart(canvas4,datos4);
+		}
+	});
+}
+
 function BuscarIncidente() {
 	var sCategoria = document.getElementById("sCategoria").value;
 	var sTipo = document.getElementById("sTipo").value;

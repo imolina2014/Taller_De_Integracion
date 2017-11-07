@@ -176,37 +176,7 @@ session_start();
 		  <a href='login.php'>Salir  <?php echo $_SESSION['usuario']?></a>
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
-		<!--<header>
-=======
-	<div class='container' style="margin-top: 100px;">
-		<header>
->>>>>>> 20d8ec8ccd1c59444bc2c4c08caff11ce1ba16a0
-			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
-				<div class='container-fluid'>
-					<div class='navbar-header'>
-						<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-1'>
-							<span class='sr-only'>Menu</span>
-							<span class='icon-bar'></span>
-							<span class='icon-bar'></span>
-							<span class='icon-bar'></span>
-						</button>
-						<a href="index.php" class='navbar-brand'>SISTEMA DE INGRESO DE INCIDENTES</a>
-					</div>
-									
-					<div class='collapse navbar-collapse'>
-						<ul class='nav navbar-nav'>
-						</ul>		
-						<ul class='nav navbar-nav navbar-right' id='navbar-1'>
-							<li><a href='incidentes.php'>Incidentes</a></li>
-							<li><a href='Estadisticas.php'>Estadisticas</a></li>
-							<li class='active'><a href='CreacionSectores.php' style='color:black; background-color:white;'>Creacion Sectores</a></li>
-							<li><a href='RevisionSectores.php'>Revision Sectores</a></li>
-							<li><a href='login.php' class'sesion'>Salir</a></li>
-						</ul>
-					</div>	
-				</div>
-			</nav>
-		</header>-->
+		
 
 		<div class='create_sector main'>
 			<form>
@@ -217,11 +187,21 @@ session_start();
 				<div class='form-group'>
 				   	<label for='exampleFormControlSelect2'>Tipo de Delitos</label>
 				    <select multiple class='form-control' id='exampleFormControlSelect2'>
-					    <option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
+					    <option>Robo con violencia</option>
+						<option>Asalto</option>
+						<option>Portonazo</option>
+						<option>Parricidio</option>
+						<option>Infanticidio</option>
+						<option>Secuestro</option>
+						<option>Sustraccion de menores</option>
+						<option>Asesinato</option>
+						<option>Otro delito</option>
+						<option>Colision vehicular</option>
+						<option>Choque multiple</option>
+						<option>Incendio</option>
+						<option>Derrumbes</option>
+						<option>Atropello de peatones</option>
+						<option>Otro accidente</option>
 					</select>
 				</div>
 				<div style="width: 100% ;; " class="row" >

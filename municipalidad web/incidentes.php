@@ -29,7 +29,7 @@ session_start();
 		  <a href='Estadisticas.php'>Estadisticas</a>
 		  <a href='CreacionSectores.php'>Creacion Sectores</a>
 		  <a href='RevisionSectores.php'>Revision Sectores</a>
-		  <a href='login.php'>Salir</a>
+		  <a href='login.php'>Salir <?php echo $_SESSION['usuario']?></a>
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
 	<!--

@@ -152,7 +152,7 @@
 		  <a href='incidentes.php'>Incidentes</a>
 		  <a href='Estadisticas.php' style='color:black; background-color:white;'>Estadisticas</a>
 		  <a href='CreacionSectores.php'>Creacion Sectores</a>
-		  <a href='RevisionSectores.php'  >Revision Sectores</a>
+		  <a href='RevisionSectores.php'>Revision Sectores</a>
 		  <a href='login.php'>Salir  <?php echo $_SESSION['usuario']?></a>
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>

@@ -16,6 +16,7 @@
 <body>	
 	<div class="container">
 		<h1>Hola Mundo</h1>
+		<a href="index.php">Cerrar Sesión</a>
 	</div>
 </body>
 </html>

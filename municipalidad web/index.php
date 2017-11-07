@@ -22,7 +22,7 @@ session_start();
 	<div class='container'>
 		<div class="topnav" id="myTopnav">
 		  <a href="#home">SISTEMA DE INGRESO DE INCIDENTES</a>
-		  <a href='incidentes.php'  style='color:black; background-color:white;'>Incidentes</a>
+		  <a href='incidentes.php'>Incidentes</a>
 		  <a href='Estadisticas.php'>Estadisticas</a>
 		  <a href='CreacionSectores.php'>Creacion Sectores</a>
 		  <a href='RevisionSectores.php' >Revision Sectores</a>

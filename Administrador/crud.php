@@ -1,9 +1,25 @@
 <?php
 	session_start(); 
-	if(!isset($_SESSION["car"]) && (!isset($_SESSION["car"]))) { 
+	if(!isset($_SESSION["usr"]) && (!isset($_SESSION["car"]))) { 
 		header("Location:index.php"); 
 	}
 ?>
+
+<style>
+	table {
+	    border-collapse: collapse;
+	    width: 100%;
+	}
+
+	table, th, td {
+		border: 1px solid black;
+	}
+
+	th {
+    	background-color: #4CAF50;
+    	color: white;
+	}
+</style>
 
 <!DOCTYPE html>
 <html>
@@ -11,12 +27,38 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Crud Usuarios</title>
-	<link rel="stylesheet" href="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>	
-	<div class="container">
-		<h1>Hola Mundo</h1>
-		<a href="index.php">Cerrar Sesión</a>
-	</div>
+	<center><div class="container">
+		<div class="jumbotron" style="margin-top: 50px; width: 1000px;">
+			<form method="POST" name="form">
+				<div>
+					<center><h2>Administrar Usuarios</h2></center>
+				</div>
+				<br>
+				<div class="table-responsive">
+					<table class="table">
+				    	<thead>
+				    		<th>#</th>
+				    		<th>Usuario</th>
+				    		<th>Clave</th>
+				    		<th>Editar</th>
+				    		<th>Eliminar</th>
+				    	</thead>
+				    	<tbody>
+				    		<td>Hola</td>
+				    		<td>Hola</td>
+				    		<td>Hola</td>
+				    		<td>Hola</td>
+				    		<td>Hola</td>
+				    	</tbody>
+				  	</table>
+				</div>
+				<div class="input-text"><h6><center><a href="index.php" id="recover-pass">Cerrar Sesión</a></center></h6></div>
+			</form>
+		</div>
+	</div></center>
 </body>
 </html>

@@ -1,12 +1,11 @@
 <?php
 	session_start(); 
-	//include("./conex.php");
-	$conexion = mysqli_connect("localhost", "root", "", "id2847271_imolina");
+	include("../conex.php");
 	if(isset($_POST["login"])) {
 		$usuario = addslashes($_POST["FRMusuario"]);
 		$clave = addslashes($_POST["FRMclave"]);
 		$sql = "SELECT * FROM usuarios WHERE NOMBRE='$usuario' AND CLAVE='$clave'";
-		$consulta = mysqli_query($conexion, $sql);
+		$consulta = mysqli_query($mysqli, $sql);
 		$nfilas = mysqli_num_rows($consulta);
 		$aDatos = mysqli_fetch_array($consulta);
 		if($nfilas > 0){
@@ -29,7 +28,7 @@
 	else {
 		session_destroy();
 	}
-	mysqli_close($conexion);
+	mysqli_close($mysqli);
 ?>
 <!DOCTYPE html>
 <html>

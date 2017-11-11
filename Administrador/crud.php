@@ -1,5 +1,6 @@
 <?php
 	session_start(); 
+	include("../conex.php");
 	if(!isset($_SESSION["usr"]) && (!isset($_SESSION["car"]))) { 
 		header("Location:index.php"); 
 	}
@@ -33,31 +34,54 @@
 <body>	
 	<center><div class="container">
 		<div class="jumbotron" style="margin-top: 50px; width: 1000px;">
-			<form method="POST" name="form">
+			<center><h2>GESTIÓN USUARIOS</h2></center><br>
+			<center><label>Usuarios Registrados:</label></center>	
+			<div>
+				<table class="table table-bordered">
+					<tr bgcolor="#2ECC71">
+						<td width="15%"><b>#</b></td>
+						<td width="15%"><b>ID USUARIO</b></td>
+						<td width="20%"><b>NOMBRE</b></td>
+						<td width="20%"><b>CLAVE</b></td>
+						<td width="30%"><b>EMAIL</b></td>
+					</tr>
+					<?php 
+						$sql = "SELECT * FROM usuarios WHERE CARGO='Usuario Sistema'";
+						$consulta = mysqli_query($mysqli, $sql);
+						$cont = 0;
+						while($aDatos = mysqli_fetch_array($consulta)) {
+							$cont = $cont + 1;
+					?>
+					<tr>
+						<td><?php echo $cont ?></td>
+						<td><?php echo $aDatos["ID_USUARIO"] ?></td>
+						<td><?php echo $aDatos["NOMBRE"] ?></td>
+						<td><?php echo $aDatos["CLAVE"] ?></td>
+						<td><?php echo $aDatos["EMAIL"] ?></td>
+					</tr>
+					<?php
+						}
+						mysqli_close($mysqli);
+					?>
+				</table>
+			</div>
+			<center>
 				<div>
-					<center><h2>Administrar Usuarios</h2></center>
+					<form action="crud.php" method="POST">	
+						<input type="submit" class="btn btn-primary" name="gestionar" value="Gestionar">
+						<input type="submit" class="btn btn-danger" name="cerrar" value="Cerrar sesión">			
+					</form>
+					<?php
+						if(isset($_POST["cerrar"])) {
+							session_destroy();
+							header("Location:index.php");
+						}
+						if(isset($_POST["gestionar"])) {
+							header("Location:gestionar.php");
+						}
+					?>
 				</div>
-				<br>
-				<div class="table-responsive">
-					<table class="table">
-				    	<thead>
-				    		<th>#</th>
-				    		<th>Usuario</th>
-				    		<th>Clave</th>
-				    		<th>Editar</th>
-				    		<th>Eliminar</th>
-				    	</thead>
-				    	<tbody>
-				    		<td>Hola</td>
-				    		<td>Hola</td>
-				    		<td>Hola</td>
-				    		<td>Hola</td>
-				    		<td>Hola</td>
-				    	</tbody>
-				  	</table>
-				</div>
-				<div class="input-text"><h6><center><a href="index.php" id="recover-pass">Cerrar Sesión</a></center></h6></div>
-			</form>
+			</center>
 		</div>
 	</div></center>
 </body>

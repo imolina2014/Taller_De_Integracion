@@ -211,6 +211,9 @@
 				</div>
 			</div>
 		</div>
+		<hr>
+		<button onclick="window.location.href='reportes/estadisticas.php'"  type="button" class="btn btn-primary">Generar Reporte PDF</button>
+		<hr>
 	</div>
 </body>
 </html>

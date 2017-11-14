@@ -17,13 +17,10 @@ session_start();
 	<script src='js/crear_sector.js'></script>
 	<link rel='stylesheet'  href='css/style_nav.css'>
 	<style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
       #map {
         height: 500px;
         width: 500px;
       }
-      /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
@@ -32,14 +29,12 @@ session_start();
     </style>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
     <script>
-		var marker;          //variable del marcador
-		var coords = {};    //coordenadas obtenidas con la geolocalización
+		var marker;          
+		var coords = {};    
 
 		//Funcion principal
 		initMap = function () 
 		{
-
-		    //usamos la API para geolocalizar el usuario
 		        navigator.geolocation.getCurrentPosition(
 		          function (position){
 		            coords = {
@@ -58,7 +53,7 @@ session_start();
 		                lng: position.coords.longitude+0.02,
 		                lat: position.coords.latitude
 		            };
-		            setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
+		            setMapa(coords);
 		            document.getElementById("coordslat").value = coords.lat;
 		            document.getElementById("coordslng").value = coords.lng;
 		            document.getElementById("coords2lat").value = coords2.lat;
@@ -67,27 +62,16 @@ session_start();
 		            document.getElementById("coords3lng").value = coords3.lng;
 		            document.getElementById("coords4lat").value = coords4.lat;
 		            document.getElementById("coords4lng").value = coords4.lng;
-		            
-		           
 		          },function(error){console.log(error);});
-		    
 		}
-
-
-
 		function setMapa (coords)
 		{   
-		      //Se crea una nueva instancia del objeto mapa
 		      var map = new google.maps.Map(document.getElementById('map'),
 		      {
 		        zoom: 13,
 		        center:new google.maps.LatLng(coords.lat,coords.lng),
 
 		      });
-
-		      //Creamos el marcador en el mapa con sus propiedades
-		      //para nuestro obetivo tenemos que poner el atributo draggable en true
-		      //position pondremos las mismas coordenas que obtuvimos en la geolocalización
 		      marker = new google.maps.Marker({
 		        map: map,
 		        draggable: true,
@@ -116,13 +100,9 @@ session_start();
 		        position: new google.maps.LatLng(coords4.lat,coords4.lng),
 
 		      });
-		      //agregamos un evento al marcador junto con la funcion callback al igual que el evento dragend que indica 
-		      //cuando el usuario a soltado el marcador
 		      marker.addListener('click', toggleBounce);
-		      
 		      marker.addListener( 'dragend', function (event)
 		      {
-		        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
 		        document.getElementById("coordslat").value = this.getPosition().lat();
 		        document.getElementById("coordslng").value = this.getPosition().lng();
 		      });
@@ -130,7 +110,6 @@ session_start();
 		      
 		      marker2.addListener( 'dragend', function (event)
 		      {
-		        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
 		        document.getElementById("coords2lat").value = this.getPosition().lat();
 		        document.getElementById("coords2lng").value = this.getPosition().lng();
 		      });
@@ -138,7 +117,6 @@ session_start();
 		      
 		      marker3.addListener( 'dragend', function (event)
 		      {
-		        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
 		        document.getElementById("coords3lat").value = this.getPosition().lat();
 		        document.getElementById("coords3lng").value = this.getPosition().lng();
 		      });
@@ -146,13 +124,10 @@ session_start();
 		      
 		      marker4.addListener( 'dragend', function (event)
 		      {
-		        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
 		        document.getElementById("coords4lat").value = this.getPosition().lat();
 		        document.getElementById("coords4lng").value = this.getPosition().lng();
 		      });
 		}
-
-		//callback al hacer clic en el marcador lo que hace es quitar y poner la animacion BOUNCE
 		function toggleBounce() {
 		  if (marker.getAnimation() !== null) {
 		    marker.setAnimation(null);
@@ -174,8 +149,6 @@ session_start();
 		  <a href='login.php'>Salir  <?php echo $_SESSION['usuario']?></a>
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
-		
-
 		<div class='create_sector main'>
 			<form>
 				<div class='form-group'>
@@ -227,11 +200,9 @@ session_start();
 						</div>
 			    	</div>
 			    </div>
-				
 				<button class='btn btn-primary' type='submit' onClick='create_sector'>Crear Sector</button>
 			</form>
 		</div>
 	</div>  	
-	
 </body>
 </html>

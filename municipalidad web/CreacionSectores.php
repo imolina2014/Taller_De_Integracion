@@ -13,9 +13,7 @@ session_start();
 	<script type='text/javascript' src="js/jquery-3.2.1.min.js"></script>
 	<script type='text/javascript' src='js/index.js'></script>
 	<link rel='stylesheet'  href='css/bootstrap.css'>
-	<link rel="stylesheet" href="css/index.css">
 	<link rel='stylesheet'  href='css/style.css'>
-	<link rel='stylesheet'  href='css/home.css'>
 	<script src='js/crear_sector.js'></script>
 	<link rel='stylesheet'  href='css/style_nav.css'>
 	<style>

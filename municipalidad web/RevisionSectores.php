@@ -14,7 +14,6 @@ session_start();
 	<script type='text/javascript' src='js/index.js'></script>
 	<link rel='stylesheet'  href='css/bootstrap.css'>
 	<link rel='stylesheet'  href='css/style.css'>
-	<link rel='stylesheet'  href='css/home.css'>
 	<link rel='stylesheet'  href='css/style_nav.css'>
 </head>
 

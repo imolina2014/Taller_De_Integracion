@@ -142,6 +142,64 @@
 			    }
 			});
 		});
+		
+		$(document).ready(function(){
+			var ctx = document.getElementById("ChartBarIncidentes").getContext('2d');
+			$.ajax({
+				url : 'php/DatosE4.php',
+				type : 'POST',
+				success : function(data) {
+					var i = eval(data);
+
+					var accidentes={
+						label: '#Accidentes',
+					    data: [i[0],i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8],i[9],i[10],i[11]],
+						backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					    borderColor:'rgba(54, 162, 235, 1)',
+					    borderWidth: 1,
+						yAxisID: "NAccidentes"
+					};
+				
+					var delitos={
+						label: '#Delitos',
+					    data: [i[12],i[13],i[14],i[15],i[16],i[17],i[18],i[19],i[20],i[21],i[22],i[23]],
+						backgroundColor: 'rgba(255, 0, 0, 0.2)',
+					    borderColor:'rgba(255, 0, 0, 1)',
+					    borderWidth: 1,
+						yAxisID:"NDelitos"
+					};
+				
+					var incidentes={
+						labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+						datasets:[accidentes,delitos]
+					}
+				
+					var opciones= {
+					  scales: {
+						xAxes: [{
+						  barPercentage: 1,
+						  categoryPercentage: 0.7
+						}],
+						yAxes: [{
+						  id: "NAccidentes"
+						}, {
+						  id: "NDelitos"
+						}
+						]
+					  }
+					};
+				 
+					var barChart = new Chart(ctx, {
+					  type: 'bar',
+					  data: incidentes,
+					  options: opciones
+					});
+
+					var canvas_Tipo_INC = document.getElementById('ChartPie_TiposAccidentes').getContext('2d');
+					window.pie = new Chart(canvas_Tipo_INC,datos);
+				}
+			});
+		});
 	</script>
 </head>
 

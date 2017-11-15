@@ -7,8 +7,12 @@
 	$queryDe = mysqli_query($mysqli,$sqlDe);
 	$datosAc = mysqli_fetch_array($queryAc);
 	$datosDe = mysqli_fetch_array($queryDe);
-	$aDatos = array(0 => $datosAc[0],
-					1 => $datosDe[0] 
+
+	$incidentes = $datosAc[0]+$datosDe[0];
+	$accidentes = round($datosAc[0]*100/$incidentes,1); 
+	$delitos = round($datosDe[0]*100/$incidentes,1);
+	$aDatos = array(0 => $accidentes,
+					1 => $delitos
 				);
 	echo json_encode($aDatos);
 ?>

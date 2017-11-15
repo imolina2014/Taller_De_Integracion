@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Labels</title>
+    <style>
+      #map {
+        height: 500px;
+        width: 500px;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
+    <script>
+      var labels = 'ABCD';
+      var labelIndex = 0;
+      var Marker_Max = 4;
+      var Num_Marker = 0;
+
+
+    
+
+      function initialize() {
+        var coords = {};    //coordenadas obtenidas con la geolocalización
+        navigator.geolocation.getCurrentPosition(
+        function (position) {
+            coords = {
+                lng: position.coords.longitude,
+                lat: position.coords.latitude
+            };
+            coords2= {
+                lng: position.coords.longitude,
+                lat: position.coords.latitude+0.05
+            };
+            coords3= {
+                lng: position.coords.longitude+0.05,
+                lat: position.coords.latitude+0.05
+            };
+            coords4= {
+                lng: position.coords.longitude+0.05,
+                lat: position.coords.latitude
+            };
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 12,
+              center: coords
+            });
+            a=addMarker(coords, map);
+            b=addMarker(coords2,map);
+            c=addMarker(coords3,map);
+            d=addMarker(coords4,map);
+
+            document.getElementById('lat1').value = coords.lat;
+            document.getElementById('long1').value = coords.lng;
+            document.getElementById('lat2').value = coords2.lat;
+            document.getElementById('long2').value = coords2.lng;
+            document.getElementById('lat3').value = coords3.lat;
+            document.getElementById('long3').value = coords3.lng;
+            document.getElementById('lat4').value = coords4.lat;
+            document.getElementById('long4').value = coords4.lng;
+          }
+
+        , function (error) { console.log(error); });
+        }
+
+      function addMarker(location, map) {
+        var marker = new google.maps.Marker({
+          draggable:true,
+          animation: google.maps.Animation.DROP,
+          position: new google.maps.LatLng(location),
+          position: location,
+          label: labels[labelIndex++ % labels.length],
+          map: map
+        });
+        return location
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+  	<form id="form1" name="form1">
+	  	<label>Latitud A   : </label>
+		<input type='text' name='lat1' id='lat1' value=''><br>
+		<label>Longitud A : </label>
+		<input type='text' name='long1' id='long1' value=''><br>
+		<label>Latitud B : </label>
+		<input type='text' name='lat2' id='lat2' value=''><br>
+		<label>Longitud B : </label>
+		<input type='text' name='long2' id='long2' value=''><br>
+		<label>Latitud C : </label>
+		<input type='text' name='lat3' id='lat3' value=''><br>
+		<label>Longitud C : </label>
+		<input type='text' name='long3' id='long3' value=''><br>
+		<label>Latitud D : </label>
+		<input type='text' name='lat4' id='lat4' value=''><br>
+		<label>Longitud C : </label>
+		<input type='text' name='long4' id='long4' value=''><br>
+    	</form>
+    <div id="map"></div>
+  </body>
+</html>

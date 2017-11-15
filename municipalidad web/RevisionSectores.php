@@ -20,7 +20,7 @@ session_start();
 <body  style='background-color: #e3f2fd;'>
 	<div class='container'>
 		<div class="topnav" id="myTopnav">
-		  <a href="#home">SISTEMA DE INGRESO DE INCIDENTES</a>
+		  <a href="index.php">SISTEMA DE INGRESO DE INCIDENTES</a>
 		  <a href='incidentes.php'>Incidentes</a>
 		  <a href='Estadisticas.php'>Estadisticas</a>
 		  <a href='CreacionSectores.php'>Creacion Sectores</a>

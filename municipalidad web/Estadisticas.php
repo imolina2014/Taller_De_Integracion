@@ -28,7 +28,7 @@
 		        success : function (data) { //una vez que el archivo recibe el request lo procesa y lo devuelve
 		            var valores = eval(data);	
 		            
-		            var Accidentes = valores[0];
+		           	var Accidentes = valores[0];
 		            var Delitos = valores[1];
 		            var datos = {
 						type : "pie",
@@ -37,7 +37,7 @@
 								data : [Accidentes,Delitos,],
 								backgroundColor : ["#F7464A","#46BFDB",],
 							}],
-							labels : ["Accidentes","Delitos",]
+							labels : ["%Accidentes","%Delitos",]
 						},
 						options : { reponsive: true, }
 					};
@@ -70,7 +70,7 @@
 								data : [RoboViolencia,Asalto,Portonazo,Parricidio,Infanticidio,Secuestro,SustraccionMenores,Asesinato,Otros],
 								backgroundColor : ["#DC143C","#FFD700","#808000","#7FFF00","#800080","#CD853F","#FF1493","#FA8072","#FF9800",],
 							}],
-							labels : ["Robo con Violencia","Asalto","Portonazo","Parricidio","Infanticidio","Secuestro","Sustracción de Menores","Asesinato",'Otros',]
+							labels : ["%Robo con Violencia","%Asalto","%Portonazo","%Parricidio","%Infanticidio","%Secuestro","%Sustracción de Menores","%Asesinato",'%Otros',]
 						},
 						options : { reponsive: true, }
 					};
@@ -100,7 +100,7 @@
 							data : [colision_vehicular,choque_multiple,incendio,derrumbes,atropellos,otros],
 							backgroundColor : ["#00BCD4","#673AB7","#F44336","#CDDC39","#FF9800","#7FFF00",],
 						}],
-						labels : ["Colision Vehicular","Choque Multiple","Incendio","Derrumbes","Atropellos","Otros",]
+						labels : ["%Colision Vehicular","%Choque Multiple","%Incendio","%Derrumbes","%Atropellos","%Otros",]
 					},
 					options : { reponsive: true, }
 				};

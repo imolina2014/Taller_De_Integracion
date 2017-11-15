@@ -31,7 +31,7 @@ session_start();
 <body name="principal" onload="crea_categoria();Incidentes()">
 	<div class="container">
 		<div class="topnav" id="myTopnav">
-		  <a href="#home">SISTEMA DE INGRESO DE INCIDENTES</a>
+		  <a href="index.php">SISTEMA DE INGRESO DE INCIDENTES</a>
 		  <a href='incidentes.php' style='color:black; background-color:white;'>Incidentes</a>
 		  <a href='Estadisticas.php'>Estadisticas</a>
 		  <a href='CreacionSectores.php' >Creacion Sectores</a>

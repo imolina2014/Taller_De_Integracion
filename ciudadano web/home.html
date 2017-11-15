@@ -93,20 +93,21 @@
 		    </form>	
 		    <script>$("#sFecha").dateDropper();</script>
 
-		    <div class="table" id="tIncidentes"></div></table>
-
-			<div style="margin-top:5%;" id="AccidentesG">
+		    <div class="table" id="tIncidentes"></div>
+		
+		    <div id="Graficos">
+		    	<div style="margin-top:5%;" id="AccidentesG">
 				<center><h3 style="font-family: fantasy;">Accidentes</h3></center>
 				<div class=" col-md-7"><canvas id="G_accidentes"></canvas></div> 
 				<div class=" col-md-5"><canvas id="G2_accidentes"></canvas></div>
 			</div>
-			
-			<div style="margin-top:33%;" id="DelitosG">
+					
+		    	<div style="margin-top:33%;" id="DelitosG">
 				<center><h3 style="font-family: fantasy;">Delitos</h3></center>
 				<div class=" col-md-7"><canvas id="G_delitos"></canvas></div> 
 				<div class=" col-md-5"><canvas id="G2_delitos"></canvas></div>
-			</div>
-		</div>
+		    	</div>
+		    </div>
 	</div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
 </body>

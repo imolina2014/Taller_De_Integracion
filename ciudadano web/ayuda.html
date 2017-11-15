@@ -12,11 +12,20 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/style_nav.css">
 
+
+
+	<!-- AGREGUE DE AQUI -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- HASTA AQUI -->
+
 </head>
 <body>
-	<div class="container">
-			<header>
-			<nav class="navbar transparent navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
+	<!-- AQUI NO SEBE QUEDAR NADA ADEMAS DE ESTO -->
+		<header>
+			<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
@@ -28,10 +37,10 @@
 						<a href="#" class="navbar-brand" style= "color: #F8F8FF">SISTEMA DE INGRESO DE INCIDENTES</a>
 					</div>
 					
-					<div class="collapse navbar-collapse">
+					<div class="collapse navbar-collapse"  id="navbar-1"> <!-- EL ID LO PASE DE LA LINEA 1...2...4 lineas mas abajo AQUI -->
 						<ul class="nav navbar-nav">
 						</ul>		
-						<ul class="nav navbar-nav navbar-right" id="navbar-1">
+						<ul class="nav navbar-nav navbar-right">
 							<li><a href="home.html" style= "color: #F8F8FF">Incidentes</a></li>
 							<li><a href="ComoUsar.html" style= "color: #F8F8FF">Como Usar</a></li>
 							<li><a href="UsoDeDatos.html" style= "color: #F8F8FF">Uso de Datos</a></li>
@@ -44,6 +53,7 @@
 			</nav>
 		</header>
 		
+		<div class="container"> <!-- ESTO LO SAQUE DE ARRIBA Y LO DEJE AQUI SOLO PARA EL CONTENIDO DE ABAJO (INCLUSO SE PODIA TRABAJAR CON SECTION O WEAS ASI PERO ESTA BIEN IGUAL) -->
 		<div class="row">
 			<div class="container-fluid main">
 				<h1><b>Ayuda</b></h1>

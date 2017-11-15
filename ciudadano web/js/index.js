@@ -254,20 +254,44 @@ function Incidentes(){
 	});
 }
 
+cont=0;
+function C_fecha(){
+	if(cont%2==0) document.getElementById("sFecha").disabled = true;
+	else document.getElementById("sFecha").disabled = false;
+	cont+=1;
+}
+
+function Quitar_filtro(){
+	Incidentes();
+	document.getElementById("tIncidentes").style.display="none";
+	document.getElementById("Graficos").style.display="";
+}
+
 function BuscarIncidente() {
+	var sCalle = document.getElementById("sCalle").value;
 	var sCategoria = document.getElementById("sCategoria").value;
 	var sTipo = document.getElementById("sTipo").value;
-	//alert(sCategoria);
-	//salert(sTipo);
+
+	if(document.getElementById("sFecha").disabled != true){
+		var sFecha = document.getElementById("sFecha").value;
+		sFecha=sFecha.split("/");
+		sFecha=sFecha[2]+"-"+sFecha[0]+"-"+sFecha[1]
+	}
+	else{var sFecha="null";}
+
 	datos = {
+		"Calle":sCalle,
 		"Categoria": sCategoria,
-		"Tipo": sTipo
+		"Tipo": sTipo,
+		"Fecha":sFecha
 	}
 	$.ajax({
 		data: datos,
 		url: "./php/mostrarIncidentes.php",
 		type: "post",
 		success: function(result) {
+			document.getElementById("tIncidentes").style.display="";
+			document.getElementById("Graficos").style.display="none";
 			$("#tIncidentes").html(result);
 		}
 	});

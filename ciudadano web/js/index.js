@@ -179,7 +179,7 @@ function Incidentes(){
 			var datos2={
 				type: 'pie',
 			    data: {
-			        labels: ["Colision vehicular","Choque multiple","Incendio","Derrumbes","Atropello de peatones","Otro"],
+			        labels: ["%Colision vehicular","%Choque multiple","%Incendio","%Derrumbes","%Atropello de peatones","%Otro"],
 			        datasets: [{
 			            label: '#Accidentes',
 			            data: accidentes,
@@ -237,7 +237,7 @@ function Incidentes(){
 			var datos4={
 				type: 'pie',
 			    data: {
-			        labels: ["Robo con violencia","Asalto","Portonazo","Parricidio","Infanticidio","Secuestro","Sustraccion de menores","Asesinato","Otro"],
+			        labels: ["%Robo con violencia","%Asalto","%Portonazo","%Parricidio","%Infanticidio","%Secuestro","%Sustraccion de menores","%Asesinato","%Otro"],
 			        datasets: [{
 			            label: '#Delitos',
 			            data: delitos,

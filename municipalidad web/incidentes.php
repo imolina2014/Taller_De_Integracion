@@ -28,7 +28,7 @@ session_start();
         }
     </style>
 </head>
-<body name="principal" onload="crea_categoria();Incidentes()">
+<body  style='background-color: #e3f2fd;' name="principal" onload="crea_categoria();Incidentes()">
 	<div class="container">
 		<div class="topnav" id="myTopnav">
 		  <a href="index.php">SISTEMA DE INGRESO DE INCIDENTES</a>

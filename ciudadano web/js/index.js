@@ -174,21 +174,34 @@ function Incidentes(){
 			};
 			var canvas=document.getElementById("G_accidentes").getContext("2d");
 			window = new Chart(canvas,datos);
+		}
+	});
 
-			//GRAFICO 2
-			var datos2={
-				type: 'pie',
-			    data: {
-			        labels: ["%Colision vehicular","%Choque multiple","%Incendio","%Derrumbes","%Atropello de peatones","%Otro"],
-			        datasets: [{
-			            label: '#Accidentes',
-			            data: accidentes,
-			            backgroundColor: [
+	$.ajax({
+		url : 'php/DatosE3.php',
+		type : 'POST',
+		success : function(data) {
+			var valores = eval(data);
+
+			var colision_vehicular = valores[0];
+			var choque_multiple = valores[1];
+			var incendio = valores[2];
+			var derrumbes = valores[3];
+			var atropellos = valores[4];
+			var otros = valores[5];
+			var datos2 = {
+				type : "pie",
+				data : {
+					datasets : [{
+						data : [colision_vehicular,choque_multiple,incendio,derrumbes,atropellos,otros],
+						backgroundColor: [
 			                'rgba(255, 99, 132, 0.5)','rgba(54, 162, 235, 0.5)','rgba(255, 206, 86, 0.5)',
 			                'rgba(255, 51, 0, 0.5)','rgba(153, 255, 0, 0.5)','rgba(0, 0, 0, 0.5)'],
-			        }]
-			    },
-			}
+					}],
+					labels : ["%Colision Vehicular","%Choque Multiple","%Incendio","%Derrumbes","%Atropellos","%Otros",]
+				},
+				options : { reponsive: true, }
+			};
 			var canvas2=document.getElementById("G2_accidentes").getContext("2d");
 			window = new Chart(canvas2,datos2);
 		}
@@ -232,22 +245,38 @@ function Incidentes(){
 			};
 			var canvas3=document.getElementById("G_delitos").getContext("2d");
 			window = new Chart(canvas3,datos3);
+		}
+	});
 
-			//GRAFICO 4
-			var datos4={
-				type: 'pie',
-			    data: {
-			        labels: ["%Robo con violencia","%Asalto","%Portonazo","%Parricidio","%Infanticidio","%Secuestro","%Sustraccion de menores","%Asesinato","%Otro"],
-			        datasets: [{
-			            label: '#Delitos',
-			            data: delitos,
-			            backgroundColor: [
+	$.ajax({
+		url : 'php/DatosE2.php', //archivo que recibe la peticion
+		type : 'POST', //método de envio
+		success : function (data) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+		    var valores = eval(data);	
+		           
+		    var RoboViolencia = valores[0];
+		    var Asalto = valores[1];
+		    var Portonazo = valores[2];
+		    var Parricidio = valores[3];
+		    var Infanticidio = valores[4];
+		    var Secuestro = valores[5];
+		    var SustraccionMenores = valores[6];
+		    var Asesinato = valores[7];
+		    var Otros = valores[8];
+		    var datos4 = {
+				type : "pie",
+				data : {
+					datasets : [{
+						data : [RoboViolencia,Asalto,Portonazo,Parricidio,Infanticidio,Secuestro,SustraccionMenores,Asesinato,Otros],
+						backgroundColor: [
 			                'rgba(255, 99, 132, 0.5)','rgba(54, 162, 235, 0.5)','rgba(255, 206, 86, 0.5)',
 							'rgba(255, 128, 0, 0.5)','rgba(255, 255, 0, 0.5)','rgba(102, 0, 0, 0.5)',
 			                'rgba(255, 51, 0, 0.5)','rgba(153, 255, 0, 0.5)','rgba(0, 0, 0, 0.5)'],
-			        }]
-			    },
-			}
+					}],
+					labels : ["%Robo con Violencia","%Asalto","%Portonazo","%Parricidio","%Infanticidio","%Secuestro","%Sustracción de Menores","%Asesinato",'%Otros',]
+				},
+				options : { reponsive: true, }
+			};
 			var canvas4=document.getElementById("G2_delitos").getContext("2d");
 			window = new Chart(canvas4,datos4);
 		}

@@ -237,7 +237,22 @@
 			</div>
 		</div>
 		<hr>
-		<button onclick="window.location.href='reportes/estadisticas.php'"  type="button" class="btn btn-primary">Generar Reporte PDF</button>
+		<h3>Generar Reporte Pdf</h3>
+		
+		<p>Seleccione el Año y luego presione el Boton</p>
+		<?php
+    		echo "<form action='reportes/estadisticas.php' method='POST'>
+    			<select name='year' class='select'>";
+			        for($i=1970;$i<=date("Y");$i++)
+			        {
+			            echo "<option>".$i."</option>";
+			        }
+		    echo "</select> ";
+		    echo "<button type='submit' class='btn btn-primary'>Generar</button>";
+		    echo "</form>";
+	    
+	    ?>
+	    
 		<hr>
 	</div>
 </body>

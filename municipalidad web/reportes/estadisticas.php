@@ -2,7 +2,9 @@
 	include 'plantilla.php';
 	require '../php/conex.php';
 
-	$query= "SELECT * FROM incidentes";
+	$year=$_POST["year"]; 
+
+	$query= "SELECT * FROM incidentes WHERE FECHA BETWEEN '".$year."-01-01' AND '".$year."-12-31'";
 	$resultado=$mysqli->query($query);
 
 	$pdf= new PDF();

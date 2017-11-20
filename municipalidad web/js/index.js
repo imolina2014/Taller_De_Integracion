@@ -25,6 +25,27 @@ function guardar() {
 	});
 }
 
+function Crea_sector(){
+	var datos = {
+		"usuario": $("#nombre_usuario").val(),
+		"nombre": $("#nombre_sector").val(),
+		"tipo": document.getElementById("tipo_delito").value,
+		"pos1": $("#coordslat").val()+","+$("#coordslng").val(),
+		"pos2": $("#coords2lat").val()+","+$("#coords2lng").val(),
+		"pos3": $("#coords3lat").val()+","+$("#coords3lng").val(),
+		"pos4": $("#coords4lat").val()+","+$("#coords4lng").val()
+	}
+
+	$.ajax({
+		type: "POST",
+		url: "php/Crea_sector.php",
+		data: datos,
+		success: function(d) {
+			$("#respuesta").html(d);
+		}
+	});
+}
+
 function RegistrarAyuda(){
 
 	var datos={

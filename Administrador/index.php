@@ -60,7 +60,7 @@
 					<input class="form-control" type="password" name="FRMclave" placeholder="Clave" required="">
 				</div><br>
 				<center><input type="submit" class="btn btn-success" name="login" value="Ingresar al sistema"></center>
-				<div class="input-text"><h6><center><a href="recuperar.php" id="recover-pass">Olvidé mi contraseña</a></center></h6></div>
+				<div class="input-text"><h6><center><a href="#" id="recover-pass">Olvidé mi contraseña</a></center></h6></div>
 			</form>
 		</div>
 	</div></center>	

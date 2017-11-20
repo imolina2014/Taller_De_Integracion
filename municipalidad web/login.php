@@ -7,7 +7,9 @@
 		$sql = "SELECT * FROM usuarios WHERE NOMBRE='$usuario' AND CLAVE='$clave'";
 		$consulta = mysqli_query($mysqli,$sql);
 		if(mysqli_num_rows($consulta)>0){
+			$Datos = mysqli_fetch_array($consulta);
 			$_SESSION["usuario"] = $usuario;
+			$_SESSION["id_usuario"] = $Datos['ID_USUARIO'];
 			header("Location:index.php");
 		}
 		else {

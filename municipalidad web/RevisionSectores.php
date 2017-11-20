@@ -123,7 +123,7 @@ session_start();
 			      	<button class="btn btn-default" onclick="changeOpacity()">Cambiar Opacidad</button>
 					<button class="btn btn-default" onclick="traecoordenadas()">Filtrar</button>
 			      	<button class='btn btn-primary' onclick="initMap()" disabled="true" id="iniciar">INICIAR</button>
-	    		</div>
+	    		</div><br>
 
 	    		<div id="map"></div>
 			    <script>
@@ -226,66 +226,7 @@ session_start();
 			    </script>
 				</div>
 			</center>	
-			<div class='mapa'></div>
-				<div class='tabla_sectores '>
-					<table class='table' id="tablaa">
-					 	<thead class='thead-inverse'>
-						    <tr>
-						    	<th>#</th>
-						     	<th>Calle</th>
-						     	<th>Descripcion</th>
-						     	<th>Fecha</th>
-						     	<th>Categoria</th>
-						     	<th>Tipo</th>
-						    </tr>
-						</thead>
-						<tbody >
-						    <tr>
-						     	<th scope='row'>1</th>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						    </tr>
-						    <tr>
-						     	<th scope='row'>2</th>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						    </tr>
-						    <tr>
-						     	<th scope='row'>3</th>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						    </tr>
-						    <tr>
-						     	<th scope='row'>4</th>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						    </tr>
-						    <tr>
-						     	<th scope='row'>5</th>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						     	<td>###</td>
-						    </tr>
-
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
+		</div><br><br><br>
 	</body>
 </body>
 </html>

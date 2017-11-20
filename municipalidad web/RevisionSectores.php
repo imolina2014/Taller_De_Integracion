@@ -17,13 +17,10 @@ session_start();
 	<link rel='stylesheet'  href='css/style.css'>
 	<link rel='stylesheet'  href='css/style_nav.css'>
 	<style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
       #map {
-        height: 450px; /*ALTO*/
-        width: 940px;  /*ANCHO*/
+        height: 450px; 
+        width: 940px;  
       }
-      /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;

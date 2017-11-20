@@ -150,14 +150,15 @@ session_start();
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
 		<div class='create_sector main'>
-			<form>
+			<form method="post">
 				<div class='form-group'>
+				    <input type="hidden" id="nombre_usuario" value=<?php echo $_SESSION['usuario'] ?> >
 				    <label for='exampleFormControlInput1'>Nombre de Sector: </label>
-				    <input type='text' class='form-control' id='exampleFormControlInput1' placeholder='Nombre'>
+				    <input type='text' class='form-control' id='nombre_sector' placeholder='Nombre'>
 				</div>
 				<div class='form-group'>
 				   	<label for='exampleFormControlSelect2'>Tipo de Delitos</label>
-				    <select multiple class='form-control' id='exampleFormControlSelect2'>
+				    <select multiple class='form-control' id='tipo_delito'>
 					    <option>Robo con violencia</option>
 						<option>Asalto</option>
 						<option>Portonazo</option>
@@ -200,8 +201,9 @@ session_start();
 						</div>
 			    	</div>
 			    </div>
-				<button class='btn btn-primary' type='submit' onClick='create_sector'>Crear Sector</button>
+				<button class='btn btn-primary' type='button' onClick='Crea_sector()'>Crear Sector</button>
 			</form>
+			<div id="respuesta"></div>
 		</div>
 	</div>  	
 </body>

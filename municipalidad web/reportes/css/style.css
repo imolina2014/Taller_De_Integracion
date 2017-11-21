@@ -1,0 +1,17 @@
+.logo{
+	border-radius: 5px;
+}
+
+.company-data{
+	text-align: right;
+	color: black;
+}
+
+.client-data{
+	text-align: left;
+	color: black;
+}
+
+.title{
+	font-size: 22px;
+}

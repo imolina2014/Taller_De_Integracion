@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ayuda</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style_nav.css">
+
+	<script src="js/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<!-- AQUI NO SEBE QUEDAR NADA ADEMAS DE ESTO -->
+		<header>
+			<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgba(0,0,0,0.9);">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+							<span class="sr-only">Menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand" style= "color: #F8F8FF">SISTEMA DE INGRESO DE INCIDENTES</a>
+					</div>
+					
+					<div class="collapse navbar-collapse"  id="navbar-1"> <!-- EL ID LO PASE DE LA LINEA 1...2...4 lineas mas abajo AQUI -->
+						<ul class="nav navbar-nav">
+						</ul>		
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="home.html" style= "color: #F8F8FF">Incidentes</a></li>
+							<li><a href="ComoUsar.html" style= "color: #F8F8FF">Como Usar</a></li>
+							<li><a href="UsoDeDatos.html" style= "color: #F8F8FF">Uso de Datos</a></li>
+							<li> <a href="ComoNotificamos.html" style= "color: #F8F8FF">Como Notificamos</a></li>
+							<li><a href="ayuda.html" style= "color: #F8F8FF;background: #7fbf00">Ayuda</a></li>
+							<li><a href="../municipalidad%20web/login.php" style= "color: #F8F8FF">Acceder</a></li>
+						</ul>
+					</div>	
+				</div>
+			</nav>
+		</header>
+		
+		<div class="container"> <!-- ESTO LO SAQUE DE ARRIBA Y LO DEJE AQUI SOLO PARA EL CONTENIDO DE ABAJO (INCLUSO SE PODIA TRABAJAR CON SECTION O WEAS ASI PERO ESTA BIEN IGUAL) -->
+		<div class="row">
+			<div class="container-fluid main">
+				<h1><b>Ayuda</b></h1>
+				<p>
+					Podemos prestar un mejor servicio si contamos con tu opinión. 
+					Completa este formulario y déjanos tu comentario o petición y nosotros te contáctaremos.
+					¡Tu opinión nos importa!
+				</p>
+			</div><br>
+			<div class="container">
+				<div class="jumbotron cuadrito">
+					<form>
+						<div>
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-user"></span>
+							</span>
+							<input class="form-control" type="text" id="FRM-nombre" placeholder="Nombre Completo" autofocus="" required="">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope"></span>
+							</span>
+							<input class="form-control" type="text" id="FRM-email" placeholder="E-mail" required="">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-eye-open"></span>
+							</span>
+							<input class="form-control" type="text" id="FRM-asunto" placeholder="Asunto" required="">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-comment"></span>
+							</span>
+							<textarea class="form-control" rows="5" cols="40" id="FRM-formulario" placeholder="Comentario" required="" maxlength="500"></textarea>
+						</div><br>
+						<center><input type="button" class="btn btn-primary" value="Enviar Formulario" onclick="RegistrarAyuda()"></center>
+						<div class="input-text"><h6><center><a href="home.html" id="recover-pass">Ir a página principal</a></center></h6></div>
+						<div id="pr"></div> 
+					</form>
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

@@ -7,6 +7,7 @@ session_start();
 ?>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE-edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -68,7 +69,7 @@ session_start();
 					<option style='background: #5cb85c; color: #fff;' value="nada" >Seleccione sector</option>
 					<?php
 						$id_usuario = $_SESSION['id_usuario'];
-						$sql = "SELECT AsText(POS1), AsText(POS2), AsText(POS3), AsText(POS4), NOMBRE,DESCRIPCION FROM sectores WHERE ID_DUENO='$id_usuario'";
+						$sql = "SELECT AsText(POS1), AsText(POS2), AsText(POS3), AsText(POS4), NOMBRE,TIPO FROM sectores WHERE ID_DUENO='$id_usuario'";
 						$consulta = mysqli_query($mysqli,$sql);
 						if(mysqli_num_rows($consulta)>0){
 							while ($Datos = mysqli_fetch_array($consulta)) {
@@ -222,6 +223,7 @@ session_start();
 			        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&libraries=visualization&callback=initMap">
 			    </script>
 				</div>
+				<div id="tablaa"></div>
 			</center>	
 		</div><br><br><br>
 	</body>

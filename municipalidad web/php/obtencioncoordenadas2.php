@@ -9,16 +9,10 @@
 	$pos4 = $posiciones2[3];
 
 	//$query = "SELECT AsText(coordenadas) FROM incidentes where CATEGORIA='$var'";
-	$query = "SELECT AsText(coordenadas), DESCRIPCION, FECHA, CATEGORIA, TIPO FROM incidentes WHERE ST_Contains(GeomFromText('Polygon(($pos1,$pos2,$pos3,$pos4, $pos1))'),COORDENADAS) and CATEGORIA = '$var'";
+	$query = "SELECT CALLE, DESCRIPCION, FECHA, CATEGORIA, TIPO FROM incidentes WHERE ST_Contains(GeomFromText('Polygon(($pos1,$pos2,$pos3,$pos4, $pos1))'),COORDENADAS) and CATEGORIA = '$var'";
 	$resultado=$mysqli->query($query);
 	while ($rows = $resultado->fetch_assoc()) {
-			$CoorSep = $rows["AsText(coordenadas)"];
-			$CoorSep = explode(" ", $CoorSep);
-			$CoorSep[0]= explode("(", $CoorSep[0]);
-			$CoorSep[1]= explode(")", $CoorSep[1]);
-			$lat = $CoorSep[0][1];
-			$lon = $CoorSep[1][0];
-			echo $lat." ".$lon."+".$rows["DESCRIPCION"]."+".$rows["FECHA"]."+".$rows["CATEGORIA"]."+".$rows["TIPO"]."/";
+			echo utf8_encode($rows["CALLE"])."+".utf8_encode($rows["DESCRIPCION"])."+".$rows["FECHA"]."+".$rows["CATEGORIA"]."+".$rows["TIPO"]."/";
 
 	}
 ?>

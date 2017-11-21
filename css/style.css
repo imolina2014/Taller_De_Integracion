@@ -1,0 +1,79 @@
+
+
+
+h1{
+	font-size: 25px;
+	color: black;
+}
+
+h2{
+	font-size: 18px;
+	color: black;
+}
+
+p{
+	font-size: 16px;
+}
+
+.main{
+	margin-top:45px;
+}
+.cuadrito{
+	margin: 10px auto;
+	width: 700px;
+	align-content: left;
+}
+.cuadrito1{
+	margin-top:2px;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+.bordes{
+	border:0.5px solid black;
+	height: 100px;
+}
+.opciones{
+	float: right;
+}
+#azul{
+	color: white;
+}
+
+form[name="filtro"]{
+	display:inline;
+} 
+
+div[id="contenedor"]{
+	display:inline;
+}
+
+select[id="sTipo"]{
+	width:200px;
+	height:31px;
+}
+
+select[id="sCategoria"]{
+	width:200px;
+	height:31px;
+}
+
+table[class="table"]{
+	margin-top:20px;
+}
+
+body[name="principal"]{
+	#background: url(http://subtlepatterns.com/patterns/sativa.png);
+}
+
+div[class=" col-md-12 main"]{
+	font-size: 18px;
+}
+
+h1[class="h1"]{
+	font-size: 25px; 
+	color:black;
+}
+
+div[id="Categoria"]{
+	display:inline;
+}

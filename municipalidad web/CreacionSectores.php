@@ -151,57 +151,82 @@ session_start();
 		</div>
 		<div class='create_sector main'>
 			<form method="post">
-				<div class='form-group'>
-				    <input type="hidden" id="nombre_usuario" value=<?php echo $_SESSION['usuario'] ?> >
-				    <label for='exampleFormControlInput1'>Nombre de Sector: </label>
-				    <input type='text' class='form-control' id='nombre_sector' placeholder='Nombre'>
+				<div class="container-fluid">
+					<div class='form-group'>
+					    <input type="hidden" id="nombre_usuario" value=<?php echo $_SESSION['usuario'] ?> >
+					    <div class="col-xs-3">
+					   		<label for='exampleFormControlInput1'>Nombre de Sector: </label>
+					    	<input type='text' class='form-control' id='nombre_sector' placeholder='Ingresar Nombre'>
+					    </div>
+
+					    <div class="col-xs-3">
+					    	<label for='exampleFormControlSelect2'>Tipos de Delitos:</label>
+						    <select class='form-control selectpicker' id='tipo_delito'>
+						    	<optgroup label="Delitos" data-max-options="2">
+								    <option>Robo con violencia</option>
+									<option>Asalto</option>
+									<option>Portonazo</option>
+									<option>Parricidio</option>
+									<option>Infanticidio</option>
+									<option>Secuestro</option>
+									<option>Sustraccion de menores</option>
+									<option>Asesinato</option>
+									<option>Otro</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
 				</div>
-				<div class='form-group'>
-				   	<label for='exampleFormControlSelect2'>Tipo de Delitos</label>
-				    <select multiple class='form-control' id='tipo_delito'>
-					    <option>Robo con violencia</option>
-						<option>Asalto</option>
-						<option>Portonazo</option>
-						<option>Parricidio</option>
-						<option>Infanticidio</option>
-						<option>Secuestro</option>
-						<option>Sustraccion de menores</option>
-						<option>Asesinato</option>
-						<option>Otro delito</option>
-						<option>Colision vehicular</option>
-						<option>Choque multiple</option>
-						<option>Incendio</option>
-						<option>Derrumbes</option>
-						<option>Atropello de peatones</option>
-						<option>Otro accidente</option>
-					</select>
-				</div>
-				<div style="width: 100% ;; " class="row" >
-			    	<div style="width: 45%; margin-left: 15px;" id="map" class="col-md-4" ></div>
+				<div style="width: 100%;margin-top:20px;margin-left: 15px" class="from-group" >
+
+					<div class="panel panel-primary col-md-6" style="max-width: 600px;">
+						<div class="panel-heading"><center>Direccionar marcadores a las coordenadas del sector en cuestion</center></div>
+					  	<div class="panel-body">
+					    	<div style="width: 94%; margin-left: 15px;" id="map" class="col-md-4" ></div>
+					  	</div>
+					</div>
+
 			    	<div style="width: 45%;height: 500px;margin-left: 20px;" class="col-md-4">
 			    		<div class="jumbotron cuadrito" style="background: transparent;" >
 							<form name="login">
-								<label id="formapa">Latitud A    : </label>
-					    		<input type="text" value="" id="coordslat" style="margin-left:11px;"><br>
-					    		<label id="formapa">Longitud A : </label>
-					    		<input type="text" value="" id="coordslng"><br>
-					    		<label id="formapa">Latitud B  : </label>
-					    		<input type="text" value="" id="coords2lat" style="margin-left:11px;"><br>
-					    		<label id="formapa">Longitud B : </label>
-					    		<input type="text" value="" id="coords2lng"><br>
-					    		<label id="formapa">Latitud C  : </label>
-					    		<input type="text" value="" id="coords3lat" style="margin-left:11px;"><br>
-					    		<label id="formapa">Longitud C : </label>
-					    		<input type="text" value="" id="coords3lng"><br>
-					    		<label id="formapa">Latitud D  : </label>
-					    		<input type="text" value="" id="coords4lat" style="margin-left:11px;"><br>
-					    		<label id="formapa">Longitud D : </label>
-					    		<input type="text" value="" id="coords4lng"><br>
+								<div class="form-group">
+									<div class="col-xs-5" style="margin-top:35px">
+										<label id="formapa">Latitud A: </label>
+							    		<input type="text" class="form-control" value="" id="coordslat" style="margin-left:11px;background: rgb(240,173,78);color:white" disabled></div>
+						    		<div class="col-xs-5" style="margin-top:35px">
+							    		<label id="formapa">Longitud A: </label>
+							    		<input type="text" class="form-control" value="" id="coordslng" style="background: rgb(92,184,92);color:white" disabled></div><br>
+						    	</div>
+						    	<div class="form-group">
+						    		<div class="col-xs-5" style="margin-top:10px">
+							    		<label id="formapa" >Latitud B: </label>
+							    		<input type="text" class="form-control" value="" id="coords2lat" style="margin-left:11px;background: rgb(240,173,78);color:white" disabled></div>
+						    		<div class="col-xs-5" style="margin-top:10px">
+							    		<label id="formapa">Longitud B: </label>
+							    		<input type="text" class="form-control" value="" id="coords2lng" style="background: rgb(92,184,92);color:white" disabled></div><br>
+						    	</div>
+						    	<div class="form-group">
+						    		<div class="col-xs-5" style="margin-top:10px">
+							    		<label id="formapa">Latitud C: </label>
+							    		<input type="text" class="form-control" value="" id="coords3lat" style="margin-left:11px;background: rgb(240,173,78);color:white" disabled></div>
+						    		<div class="col-xs-5" style="margin-top:10px">
+							    		<label id="formapa">Longitud C: </label>
+							    		<input type="text" class="form-control" value="" id="coords3lng" style="background: rgb(92,184,92);color:white" disabled></div><br>
+					    		</div>
+					    		<div class="form-group">
+					    			<div class="col-xs-5" style="margin-top:10px">
+							    		<label id="formapa">Latitud D: </label>
+							    		<input type="text" class="form-control" value="" id="coords4lat" style="margin-left:11px;background: rgb(240,173,78);color:white" disabled></div>
+							    	<div class="col-xs-5" style="margin-top:10px">
+							    		<label id="formapa">Longitud D: </label>
+							    		<input type="text" class="form-control" value="" id="coords4lng" style="background: rgb(92,184,92);color:white" disabled></div><br>
+					    		</div>
+					    		<button class='btn btn-primary' style="margin-top:30px;margin-left:26px" type='button' onClick='Crea_sector()'>Crear Sector
+					    		</button>
 							</form>
 						</div>
 			    	</div>
 			    </div>
-				<button class='btn btn-primary' type='button' onClick='Crea_sector()'>Crear Sector</button>
 			</form>
 			<div id="respuesta"></div>
 		</div>

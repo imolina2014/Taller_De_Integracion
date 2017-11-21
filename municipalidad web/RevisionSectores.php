@@ -64,7 +64,7 @@ session_start();
 		</div>
 		<div class='main' style="margin-top: 100px;">
 			<center>
-				<select class='selectpicker show-menu-arrow' id="sector">
+				<select class='selectpicker show-menu-arrow' id="sector" style="width:200px;height:31px; margin: 5px; ">
 					<option style='background: #5cb85c; color: #fff;' value="nada" >Seleccione sector</option>
 					<?php
 						$id_usuario = $_SESSION['id_usuario'];
@@ -110,7 +110,7 @@ session_start();
 					
 					
 				</select>
-				<select id="Tipo">
+				<select id="Tipo" style="width:200px;height:31px; margin: 5px; ">
 								<option selected value="Seleccionar" value="nada">Seleccionar Tipo</option>
 								<option value="Delito">Delitos</option>
 								<option value="Accidente">Accidentes</option>

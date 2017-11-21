@@ -124,6 +124,7 @@ session_start();
 	    		</div><br>
 
 	    		<div id="map"></div>
+	    		<button class='btn btn-primary' onclick="window.location.href='reportes/sectores.php'" >Generar Reporte Pdf</button>
 			    <script>
 
 			      // This example requires the Visualization library. Include the libraries=visualization

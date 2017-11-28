@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <title>Security Safe</title>
+</head>
+<body>
+    <div data-role="page" id="pagina1">
+        <div data-role="header">
+            <h1>Ayuda</h1>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-transition="pop" data-icon="alert">Denuncia</a></li>
+                <li><a href="#" data-icon="info">Ayuda</a></li>
+            </ul>
+        </div>
+
+
+
+
+        <div data-role="content">
+            <h2 style="font-size:18px">Preguntas frecuentes.</h2>
+            <br>
+            <h5 style="font-size:14px">El mapa no carga</h5>
+            <br>
+            <p style="font-size:12px">La causa mas probable es que el GPS de su dispositivo este deshabilitado. Si es asi habilitelo y reintente.</p>
+            <br>
+            <h5 style="font-size:14px">¿Que sucede con estos datos?</h5>
+            <br>
+            <p style="font-size:12px">La informacion aqui recaudada es almacenada en una base de datos segura, desde la cual se obtienen los datos para alimentar nuestra plataforma web.</p>
+            <br>
+            <h5 style="font-size:14px">¿Existe un limite de denuncias que pueda hacer?</h5>
+            <br>
+            <p style="font-size:12px">La respuesta es no. Usted puede realizar todas las deuncias que estime pretinentes.</p>
+            <br>
+            <h5 style="font-size:14px">¿Puedo cambiar el lugar donde ocurrio el suceso?</h5>
+            <br>
+            <p style="font-size:12px">Si. Solo basta con mover el marcador del mapa a la posicion escogida.</p>
+            <br>
+            <h5 style="font-size:14px">¿Y si no muevo el marcador?</h5>
+            <br>
+            <p style="font-size:12px">No importa, se obtendra la posicion en tiempo real en la que usted esta ubicado.</p>
+            <br>
+            <h5 style="font-size:14px">¿Es necesaria una descripcion del incidente?</h5>
+            <br>
+            <p style="font-size:12px">La descripcion es de caracter opcional. Aun asi es recomendable proporcionar una.</p>
+            <br>
+            <br>
+            <h2 style="font-size:18px">Mas dudas.</h2>
+            <br>
+            <p style="font-size:12px">Si tiene mas consultas sobre la aplicacion y como usarla, puede visitar el sitio <a href="https://integracioniv.000webhostapp.com/ciudadano%20web/ComoUsar.html" target="_system">Denuncia ciudadana</a></p> 
+        </div>
+            
+        <div data-role="footer" data-position="fixed">
+            <h4>2017 Security Safe</h4>
+        </div>
+    </div>
+
+    <!-----------------------------------------SECCION DE SCRIPTS--------------------------------------------->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBav05DiXZtDaYqSyCym2ulb75b0ST3dPA&callback=initMap"></script>
+</body>
+</html>
